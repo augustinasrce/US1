@@ -1,7 +1,7 @@
-    var app = angular.module('HomeScreen', []);
+    var app = angular.module('ContactUsScreen', []);
 
 
-    app.controller('HomeScreenController', function($scope, $http) {
+    app.controller('ContactUsScreenController', function($scope, $http) {
     $http({
       method: 'GET',
       url: '/lt'

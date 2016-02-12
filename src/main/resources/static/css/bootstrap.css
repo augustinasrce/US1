@@ -60,8 +60,7 @@ dfn {
   font-style: italic;
 }
 h1 {
-  //margin: .67em 0;
-  margin: 1em 5em; // custom
+  margin: .67em 0;
   font-size: 2em;
 }
 mark {
@@ -1098,8 +1097,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  //color: #337ab7;
-  color: #000000; // custom
+  color: #337ab7;
   text-decoration: none;
 }
 a:hover,

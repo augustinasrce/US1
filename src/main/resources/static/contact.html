@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="ContactUsScreen" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Parašykite mums</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+        padding-top: 60px;
+        }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
+
+
+<div ng-controller="ContactUsScreenController">
+    <div class="container">
+        <h1>{{ title }}</h1>
+    </div>
+    <form class="form-horizontal">
+        <div class="center-block">
+            <div class="form-group">
+                <label for="inputTopic" class="col-xs-5 control-label pull-left">{{ topic }}</label>
+                <div class="col-xs-5">
+                    <select class="form-control" id="inputTopic" placeholder="{{ topic }}">
+                        <option value="one">One</option>
+                        <option value="two">Two</option>
+                        <option value="three">Three</option>
+                        <option value="four">Four</option>
+                        <option value="five">Five</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+
+</div>
+
+
+<!-- for BootStrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- ----------- -->
+</body>
+</html>
+
+<!--
 
 <h1>Parašykite mums</h1>
 
@@ -48,7 +94,4 @@
 <p><label>{{ email }}</label></p>
 <p><label>{{ answertype }}</label></p>
 <p><label>{{ information }}</label></p>
-
-
-</body>
-</html>
+ -->

@@ -1,19 +1,30 @@
-<!doctype html>
-<html data-ng-app="HomeScreen">
+<!DOCTYPE html>
+<html ng-app="HomeScreen" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> Demo </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+        padding-top: 60px;
+        }
+    </style>
     <script src="js/angular.min.js"></script>
     <script src="js/index.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-
 </head>
-<body link="black" vlink="black" alink="pink">
-    <div data-ng-controller="SimpleCtrl">
-        <h1>                             {{ title }}     </h1>
-        <h1><a href="register.html">     {{ register }}  </a></h1>
-        <h1><a href="contact.html">      {{ contacts }}  </a></h1>
+<body>
+<div ng-controller="HomeScreenController">
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <a href="register.html"> {{ register }} </a> <br>
+        <a href="contact.html"> {{ contacts }} </a>
     </div>
+</div>
+<!-- for BootStrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- ----------- -->
 </body>
 </html>

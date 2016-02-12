@@ -1,11 +1,11 @@
-package com.swedbankTeamC.services;
+package lt.swedbank.contactForm.services;
 
-import com.swedbankTeamC.beans.Language;
+import lt.swedbank.contactForm.beans.FieldNames;
+import lt.swedbank.contactForm.beans.Language;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 
 /**
  * Created by p998ueh on 2016.02.11.
@@ -22,9 +22,9 @@ public class HomeScreenService {
     }
 
     @RequestMapping("/lt")
-    public Language getDefaultLanguage() {
+    public FieldNames getLanguageLT() {
         language = new Language();
-        return language;
+        return language.getFieldNamesLT();
     }
 /*
     @RequestMapping("lt/index.html")
