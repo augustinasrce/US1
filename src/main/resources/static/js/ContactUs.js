@@ -9,10 +9,14 @@ var contactUs = angular.module('ContactUs', []);
                                "Paskolos, lizingas","Kasdienių finansų valdymas"];
         $scope.responseWayChoices = ["Telefonu","El.paštu","Telefonu ir El.paštu"];
         $scope.messageTag = "Žinutės tekstas";
+        $scope.message= "WRONG";
         $scope.client = {
             name: "Vardas",
             surname: "Pavardė",
             phone: "Telefonas",
             email: "El.paštas",
             responseWay: "Kaip pageidaujate gauti atsakymą"};
-        });
+
+    });
+
+
