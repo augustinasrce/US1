@@ -1,11 +1,11 @@
 package com.swedbankTeamC.services;
 
-import org.springframework.web.bind.annotation.PathVariable;
+import com.swedbankTeamC.beans.Language;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 
 /**
  * Created by p998ueh on 2016.02.11.
@@ -13,20 +13,25 @@ import javax.annotation.PostConstruct;
 @RestController
 public class HomeScreenService {
 
-    /*
-        @PostConstruct
-        public void init() {
-            peanutList = new PeanutList();
-            peanutList.addPeanut(new Peanut("Karolis"));
-            peanutList.addPeanut(new Peanut("Antanas"));
-            peanutList.addPeanut(new Peanut("Petras"));
-            peanutList.addPeanut(new Peanut("Jonas"));
-        }
+    Language language = null;
 
-        @RequestMapping("/peanuts")
-        public PeanutList list() {
-            return peanutList;
-        }
+    @PostConstruct
+    public void init() {
+
+
+    }
+
+    @RequestMapping("/lt")
+    public Language getDefaultLanguage() {
+        language = new Language();
+        return language;
+    }
+/*
+    @RequestMapping("lt/index.html")
+    public Language getLTLanguage() {
+        return language;
+    }
+
 
         @RequestMapping("/peanuts/sorted")
         public PeanutList sortedList() {
@@ -88,7 +93,6 @@ public class HomeScreenService {
 
         }
 */
-
 
 
 }

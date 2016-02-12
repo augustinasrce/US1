@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html data-ng-app="HomeScreen">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title> Demo </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script type="text/javascript">
+
+    var app = angular.module('HomeScreen', []);
+    app.controller('SimpleCtrl', function($scope) {
+        $scope.title = "Susisiekite su mumis";
+        $scope.register = "Registruokitės konsultacijai internetu";
+        $scope.contacts = "Parašykite mums";
+        document.title = $scope.title;
+    });
+    </script>
+
+
 </head>
-<body>
-<a href="http://localhost:8080/lt/"></a>
-<h1> Hello World!</h1>
+<body link="black" vlink="black" alink="pink">
+    <div data-ng-controller="SimpleCtrl">
+        <h1 align="center"> {{ title }} </h1>
+        <h1 align="center"><a href="register.html">{{ register }}</a></h1>
+        <h1 align="center"><a href="contact.html">{{ contacts }}</a></h1>
+    </div>
 </body>
 </html>
