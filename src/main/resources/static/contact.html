@@ -2,11 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Parašykite mums!</title>
+    <title>Parašykite mums</title>
 </head>
 <body>
 
-<h1>Parašykite mums!</h1>
+<h1>Parašykite mums</h1>
+
+<p><label>{{ theme }}</label>
+    <select name="{{ messageDefault }}">
+        <option value="{{ messageOption1 }}">{{ messageOption1 }}</option>
+        <option value="{{ messageOption2 }}">{{ messageOption2 }}</option>
+        <option value="{{ messageOption3 }}">{{ messageOption3 }}</option>
+        <option value="{{ messageOption4 }}">{{ messageOption4 }}</option>
+        <option value="{{ messageOption5 }}">{{ messageOption5 }}</option>
+        <option value="{{ messageOption6 }}">{{ messageOption6 }}</option>
+    </select>
+</p>
+
+
+<p>
+    <label>{{ message }}</label>
+    <textarea name="textArea" rows="10" cols="40"></textarea>
+</p>
+
+<p>
+    <label>{{ name }}</label>
+    <input type="text"/>
+</p>
+
+<div class="dropdown theme-dropdown clearfix">
+    <a id="dropdownMenu1" href="#" class="sr-only dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li class="active"><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>
+
+
+
+<p><label>{{ surname }}</label></p>
+<p><label>{{ phoneno }}</label></p>
+<p><label>{{ email }}</label></p>
+<p><label>{{ answertype }}</label></p>
+<p><label>{{ information }}</label></p>
 
 
 </body>
