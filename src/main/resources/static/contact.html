@@ -16,73 +16,76 @@
     <script src="js/contact.js"></script>
 </head>
 <body>
-
-
 <div ng-controller="ContactUsScreenController">
     <div class="container">
-        <h1>{{ title }}</h1>
+        <h1>{{ nameList[0] }}</h1>
     </div>
     <form class="form-horizontal">
         <div class="center-block">
             <div class="form-group">
-                <label for="inputTopic" class="col-xs-3 control-label">{{ topic }}</label>
+                <label for="inputTopic" class="col-xs-3 control-label">{{ nameList[1] }}</label>
                 <div class="col-xs-5">
-                    <select class="form-control" id="inputTopic" placeholder="{{ topic }}">
-                        <option value="one">One</option>
-                        <option value="two">Two</option>
-                        <option value="three">Three</option>
-                        <option value="four">Four</option>
-                        <option value="five">Five</option>
+                    <select class="form-control" id="inputTopic">
+                        <option value="{{ dropDownList[0] }}">{{ dropDownList[0] }}</option>
+                        <option value="{{ dropDownList[1] }}">{{ dropDownList[1] }}</option>
+                        <option value="{{ dropDownList[2] }}">{{ dropDownList[2] }}</option>
+                        <option value="{{ dropDownList[3] }}">{{ dropDownList[3] }}</option>
+                        <option value="{{ dropDownList[4] }}">{{ dropDownList[4] }}</option>
+                        <option value="{{ dropDownList[5] }}">{{ dropDownList[5] }}</option>
+                        <option value="{{ dropDownList[6] }}">{{ dropDownList[6] }}</option>
                     </select>
                 </div>
             </div>
-
-
             <div class="form-group">
-                <label for="inputMessage" class="col-xs-3 control-label">{{ message }}</label>
+                <label for="inputMessage" class="col-xs-3 control-label">{{ nameList[2] }}</label>
                 <div class="col-xs-5">
                     <textarea class="form-control" id="inputMessage" rows="5"></textarea>
                 </div>
             </div>
-
-
             <div class="form-group">
-                <label for="inputName" class="col-xs-3 control-label">{{ name }}</label>
+                <label for="inputName" class="col-xs-3 control-label">{{ nameList[3] }}</label>
                 <div class="col-xs-5">
                     <input class="form-control" id="inputName"/>
                 </div>
             </div>
-
-
             <div class="form-group">
-                <label for="inputSurname" class="col-xs-3 control-label">{{ surname }}</label>
+                <label for="inputSurname" class="col-xs-3 control-label">{{ nameList[4] }}</label>
                 <div class="col-xs-5">
                     <input class="form-control" id="inputSurname"/>
                 </div>
             </div>
-
             <div class="form-group">
-                <label for="inputPhone" class="col-xs-3 control-label">{{ phone }}</label>
+                <label for="inputPhone" class="col-xs-3 control-label">{{ nameList[5] }}</label>
                 <div class="col-xs-5">
                     <input class="form-control" id="inputPhone"/>
                 </div>
             </div>
-
             <div class="form-group">
-                <label for="inputEmail" class="col-xs-3 control-label">{{ email }}</label>
+                <label for="inputEmail" class="col-xs-3 control-label">{{ nameList[6] }}</label>
                 <div class="col-xs-5">
                     <input class="form-control" id="inputEmail"/>
                 </div>
             </div>
-
-            <!-- need to add radio box to chose answer type  -->
-
             <div class="form-group">
-                <div class="col-xs-offset-3 col-xs-5">
-                    <p>{{ info }}</p>
+                <label class="col-xs-3 control-label">{{ nameList[7] }}</label>
+                <div class="col-xs-5 btn-group" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="radio" name="answerType" value="email">{{ radioButtonList[0] }}
+                    </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="answerType" value="phone">{{ radioButtonList[1] }}
+                    </label>
+                    <label class="btn btn-default active">
+                        <input type="radio" name="answerType" value="both" checked="">{{ radioButtonList[2] }}
+                    </label>
                 </div>
             </div>
-
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-5">
+                    <p>{{ nameList[8] }}</p>
+                </div>
+            </div>
+            <button type="button" class="col-xs-offset-7 col-xs-1 btn btn-primary">{{ nameList[9] }}</button>
         </div>
     </form>
 </div>

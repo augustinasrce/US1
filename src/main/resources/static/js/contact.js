@@ -5,16 +5,11 @@
              method: 'GET',
              url: '/lt'
            }).then(function successCallback(response) {
-               $scope.title = response.data.contactUsNameList[0];
-               $scope.topic = response.data.contactUsNameList[1];
-               $scope.message = response.data.contactUsNameList[2];
-               $scope.name = response.data.contactUsNameList[3];
-               $scope.surname = response.data.contactUsNameList[4];
-               $scope.phone = response.data.contactUsNameList[5];
-               $scope.email = response.data.contactUsNameList[6];
-               $scope.answer = response.data.contactUsNameList[7];
-               $scope.info = response.data.contactUsNameList[8];
+               $scope.nameList = response.data.contactUsNameList;
+               $scope.dropDownListName = response.data.dropDownListName;
+               $scope.dropDownList = response.data.contactUsDropDownMenuList;
+               $scope.radioButtonList = response.data.contactUsRadioButtonList;
 
-               document.title = $scope.title;
+               document.title = $scope.nameList[0];
              });
            });

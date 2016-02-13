@@ -2,19 +2,20 @@ package lt.swedbank.contactForm.beans;
 
 import java.util.ArrayList;
 
-/**
- * Created by Augustinas on 12 02 2016!
- */
 public class FieldNames {
     ArrayList<String> homeScreenNameList;
     ArrayList<String> contactUsNameList;
+    ArrayList<String> contactUsDropDownMenuList;
+    ArrayList<String> contactUsRadioButtonList;
 
     public FieldNames() {
         homeScreenNameList = new ArrayList<String>();
         contactUsNameList = new ArrayList<String>();
+        contactUsDropDownMenuList = new ArrayList<String>();
+        contactUsRadioButtonList = new ArrayList<String>();
     }
 
-    public void setupLanguageLT(){
+    public void setupLanguageLT() {
         homeScreenNameList.add("Susisiekite su mumis");
         homeScreenNameList.add("Registruokitės konsultacijai internetu");
         homeScreenNameList.add("Parašykite mums");
@@ -32,8 +33,21 @@ public class FieldNames {
                 "laukiame jūsų skambučių tel. 1884 (privatiems klientams) bei 1633 (verslo klientams). " +
                 "Iš užsienio skambinkite tel. +370 5 268 4444 (privatiems klientams) " +
                 "bei +370 5 268 4422 (verslo klientams).");
+        contactUsNameList.add("Siųsti");
 
+        contactUsDropDownMenuList.add("Pasirinkite");
+        contactUsDropDownMenuList.add("Taupymas ir investavimas");
+        contactUsDropDownMenuList.add("Pensijos ir kaupimas");
+        contactUsDropDownMenuList.add("Gyvybės draudimas");
+        contactUsDropDownMenuList.add("Ne gyvybės draudimas");
+        contactUsDropDownMenuList.add("Paskolos, lizingas");
+        contactUsDropDownMenuList.add("Kasdienių finansų valdymas");
+
+        contactUsRadioButtonList.add("telefonu");
+        contactUsRadioButtonList.add("el. paštu");
+        contactUsRadioButtonList.add("el. paštu ir telefonu");
     }
+
 
     public ArrayList<String> getHomeScreenNameList() {
         return homeScreenNameList;
@@ -42,4 +56,13 @@ public class FieldNames {
     public ArrayList<String> getContactUsNameList() {
         return contactUsNameList;
     }
+
+    public ArrayList<String> getContactUsDropDownMenuList() {
+        return contactUsDropDownMenuList;
+    }
+
+    public ArrayList<String> getContactUsRadioButtonList() {
+        return contactUsRadioButtonList;
+    }
+
 }
