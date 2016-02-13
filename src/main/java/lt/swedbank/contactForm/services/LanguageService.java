@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
  * Created by p998ueh on 2016.02.11.
  */
 @RestController
-public class HomeScreenService {
+public class LanguageService {
 
     Language language = null;
 
@@ -26,6 +26,20 @@ public class HomeScreenService {
         language = new Language();
         return language.getFieldNamesLT();
     }
+
+    @RequestMapping("/en")
+    public FieldNames getLanguageEN() {
+        language = new Language();
+        return language.getFieldNamesLT();
+    }
+
+    /*
+    @RequestMapping("/lt/contact")
+    public FieldNames getLanguageForContactUsScreenLT() {
+        language = new Language();
+        return language.getFieldNamesForContactUsScreenLT();
+    }
+
 /*
     @RequestMapping("lt/index.html")
     public Language getLTLanguage() {

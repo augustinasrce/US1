@@ -10,9 +10,10 @@
         body {
         padding-top: 60px;
         }
+        textarea { resize:none; }
     </style>
     <script src="js/angular.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/contact.js"></script>
 </head>
 <body>
 
@@ -24,7 +25,7 @@
     <form class="form-horizontal">
         <div class="center-block">
             <div class="form-group">
-                <label for="inputTopic" class="col-xs-5 control-label pull-left">{{ topic }}</label>
+                <label for="inputTopic" class="col-xs-3 control-label">{{ topic }}</label>
                 <div class="col-xs-5">
                     <select class="form-control" id="inputTopic" placeholder="{{ topic }}">
                         <option value="one">One</option>
@@ -36,12 +37,55 @@
                 </div>
             </div>
 
+
+            <div class="form-group">
+                <label for="inputMessage" class="col-xs-3 control-label">{{ message }}</label>
+                <div class="col-xs-5">
+                    <textarea class="form-control" id="inputMessage" rows="5"></textarea>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputName" class="col-xs-3 control-label">{{ name }}</label>
+                <div class="col-xs-5">
+                    <input class="form-control" id="inputName"/>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputSurname" class="col-xs-3 control-label">{{ surname }}</label>
+                <div class="col-xs-5">
+                    <input class="form-control" id="inputSurname"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPhone" class="col-xs-3 control-label">{{ phone }}</label>
+                <div class="col-xs-5">
+                    <input class="form-control" id="inputPhone"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail" class="col-xs-3 control-label">{{ email }}</label>
+                <div class="col-xs-5">
+                    <input class="form-control" id="inputEmail"/>
+                </div>
+            </div>
+
+            <!-- need to add radio box to chose answer type  -->
+
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-5">
+                    <p>{{ info }}</p>
+                </div>
+            </div>
+
         </div>
     </form>
-
-
 </div>
-
 
 <!-- for BootStrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -49,49 +93,3 @@
 <!-- ----------- -->
 </body>
 </html>
-
-<!--
-
-<h1>Parašykite mums</h1>
-
-<p><label>{{ theme }}</label>
-    <select name="{{ messageDefault }}">
-        <option value="{{ messageOption1 }}">{{ messageOption1 }}</option>
-        <option value="{{ messageOption2 }}">{{ messageOption2 }}</option>
-        <option value="{{ messageOption3 }}">{{ messageOption3 }}</option>
-        <option value="{{ messageOption4 }}">{{ messageOption4 }}</option>
-        <option value="{{ messageOption5 }}">{{ messageOption5 }}</option>
-        <option value="{{ messageOption6 }}">{{ messageOption6 }}</option>
-    </select>
-</p>
-
-
-<p>
-    <label>{{ message }}</label>
-    <textarea name="textArea" rows="10" cols="40"></textarea>
-</p>
-
-<p>
-    <label>{{ name }}</label>
-    <input type="text"/>
-</p>
-
-<div class="dropdown theme-dropdown clearfix">
-    <a id="dropdownMenu1" href="#" class="sr-only dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li class="active"><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="#">Separated link</a></li>
-    </ul>
-</div>
-
-
-
-<p><label>{{ surname }}</label></p>
-<p><label>{{ phoneno }}</label></p>
-<p><label>{{ email }}</label></p>
-<p><label>{{ answertype }}</label></p>
-<p><label>{{ information }}</label></p>
- -->
