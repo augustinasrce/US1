@@ -1,0 +1,97 @@
+<!--WITH HASHMAPS      NameTagsHashMap(name, surname etc.), ArraysNameTagsHashMap(dropdownmenu, radio buttons etc.)
+ -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="RegistrationScreen" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px;
+        }
+        textarea { resize:none; }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script src="js/registration.js"></script>
+
+</head>
+<body >
+    <div ng-controller="RegistrationScreenController">
+        <form class="form-horizontal">
+            <div class="center-block">
+
+                <div class="form-group">
+                    <label for="inputName" class="col-xs-3 control-label">{{ nameList.get("name") }}</label>
+                    <div class="col-xs-5">
+                        <input class="form-control" id="inputName"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputSurname" class="col-xs-3 control-label">{{ nameList.get("surname") }}</label>
+                    <div class="col-xs-5">
+                        <input class="form-control" id="inputSurname"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPhone" class="col-xs-3 control-label">{{ nameList.get("phone") }}</label>
+                    <div class="col-xs-5">
+                        <input class="form-control" value="+370" id="inputPhone"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail" class="col-xs-3 control-label">{{ nameList.get("email") }}</label>
+                    <div class="col-xs-5">
+                        <input class="form-control" type="email" id="inputEmail"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputBankDivision" class="col-xs-3 control-label">{{ nameList.get("bankDivision") }}</label>
+                    <div class="col-xs-5">
+                        <select class="form-control" id="inputBankDivision">
+                            <div ng-repeat="bankDivision in bankDivisions ">
+                                <option value="{{ bankDivision }}">{{ bankDivision }}</option>
+                            </div>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputDate" class="col-xs-3 control-label">{{ nameList.get("date") }}</label>
+                    <div class="col-xs-5">
+                        <input class="form-control" type="datetime-local" id="inputDate"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputTopic" class="col-xs-3 control-label">{{ nameList.get("topic") }}</label>
+                    <div class="col-xs-5">
+                        <select class="form-control" id="inputTopic">
+                            <div ng-repeat="topic in topics">
+                                <option value="{{ topic }}">{{ topic }}</option>
+                            </div>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputOther" class="col-xs-3 control-label">{{ nameList.get("other") }}</label>
+                    <div class="col-xs-5">
+                        <textarea class="form-control" rows="5" id="inputOther"></textarea>
+                    </div>
+                </div>
+
+
+                <button type="button" class="col-xs-offset-7 col-xs-1 btn btn-primary">{{ nameList.get("confirmButton")}}</button>
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>
