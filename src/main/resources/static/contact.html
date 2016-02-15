@@ -54,13 +54,13 @@
                     <input class="form-control" id="inputSurname"/>
                 </div>
             </div>
-            <div class="form-group">
+            <div id="phone" class="form-group">
                 <label for="inputPhone" class="col-xs-3 control-label">{{ nameList[5] }}</label>
                 <div class="col-xs-5">
                     <input class="form-control" id="inputPhone"/>
                 </div>
             </div>
-            <div class="form-group">
+            <div id="email" class="form-group">
                 <label for="inputEmail" class="col-xs-3 control-label">{{ nameList[6] }}</label>
                 <div class="col-xs-5">
                     <input class="form-control" id="inputEmail"/>
@@ -69,14 +69,14 @@
             <div class="form-group">
                 <label class="col-xs-3 control-label">{{ nameList[7] }}</label>
                 <div class="col-xs-5 btn-group" data-toggle="buttons">
-                    <label class="btn btn-default">
-                        <input type="radio" name="answerType" value="email">{{ radioButtonList[0] }}
+                    <label class="btn btn-default" onclick="hideEmailField()">
+                        <input type="radio" name="answerType">{{ radioButtonList[0] }}
                     </label>
-                    <label class="btn btn-default">
-                        <input type="radio" name="answerType" value="phone">{{ radioButtonList[1] }}
+                    <label class="btn btn-default" onclick="hidePhoneField()">
+                        <input type="radio" name="answerType">{{ radioButtonList[1] }}
                     </label>
-                    <label class="btn btn-default active">
-                        <input type="radio" name="answerType" value="both" checked="">{{ radioButtonList[2] }}
+                    <label class="btn btn-default active" onclick="showEmailPhoneFields()">
+                        <input type="radio" name="answerType" checked>{{ radioButtonList[2] }}
                     </label>
                 </div>
             </div>
