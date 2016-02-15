@@ -7,12 +7,14 @@ public class FieldNames {
     ArrayList<String> contactUsNameList;
     ArrayList<String> contactUsDropDownMenuList;
     ArrayList<String> contactUsRadioButtonList;
+    ArrayList<String> contactUsConfirmationNameList;
 
     public FieldNames() {
         homeScreenNameList = new ArrayList<String>();
         contactUsNameList = new ArrayList<String>();
         contactUsDropDownMenuList = new ArrayList<String>();
         contactUsRadioButtonList = new ArrayList<String>();
+        contactUsConfirmationNameList = new ArrayList<String>();
     }
 
     public void setupLanguageLT() {
@@ -46,6 +48,14 @@ public class FieldNames {
         contactUsRadioButtonList.add("telefonu");
         contactUsRadioButtonList.add("el. paštu");
         contactUsRadioButtonList.add("el. paštu ir telefonu");
+
+        contactUsConfirmationNameList.add("Sveiki, ");
+        contactUsConfirmationNameList.add("dėkojame, kad kreipiatės į „Swedbank“.");
+        contactUsConfirmationNameList.add("Į pateiktus klausimus atsakome darbo dienomis 8–20 val., " +
+                "šeštadieniais 9–16 valandomis. Jeigu Jums reikalinga skubi informacija, " +
+                "laukiame Jūsų skambučių telefonu 1884 arba tel. +370 5 268 4444, " +
+                "jei skambinate iš užsienio. Linkime geros dienos!");
+        contactUsConfirmationNameList.add("< Atgal");
     }
 
 
@@ -63,6 +73,10 @@ public class FieldNames {
 
     public ArrayList<String> getContactUsRadioButtonList() {
         return contactUsRadioButtonList;
+    }
+
+    public ArrayList<String> getContactUsConfirmationNameList() {
+        return contactUsConfirmationNameList;
     }
 
 }
