@@ -10,8 +10,8 @@ public class FieldNames {
     ArrayList<String> contactUsDropDownMenuList;
     ArrayList<String> contactUsRadioButtonList;
     ArrayList<String> contactUsConfirmationNameList;
-    ArrayList<String> bankDivisions;
-    ArrayList<String> topics;
+    ArrayList<String> bankDivisionList;
+    ArrayList<String> topicList;
     Map<String, String> registrationNameTags;
 
     public FieldNames() {
@@ -20,8 +20,8 @@ public class FieldNames {
         contactUsDropDownMenuList = new ArrayList<String>();
         contactUsRadioButtonList = new ArrayList<String>();
         contactUsConfirmationNameList = new ArrayList<String>();
-        bankDivisions = new ArrayList<String>();
-        topics = new ArrayList<String>();
+        bankDivisionList = new ArrayList<String>();
+        topicList = new ArrayList<String>();
         registrationNameTags = new HashMap<String, String>();
 
     }
@@ -66,18 +66,18 @@ public class FieldNames {
                 "jei skambinate iš užsienio. Linkime geros dienos!");
         contactUsConfirmationNameList.add("< Atgal");
 
-        bankDivisions.add("Antakalnio g. 45");
-        bankDivisions.add("Ateities g. 91 (PC „Mandarinas\")");
-        bankDivisions.add("Gedimino pr. 56");
-        bankDivisions.add("Konstitucijos pr. 20A, dirba Būsto Centras");
-        bankDivisions.add("Ozo g. 25 (PPC „Akropolis\")");
+        bankDivisionList.add("Antakalnio g. 45");
+        bankDivisionList.add("Ateities g. 91 (PC „Mandarinas\")");
+        bankDivisionList.add("Gedimino pr. 56");
+        bankDivisionList.add("Konstitucijos pr. 20A, dirba Būsto Centras");
+        bankDivisionList.add("Ozo g. 25 (PPC „Akropolis\")");
 
-        topics.add("Taupymas ir investavimas");
-        topics.add("Pensijos ir kaupimas");
-        topics.add("Gyvybės draudimas");
-        topics.add("Ne gyvybės draudimas");
-        topics.add("Paskolos, lizingas");
-        topics.add("Kasdienių finansų valdymas");
+        topicList.add("Taupymas ir investavimas");
+        topicList.add("Pensijos ir kaupimas");
+        topicList.add("Gyvybės draudimas");
+        topicList.add("Ne gyvybės draudimas");
+        topicList.add("Paskolos, lizingas");
+        topicList.add("Kasdienių finansų valdymas");
 
         registrationNameTags.put("title","Registracija");
         registrationNameTags.put("header","Registruokitės konsultacijai internetu");
@@ -113,9 +113,9 @@ public class FieldNames {
         return contactUsConfirmationNameList;
     }
 
-    public ArrayList<String> getTopicList(){return topics;}
+    public ArrayList<String> getTopicList(){return topicList;}
 
-    public ArrayList<String> getBankDivisionList(){return bankDivisions;}
+    public ArrayList<String> getBankDivisionList(){return bankDivisionList;}
 
     public Map<String,String> getRegistrationNameTags(){return registrationNameTags;}
 

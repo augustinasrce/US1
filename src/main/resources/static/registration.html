@@ -20,75 +20,75 @@
 </head>
 <body >
     <div ng-controller="RegistrationScreenController">
+        <div class="container">
+            <h1>{{ nameList.header }}</h1>
+        </div>
+
         <form class="form-horizontal">
             <div class="center-block">
 
                 <div class="form-group">
-                    <label for="inputName" class="col-xs-3 control-label">{{ nameList.get("name") }}</label>
+                    <label for="inputName" class="col-xs-3 control-label">{{ nameList.name }}</label>
                     <div class="col-xs-5">
                         <input class="form-control" id="inputName"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputSurname" class="col-xs-3 control-label">{{ nameList.get("surname") }}</label>
+                    <label for="inputSurname" class="col-xs-3 control-label">{{ nameList.surname }}</label>
                     <div class="col-xs-5">
                         <input class="form-control" id="inputSurname"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputPhone" class="col-xs-3 control-label">{{ nameList.get("phone") }}</label>
+                    <label for="inputPhone" class="col-xs-3 control-label">{{ nameList.phone }}</label>
                     <div class="col-xs-5">
                         <input class="form-control" value="+370" id="inputPhone"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail" class="col-xs-3 control-label">{{ nameList.get("email") }}</label>
+                    <label for="inputEmail" class="col-xs-3 control-label">{{ nameList.email }}</label>
                     <div class="col-xs-5">
                         <input class="form-control" type="email" id="inputEmail"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputBankDivision" class="col-xs-3 control-label">{{ nameList.get("bankDivision") }}</label>
+                    <label for="inputBankDivision" class="col-xs-3 control-label">{{ nameList.bankDivision }}</label>
                     <div class="col-xs-5">
                         <select class="form-control" id="inputBankDivision">
-                            <div ng-repeat="bankDivision in bankDivisions ">
-                                <option value="{{ bankDivision }}">{{ bankDivision }}</option>
-                            </div>
+                            <option ng-repeat="bankDivision in bankDivisions "value="{{ bankDivision }}">{{ bankDivision }}</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputDate" class="col-xs-3 control-label">{{ nameList.get("date") }}</label>
+                    <label for="inputDate" class="col-xs-3 control-label">{{ nameList.date }}</label>
                     <div class="col-xs-5">
                         <input class="form-control" type="datetime-local" id="inputDate"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputTopic" class="col-xs-3 control-label">{{ nameList.get("topic") }}</label>
+                    <label for="inputTopic" class="col-xs-3 control-label">{{ nameList.topic }}</label>
                     <div class="col-xs-5">
                         <select class="form-control" id="inputTopic">
-                            <div ng-repeat="topic in topics">
-                                <option value="{{ topic }}">{{ topic }}</option>
-                            </div>
+                            <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputOther" class="col-xs-3 control-label">{{ nameList.get("other") }}</label>
+                    <label for="inputOther" class="col-xs-3 control-label">{{ nameList.other }}</label>
                     <div class="col-xs-5">
                         <textarea class="form-control" rows="5" id="inputOther"></textarea>
                     </div>
                 </div>
 
 
-                <button type="button" class="col-xs-offset-7 col-xs-1 btn btn-primary">{{ nameList.get("confirmButton")}}</button>
+                <button type="button" class="col-xs-offset-7 col-xs-1 btn btn-primary">{{ nameList.confirmButton}}</button>
 
             </div>
         </form>

@@ -26,13 +26,7 @@
                 <label for="inputTopic" class="col-xs-3 control-label">{{ nameList[1] }}</label>
                 <div class="col-xs-5">
                     <select class="form-control" id="inputTopic">
-                        <option value="{{ dropDownList[0] }}">{{ dropDownList[0] }}</option>
-                        <option value="{{ dropDownList[1] }}">{{ dropDownList[1] }}</option>
-                        <option value="{{ dropDownList[2] }}">{{ dropDownList[2] }}</option>
-                        <option value="{{ dropDownList[3] }}">{{ dropDownList[3] }}</option>
-                        <option value="{{ dropDownList[4] }}">{{ dropDownList[4] }}</option>
-                        <option value="{{ dropDownList[5] }}">{{ dropDownList[5] }}</option>
-                        <option value="{{ dropDownList[6] }}">{{ dropDownList[6] }}</option>
+                        <option ng-repeat="dropDownItem in dropDownList" value="{{ dropDownItem }}">{{ dropDownItem }}</option>
                     </select>
                 </div>
             </div>
@@ -66,6 +60,7 @@
                     <input class="form-control" id="inputEmail"/>
                 </div>
             </div>
+
             <div class="form-group">
                 <label class="col-xs-3 control-label">{{ nameList[7] }}</label>
                 <div class="col-xs-5 btn-group" data-toggle="buttons">
