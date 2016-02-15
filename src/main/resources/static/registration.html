@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             padding-top: 60px;
@@ -19,7 +20,7 @@
 
 </head>
 <body >
-    <div ng-controller="RegistrationScreenController">
+    <div ng-controller="RegistrationScreenController" >
         <div class="container">
             <h1>{{ nameList.header }}</h1>
         </div>
@@ -37,7 +38,8 @@
                 <div class="form-group">
                     <label for="inputSurname" class="col-xs-3 control-label">{{ nameList.surname }}</label>
                     <div class="col-xs-5">
-                        <input class="form-control" id="inputSurname"/>
+                        <input class="form-control" id="inputSurname" />
+
                     </div>
                 </div>
 
@@ -51,7 +53,7 @@
                 <div class="form-group">
                     <label for="inputEmail" class="col-xs-3 control-label">{{ nameList.email }}</label>
                     <div class="col-xs-5">
-                        <input class="form-control" type="email" id="inputEmail"/>
+                        <input class="form-control" type="email" ng-model="user.email" id="inputEmail"/>
                     </div>
                 </div>
 
@@ -87,9 +89,7 @@
                     </div>
                 </div>
 
-
-                <button type="button" class="col-xs-offset-7 col-xs-1 btn btn-primary">{{ nameList.confirmButton}}</button>
-
+                    <button type="button" class="col-xs-offset-7 col-xs-1 btn btn-primary" ng-click="submitRegistration()">{{ nameList.confirmButton}}</button>
             </div>
         </form>
     </div>

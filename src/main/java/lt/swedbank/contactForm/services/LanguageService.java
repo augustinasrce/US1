@@ -15,10 +15,9 @@ public class LanguageService {
 
     Language language = null;
 
+    String testas = null;
     @PostConstruct
     public void init() {
-
-
     }
 
     @RequestMapping("/lt")
