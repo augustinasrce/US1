@@ -32,13 +32,13 @@ public class FieldNames {
         homeScreenNameList.add("Parašykite mums");
 
         contactUsNameList.add("Parašykite mums");
-        contactUsNameList.add("Tema");
-        contactUsNameList.add("Žinutės tekstas");
-        contactUsNameList.add("Vardas");
-        contactUsNameList.add("Pavardė");
-        contactUsNameList.add("Telefonas");
-        contactUsNameList.add("El. Paštas");
-        contactUsNameList.add("Kaip pageidaujate gauti atsakymą");
+        contactUsNameList.add("Tema *");
+        contactUsNameList.add("Žinutės tekstas *");
+        contactUsNameList.add("Vardas *");
+        contactUsNameList.add("Pavardė *");
+        contactUsNameList.add("Telefonas *");
+        contactUsNameList.add("El. Paštas *");
+        contactUsNameList.add("Kaip pageidaujate gauti atsakymą *");
         contactUsNameList.add("Į pateiktus klausimus atsakome darbo dienomis 8–20 val., " +
                 "šeštadieniais 9–16 valandomis. Jeigu Jums reikalinga skubi informacija, " +
                 "laukiame jūsų skambučių tel. 1884 (privatiems klientams) bei 1633 (verslo klientams). " +
@@ -46,7 +46,6 @@ public class FieldNames {
                 "bei +370 5 268 4422 (verslo klientams).");
         contactUsNameList.add("Siųsti");
 
-        contactUsDropDownMenuList.add("Pasirinkite");
         contactUsDropDownMenuList.add("Taupymas ir investavimas");
         contactUsDropDownMenuList.add("Pensijos ir kaupimas");
         contactUsDropDownMenuList.add("Gyvybės draudimas");

@@ -1,4 +1,4 @@
-    var app = angular.module('ContactUsScreen', []);
+    var app = angular.module('ContactUsScreen', ['ngMessages']);
 
     app.controller('ContactUsScreenController', function($scope, $http) {
            $http({
