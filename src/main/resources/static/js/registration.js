@@ -1,4 +1,4 @@
-var app = angular.module('RegistrationScreen', []);
+var app = angular.module('RegistrationScreen', ['ngMessages']);
 
  app.controller('RegistrationScreenController',  function($scope, $http) {
        $http({
@@ -14,4 +14,6 @@ var app = angular.module('RegistrationScreen', []);
           });
 
  });
+
+
 

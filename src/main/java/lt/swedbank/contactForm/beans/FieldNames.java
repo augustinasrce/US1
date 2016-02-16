@@ -66,12 +66,14 @@ public class FieldNames {
                 "jei skambinate iš užsienio. Linkime geros dienos!");
         contactUsConfirmationNameList.add("< Atgal");
 
+        bankDivisionList.add("Pasirinkite");
         bankDivisionList.add("Antakalnio g. 45");
         bankDivisionList.add("Ateities g. 91 (PC „Mandarinas\")");
         bankDivisionList.add("Gedimino pr. 56");
         bankDivisionList.add("Konstitucijos pr. 20A, dirba Būsto Centras");
         bankDivisionList.add("Ozo g. 25 (PPC „Akropolis\")");
 
+        topicList.add("Pasirinkite");
         topicList.add("Taupymas ir investavimas");
         topicList.add("Pensijos ir kaupimas");
         topicList.add("Gyvybės draudimas");

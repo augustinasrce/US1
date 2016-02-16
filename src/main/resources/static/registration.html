@@ -15,36 +15,63 @@
         textarea { resize:none; }
     </style>
     <script src="js/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.4.0/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
     <script src="js/registration.js"></script>
 
 </head>
-<body >
-    <div ng-controller="RegistrationScreenController">
+<body ng-app="app" ng-controller="RegistrationScreenController as main">
         <div class="container">
             <h1>{{ nameList.header }}</h1>
         </div>
 
-        <form class="form-horizontal">
+        <form name="nameForm" class="form-horizontal" novalidate>
             <div class="center-block">
-
-                <div class="form-group">
-                    <label for="inputName" class="col-xs-3 control-label">{{ nameList.name }}</label>
+                <div class="form-group"  ng-class="{ 'has-error': nameForm.name.$touched && nameForm.name.$invalid }">
+                    <label for="inputName" ng-model="inputName" class="col-xs-3 control-label">{{ nameList.name }}</label>
                     <div class="col-xs-5">
-                        <input class="form-control" id="inputName"/>
+                        <input type="text" name="name" class="form-control" id="inputName"
+                               ng-model="main.name"
+                               ng-minlength="5"
+                               ng-maxlength="10"
+                               required>
+                        <div class="help-block" ng-messages="nameForm.name.$error" ng-if="nameForm.name.$touched">
+                            <p ng-message="minlength">Jūsų vardas per trumpas.</p>
+                            <p ng-message="maxlength">Jūsų vardas per ilgas.</p>
+                            <p ng-message="required">Įveskite savo varda.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group"  ng-class="{ 'has-error': nameForm.surname.$touched && nameForm.surname.$invalid }">
                     <label for="inputSurname" class="col-xs-3 control-label">{{ nameList.surname }}</label>
                     <div class="col-xs-5">
-                        <input class="form-control" id="inputSurname"/>
+                        <input type="text" name="surname" class="form-control" id="inputSurname"
+                               ng-model="main.surname"
+                               ng-minlength="5"
+                               ng-maxlength="10"
+                               required>
+                        <div class="help-block" ng-messages="nameForm.surname.$error" ng-if="nameForm.surname.$touched">
+                            <p ng-message="minlength">Jūsų pavardė per trumpa.</p>
+                            <p ng-message="maxlength">Jūsų pavardė per ilga.</p>
+                            <p ng-message="required">Įveskite savo pavardę.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group"  ng-class="{ 'has-error': nameForm.phoneNr.$touched && nameForm.phoneNr.$invalid }">
                     <label for="inputPhone" class="col-xs-3 control-label">{{ nameList.phone }}</label>
                     <div class="col-xs-5">
-                        <input class="form-control" value="+370" id="inputPhone"/>
+                        <input type="text" name="phoneNr" class="form-control" id="inputPhone" value="+370"
+                               ng-model="main.phoneNr"
+                               ng-minlength="8"
+                               ng-maxlength="15"
+                               required>
+                        <div class="help-block" ng-messages="nameForm.phoneNr.$error" ng-if="nameForm.phoneNr.$touched">
+                            <p ng-message="minlength">Jūsų telefono numeris per trumpas.</p>
+                            <p ng-message="maxlength">Jūsų telefono numeris per ilgas.</p>
+                            <p ng-message="required">Įveskite telefono numerį.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -64,17 +91,26 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" ng-class="{ 'has-error': nameForm.date.$touched && nameForm.date.$invalid }">
                     <label for="inputDate" class="col-xs-3 control-label">{{ nameList.date }}</label>
                     <div class="col-xs-5">
-                        <input class="form-control" type="datetime-local" id="inputDate"/>
+                        <input type="text" name="date" class="form-control" id="inputDate"
+                               ng-model="main.date"
+                               ng-minlength="10"
+                               ng-maxlength="10"
+                               required>
+                        <div class="help-block" ng-messages="nameForm.date.$error" ng-if="nameForm.date.$touched">
+                            <p ng-message="minlength">Įvesta data per trumpa.</p>
+                            <p ng-message="maxlength">Įvesta data per ilga.</p>
+                            <p ng-message="required">Įveskite datą.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputTopic" class="col-xs-3 control-label">{{ nameList.topic }}</label>
                     <div class="col-xs-5">
-                        <select class="form-control" id="inputTopic">
+                        <select type="text" class="form-control" name="topic" id="inputTopic">
                             <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
                         </select>
                     </div>
@@ -92,6 +128,6 @@
 
             </div>
         </form>
-    </div>
+           <!--/div ng-controller="ExampleController"-->
 </body>
 </html>
