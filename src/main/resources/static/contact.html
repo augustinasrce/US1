@@ -18,6 +18,7 @@
     <script src="js/contact.js"></script>
 </head>
 <body ng-app="app" ng-controller="ContactUsScreenController as main">
+
 <div class="container">
     <h1>{{ nameList[0] }}</h1>
 </div>
@@ -41,7 +42,7 @@
              ng-class="{ 'has-error': contactForm.textMessage.$touched && contactForm.textMessage.$invalid }">
             <label for="inputMessage" class="col-xs-2">{{ nameList[2] }}</label>
             <div class="col-xs-10">
-                    <textarea type="text" name="textMessage" class="form-control" id="inputMessage" rows="5"
+                    <textarea type="text" name="textMessage" class="form-control" id="inputMessage" rows="4"
                               ng-model="main.textMessage"
                               ng-minlength="10"
                               ng-maxlength="400"
@@ -155,8 +156,8 @@
             </div>
         </div>
 
-        <button class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="contactForm.&invalid">{{ nameList[9] }}
-        </button>
+        <input type="button" class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="contactForm.&invalid"
+               value="{{ nameList[9] }}"/>
 
     </form>
 </div>
@@ -165,6 +166,6 @@
 <!-- for BootStrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!-- ----------- -->
+<!-- ------------- -->
 </body>
 </html>
