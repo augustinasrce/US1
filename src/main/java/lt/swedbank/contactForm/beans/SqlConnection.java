@@ -171,7 +171,9 @@ public class SqlConnection {
         }
         catch(Exception e)
         {
+            result.add(e.toString());
             System.out.printf(e.getMessage());
+            return result;
         }
 
         return result;

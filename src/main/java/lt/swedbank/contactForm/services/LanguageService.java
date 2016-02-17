@@ -35,10 +35,11 @@ public class LanguageService {
     }
 
     @RequestMapping("/sql")
-    public ArrayList<String> getALLRegistrations() {
+    public ArrayList<String> getAllRegistrations() {
         SqlConnection sqlConnection = new SqlConnection();
+        sqlConnection.connect();
 
-        ArrayList<String> result = new ArrayList<String>();
+        ArrayList<String> result; // = new ArrayList<String>();
         result = sqlConnection.selectRegistations("");
 
         sqlConnection.closeConnection();
