@@ -5,7 +5,7 @@ var app = angular.module('registrationScreenOverview', ['ngMessages']);
                 method: 'GET',
                 url: '/sql'
               }).then(function successCallback(response) {
-                                $scope.registrationInfo = response.config.result;
+                                $scope.registrationInfo = response.data;
                                   });
 //
 
