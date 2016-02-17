@@ -83,7 +83,7 @@ public class FieldNames {
         registrationNameTags.put("name","Vardas *");
         registrationNameTags.put("surname","Pavardė *");
         registrationNameTags.put("phone","Telefonas susisiekti *");
-        registrationNameTags.put("email","El.Paštas");
+        registrationNameTags.put("email","El. Paštas");
         registrationNameTags.put("bankDivision","Banko skyrius *");
         registrationNameTags.put("date","Data *");
         registrationNameTags.put("topic","Tema *");
