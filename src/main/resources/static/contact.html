@@ -18,75 +18,95 @@
     <script src="js/contact.js"></script>
 </head>
 <body ng-app="app" ng-controller="ContactUsScreenController as main">
-<div >
-    <div class="container">
-        <h1>{{ nameList[0] }}</h1>
-    </div>
-    <form name="contactForm" class="form-horizontal" novalidate>
-        <div class="center-block">
-            <div class="form-group">
-                <label for="inputTopic" class="col-xs-3 control-label">{{ nameList[1] }}</label>
-                <div class="col-xs-5">
-                    <select class="form-control" id="inputTopic">
-                        <option ng-repeat="dropDownItem in dropDownList" value="{{ dropDownItem }}">{{ dropDownItem }}</option>
-                    </select>
-                </div>
+<div class="container">
+    <h1>{{ nameList[0] }}</h1>
+</div>
+
+<div class="container">
+    <form ng-submit="submitForm()" name="contactForm" class="form-horizontal" novalidate>
+
+        <!-- TopicList -->
+        <div class="form-group">
+            <label for="inputTopic" class="col-xs-2">{{ nameList[1] }}</label>
+            <div class="col-xs-10">
+                <select class="form-control" id="inputTopic">
+                    <option ng-repeat="dropDownItem in dropDownList" value="{{ dropDownItem }}">{{ dropDownItem }}
+                    </option>
+                </select>
             </div>
-            <div class="form-group"  ng-class="{ 'has-error': contactForm.textMessage.$touched && contactForm.textMessage.$invalid }">
-                <label for="inputMessage" class="col-xs-3 control-label">{{ nameList[2] }}</label>
-                <div class="col-xs-5">
+        </div>
+
+        <!-- Message -->
+        <div class="form-group"
+             ng-class="{ 'has-error': contactForm.textMessage.$touched && contactForm.textMessage.$invalid }">
+            <label for="inputMessage" class="col-xs-2">{{ nameList[2] }}</label>
+            <div class="col-xs-10">
                     <textarea type="text" name="textMessage" class="form-control" id="inputMessage" rows="5"
                               ng-model="main.textMessage"
                               ng-minlength="10"
                               ng-maxlength="400"
                               required></textarea>
-                    <div class="help-block" ng-messages="contactForm.textMessage.$error" ng-if="contactForm.textMessage.$touched">
-                        <p ng-message="minlength">Įvestas žinutės tekstas per trumpas!</p>
-                        <p ng-message="maxlength">Įvestas žinutės tekstas per ilgas!</p>
-                        <p ng-message="required">Įveskite žinutės tekstą!</p>
-                    </div>
+                <div class="help-block" ng-messages="contactForm.textMessage.$error"
+                     ng-if="contactForm.textMessage.$touched">
+                    <p ng-message="minlength">Įvestas žinutės tekstas per trumpas!</p>
+                    <p ng-message="maxlength">Įvestas žinutės tekstas per ilgas!</p>
+                    <p ng-message="required">Įveskite žinutės tekstą!</p>
                 </div>
             </div>
-                <div class="form-group"  ng-class="{ 'has-error': contactForm.name.$touched && contactForm.name.$invalid }">
-                    <label for="inputName" ng-model="inputName" class="col-xs-3 control-label">{{ nameList[3] }}</label>
-                    <div class="col-xs-5">
-                        <input type="text" name="name" class="form-control" id="inputName"
-                               ng-model="main.name"
-                               ng-minlength="5"
-                               ng-maxlength="10"
-                               required>
-                        <div class="help-block" ng-messages="contactForm.name.$error" ng-if="contactForm.name.$touched">
-                            <p ng-message="minlength">Jūsų vardas per trumpas!</p>
-                            <p ng-message="maxlength">Jūsų vardas per ilgas!</p>
-                            <p ng-message="required">Įveskite savo varda!</p>
-                        </div>
-                    </div>
+        </div>
+
+        <!-- Name -->
+        <div class="form-group"
+             ng-class="{ 'has-error': contactForm.name.$touched && contactForm.name.$invalid }">
+            <label for="inputName" ng-model="inputName" class="col-xs-2">{{ nameList[3] }}</label>
+            <div class="col-xs-10">
+                <input type="text" name="name" class="form-control" id="inputName"
+                       ng-model="main.name"
+                       ng-minlength="5"
+                       ng-maxlength="10"
+                       required>
+                <div class="help-block" ng-messages="contactForm.name.$error" ng-if="contactForm.name.$touched">
+                    <p ng-message="minlength">Jūsų vardas per trumpas!</p>
+                    <p ng-message="maxlength">Jūsų vardas per ilgas!</p>
+                    <p ng-message="required">Įveskite savo varda!</p>
                 </div>
             </div>
-        <div class="form-group"  ng-class="{ 'has-error': contactForm.surname.$touched && contactForm.surname.$invalid }">
-            <label for="inputSurname" class="col-xs-3 control-label">{{ nameList[4] }}</label>
-            <div class="col-xs-5">
+
+        </div>
+
+        <!-- Surname -->
+        <div class="form-group"
+             ng-class="{ 'has-error': contactForm.surname.$touched && contactForm.surname.$invalid }">
+            <label for="inputSurname" class="col-xs-2">{{ nameList[4] }}</label>
+            <div class="col-xs-10">
                 <input type="text" name="surname" class="form-control" id="inputSurname"
                        ng-model="main.surname"
                        ng-minlength="5"
                        ng-maxlength="10"
                        required>
-                <div class="help-block" ng-messages="contactForm.surname.$error" ng-if="contactForm.surname.$touched">
+                <div class="help-block" ng-messages="contactForm.surname.$error"
+                     ng-if="contactForm.surname.$touched">
                     <p ng-message="minlength">Jūsų pavardė per trumpa!</p>
                     <p ng-message="maxlength">Jūsų pavardė per ilga!</p>
                     <p ng-message="required">Įveskite savo pavardę!</p>
                 </div>
             </div>
         </div>
-        <div class="form-group"  ng-class="{ 'has-error': contactForm.phoneNr.$touched && contactForm.phoneNr.$invalid }">
-            <label for="inputPhone" class="col-xs-3 control-label">{{ nameList[5] }}</label>
-            <div class="col-xs-5">
+
+
+        <!-- phone -->
+        <div class="form-group"
+             ng-class="{ 'has-error': contactForm.phoneNr.$touched && contactForm.phoneNr.$invalid }">
+            <label for="inputPhone" class="col-xs-2">{{ nameList[5] }}</label>
+            <div class="col-xs-10">
+
                 <input type="text" name="phoneNr" class="form-control" id="inputPhone" value="+370"
                        ng-model="main.phoneNr"
                        ng-minlength="8"
                        ng-maxlength="15"
                        required>
-                <div class="help-block" ng-messages="contactForm.phoneNr.$error" ng-if="contactForm.phoneNr.$touched">
+                <div class="help-block" ng-messages="contactForm.phoneNr.$error"
+                     ng-if="contactForm.phoneNr.$touched">
                     <p ng-message="minlength">Jūsų telefono numeris per trumpas!</p>
                     <p ng-message="maxlength">Jūsų telefono numeris per ilgas!</p>
                     <p ng-message="required">Įveskite telefono numerį!</p>
@@ -94,9 +114,11 @@
             </div>
         </div>
 
-        <div class="form-group"  ng-class="{ 'has-error': contactForm.email.$touched && contactForm.email.$invalid }">
-            <label for="inputPhone" class="col-xs-3 control-label">{{ nameList[6] }}</label>
-            <div class="col-xs-5">
+        <!-- email -->
+        <div class="form-group"
+             ng-class="{ 'has-error': contactForm.email.$touched && contactForm.email.$invalid }">
+            <label for="inputEmail" class="col-xs-2">{{ nameList[6] }}</label>
+            <div class="col-xs-10">
                 <input type="email" name="email" class="form-control" id="inputEmail"
                        ng-model="main.email"
                        ng-minlength="8"
@@ -111,29 +133,34 @@
             </div>
         </div>
 
-
+        <!-- radio Buttons -->
         <div class="form-group">
-                <label class="col-xs-3 control-label">{{ nameList[7] }}</label>
-                <div class="col-xs-5 btn-group" data-toggle="buttons">
-                    <label class="btn btn-default" onclick="hideEmailField()">
-                        <input type="radio" name="answerType">{{ radioButtonList[0] }}
-                    </label>
-                    <label class="btn btn-default" onclick="hidePhoneField()">
-                        <input type="radio" name="answerType">{{ radioButtonList[1] }}
-                    </label>
-                    <label class="btn btn-default active" onclick="showEmailPhoneFields()">
-                        <input type="radio" name="answerType" checked>{{ radioButtonList[2] }}
-                    </label>
-                </div>
+            <label class="col-xs-2">{{ nameList[7] }}</label>
+            <div class="col-xs-10 btn-group" data-toggle="buttons">
+                <label class="btn btn-default" onclick="hideEmailField()">
+                    <input type="radio" name="answerType">{{ radioButtonList[0] }}
+                </label>
+                <label class="btn btn-default" onclick="hidePhoneField()">
+                    <input type="radio" name="answerType">{{ radioButtonList[1] }}
+                </label>
+                <label class="btn btn-default active" onclick="showEmailPhoneFields()">
+                    <input type="radio" name="answerType" checked>{{ radioButtonList[2] }}
+                </label>
             </div>
-            <div class="form-group">
-                <div class="col-xs-offset-3 col-xs-5">
-                    <p>{{ nameList[8] }}</p>
-                </div>
-            </div>
-            <a href="P0301Confirmation.html" class="col-xs-offset-7 col-xs-1 btn btn-primary">{{ nameList[9] }}</a>
         </div>
+
+        <!-- info msg -->
+        <div class="form-group">
+            <div class="col-xs-12">
+                <p>{{ nameList[8] }}</p>
+            </div>
+        </div>
+
+        <button class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="contactForm.&invalid">{{ nameList[9] }}
+        </button>
+
     </form>
+</div>
 </div>
 
 <!-- for BootStrap -->
