@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="registrationScreenOverview" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+        padding-top: 60px;
+        }
+        textarea { resize:none; }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.4.0/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    <script src="js/registrationOverview.js"></script>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th, td {
+        padding: 5px;
+        }
+    </style>
+</head>
+
+<body ng-app="app" ng-controller="registrationScreenOverviewController as main">
+<div class="container">
+    <h1>{{ nameList[0] }}</h1>
+    <h1>{{ registrationInfo[0] }}</h1>
+</div>
+<div class="container">
+<table style="width:100%">
+    <tr>
+        <th>Data</th>
+        <th>Banko skyrius</th>
+        <th>Tema</th>
+        <th colspan="2">Veiksmai</th>
+    </tr>
+    <tr>
+        <td>smth</td>
+        <td>smth</td>
+        <td>smthsmth</td>
+        <td>moreofsmth</td>
+        <td>evenmoreofsmth</td>
+    </tr>
+</table>
+    </div>
+
+</body>
+</html>

@@ -47,11 +47,8 @@
                               ng-minlength="10"
                               ng-maxlength="400"
                               required></textarea>
-                <div class="help-block" ng-messages="contactForm.textMessage.$error"
-                     ng-if="contactForm.textMessage.$touched">
-                    <p ng-message="minlength">Įvestas žinutės tekstas per trumpas!</p>
-                    <p ng-message="maxlength">Įvestas žinutės tekstas per ilgas!</p>
-                    <p ng-message="required">Įveskite žinutės tekstą!</p>
+                <div class="help-block" ng-messages="contactForm.textMessage.$error" ng-if="contactForm.textMessage.$touched">
+                    <div ng-messages-include="errorMessages/textareaMessages.html"></div>
                 </div>
             </div>
         </div>
@@ -67,9 +64,7 @@
                        ng-maxlength="10"
                        required>
                 <div class="help-block" ng-messages="contactForm.name.$error" ng-if="contactForm.name.$touched">
-                    <p ng-message="minlength">Jūsų vardas per trumpas!</p>
-                    <p ng-message="maxlength">Jūsų vardas per ilgas!</p>
-                    <p ng-message="required">Įveskite savo varda!</p>
+                    <div ng-messages-include="errorMessages/nameMessages.html"></div>
                 </div>
             </div>
 
@@ -85,11 +80,8 @@
                        ng-minlength="5"
                        ng-maxlength="10"
                        required>
-                <div class="help-block" ng-messages="contactForm.surname.$error"
-                     ng-if="contactForm.surname.$touched">
-                    <p ng-message="minlength">Jūsų pavardė per trumpa!</p>
-                    <p ng-message="maxlength">Jūsų pavardė per ilga!</p>
-                    <p ng-message="required">Įveskite savo pavardę!</p>
+                <div class="help-block" ng-messages="contactForm.surname.$error" ng-if="contactForm.surname.$touched">
+                    <div ng-messages-include="errorMessages/surnameMessages.html"></div>
                 </div>
             </div>
         </div>
@@ -105,11 +97,8 @@
                        ng-minlength="8"
                        ng-maxlength="15"
                        required>
-                <div class="help-block" ng-messages="contactForm.phoneNr.$error"
-                     ng-if="contactForm.phoneNr.$touched">
-                    <p ng-message="minlength">Jūsų telefono numeris per trumpas!</p>
-                    <p ng-message="maxlength">Jūsų telefono numeris per ilgas!</p>
-                    <p ng-message="required">Įveskite telefono numerį!</p>
+                <div class="help-block" ng-messages="contactForm.phoneNr.$error" ng-if="contactForm.phoneNr.$touched">
+                    <div ng-messages-include="errorMessages/phoneMessages.html"></div>
                 </div>
             </div>
         </div>
@@ -125,10 +114,7 @@
                        ng-maxlength="15"
                        required>
                 <div class="help-block" ng-messages="contactForm.email.$error" ng-if="contactForm.email.$touched">
-                    <p ng-message="required">Įveskite elektroninio pašto adresą!</p>
-                    <p ng-message="minlength">Jūsų elektroninio pašto adresas per trumpas!</p>
-                    <p ng-message="maxlength">Jūsų elektroninio pašto adresas per ilgas!</p>
-                    <p ng-message="email">Neteisingai įvestas elektroninio pašto adresas!</p>
+                    <div ng-messages-include="errorMessages/emailMessages.html"></div>
                 </div>
             </div>
         </div>

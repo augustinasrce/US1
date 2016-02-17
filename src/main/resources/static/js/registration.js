@@ -10,7 +10,7 @@ var app = angular.module('RegistrationScreen', ['ngMessages']);
         $scope.topics = response.data.topicList;
         $scope.bankDivisions = response.data.bankDivisionList;
 
-        document.title =  response.data.registrationNameTags.title;
+        document.title =  response.nameList.title;
           });
 
  });

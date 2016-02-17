@@ -2,7 +2,7 @@
  -->
 
 <!DOCTYPE html>
-<html lang="en" ng-app="RegistrationScreen" >
+<html lang="en" ng-app="RegistrationScreen">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            padding-top: 60px;
+        padding-top: 60px;
         }
         textarea { resize:none; }
     </style>
@@ -21,113 +21,120 @@
 
 </head>
 <body ng-app="app" ng-controller="RegistrationScreenController as main">
-        <div class="container">
-            <h1>{{ nameList.header }}</h1>
-        </div>
-
-        <form name="nameForm" class="form-horizontal" novalidate>
-            <div class="center-block">
-                <div class="form-group"  ng-class="{ 'has-error': nameForm.name.$touched && nameForm.name.$invalid }">
-                    <label for="inputName" ng-model="inputName" class="col-xs-3 control-label">{{ nameList.name }}</label>
-                    <div class="col-xs-5">
-                        <input type="text" name="name" class="form-control" id="inputName"
-                               ng-model="main.name"
-                               ng-minlength="5"
-                               ng-maxlength="10"
-                               required>
-                        <div class="help-block" ng-messages="nameForm.name.$error" ng-if="nameForm.name.$touched">
-                            <p ng-message="minlength">Jūsų vardas per trumpas!</p>
-                            <p ng-message="maxlength">Jūsų vardas per ilgas!</p>
-                            <p ng-message="required">Įveskite savo varda!</p>
-                        </div>
+<div class="container">
+    <h1>{{ nameList.header }}</h1>
+</div>
+<div class="container">
+    <form name="registrationForm" class="form-horizontal" novalidate>
+        <div class="center-block">
+            <div class="form-group"
+                 ng-class="{ 'has-error': registrationForm.name.$touched && registrationForm.name.$invalid }">
+                <label for="inputName" ng-model="inputName" class="col-xs-2">{{ nameList.name }}</label>
+                <div class="col-xs-10">
+                    <input type="text" name="name" class="form-control" id="inputName"
+                           ng-model="main.name"
+                           ng-minlength="5"
+                           ng-maxlength="10"
+                           required>
+                    <div class="help-block" ng-messages="registrationForm.name.$error"
+                         ng-if="registrationForm.name.$touched">
+                        <div ng-messages-include="errorMessages/nameMessages.html"></div>
                     </div>
                 </div>
-
-                <div class="form-group"  ng-class="{ 'has-error': nameForm.surname.$touched && nameForm.surname.$invalid }">
-                    <label for="inputSurname" class="col-xs-3 control-label">{{ nameList.surname }}</label>
-                    <div class="col-xs-5">
-                        <input type="text" name="surname" class="form-control" id="inputSurname"
-                               ng-model="main.surname"
-                               ng-minlength="5"
-                               ng-maxlength="10"
-                               required>
-                        <div class="help-block" ng-messages="nameForm.surname.$error" ng-if="nameForm.surname.$touched">
-                            <p ng-message="minlength">Jūsų pavardė per trumpa!</p>
-                            <p ng-message="maxlength">Jūsų pavardė per ilga!</p>
-                            <p ng-message="required">Įveskite savo pavardę!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group"  ng-class="{ 'has-error': nameForm.phoneNr.$touched && nameForm.phoneNr.$invalid }">
-                    <label for="inputPhone" class="col-xs-3 control-label">{{ nameList.phone }}</label>
-                    <div class="col-xs-5">
-                        <input type="text" name="phoneNr" class="form-control" id="inputPhone" value="+370"
-                               ng-model="main.phoneNr"
-                               ng-minlength="8"
-                               ng-maxlength="15"
-                               required>
-                        <div class="help-block" ng-messages="nameForm.phoneNr.$error" ng-if="nameForm.phoneNr.$touched">
-                            <p ng-message="minlength">Jūsų telefono numeris per trumpas!</p>
-                            <p ng-message="maxlength">Jūsų telefono numeris per ilgas!</p>
-                            <p ng-message="required">Įveskite telefono numerį!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputEmail" class="col-xs-3 control-label">{{ nameList.email }}</label>
-                    <div class="col-xs-5">
-                        <input class="form-control" type="email" id="inputEmail"/>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputBankDivision" class="col-xs-3 control-label">{{ nameList.bankDivision }}</label>
-                    <div class="col-xs-5">
-                        <select class="form-control" id="inputBankDivision">
-                            <option ng-repeat="bankDivision in bankDivisions "value="{{ bankDivision }}">{{ bankDivision }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group" ng-class="{ 'has-error': nameForm.date.$touched && nameForm.date.$invalid }">
-                    <label for="inputDate" class="col-xs-3 control-label">{{ nameList.date }}</label>
-                    <div class="col-xs-5">
-                        <input type="text" name="date" class="form-control" id="inputDate"
-                               ng-model="main.date"
-                               ng-minlength="10"
-                               ng-maxlength="10"
-                               required>
-                        <div class="help-block" ng-messages="nameForm.date.$error" ng-if="nameForm.date.$touched">
-                            <p ng-message="minlength">Įvesta data per trumpa!</p>
-                            <p ng-message="maxlength">Įvesta data per ilga!</p>
-                            <p ng-message="required">Įveskite datą!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputTopic" class="col-xs-3 control-label">{{ nameList.topic }}</label>
-                    <div class="col-xs-5">
-                        <select type="text" class="form-control" name="topic" id="inputTopic">
-                            <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputOther" class="col-xs-3 control-label">{{ nameList.other }}</label>
-                    <div class="col-xs-5">
-                        <textarea class="form-control" rows="5" id="inputOther"></textarea>
-                    </div>
-                </div>
-
-
-                <button type="button" class="col-xs-offset-7 col-xs-1 btn btn-primary">{{ nameList.confirmButton}}</button>
-
             </div>
-        </form>
-           <!--/div ng-controller="ExampleController"-->
+
+            <div class="form-group"
+                 ng-class="{ 'has-error': registrationForm.surname.$touched && registrationForm.surname.$invalid }">
+                <label for="inputSurname" class="col-xs-2">{{ nameList.surname }}</label>
+                <div class="col-xs-10">
+                    <input type="text" name="surname" class="form-control" id="inputSurname"
+                           ng-model="main.surname"
+                           ng-minlength="5"
+                           ng-maxlength="10"
+                           required>
+                    <div class="help-block" ng-messages="registrationForm.surname.$error"
+                         ng-if="registrationForm.surname.$touched">
+                        <div ng-messages-include="errorMessages/surnameMessages.html"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error': registrationForm.phoneNr.$touched && registrationForm.phoneNr.$invalid }">
+                <label for="inputPhone" class="col-xs-2">{{ nameList.phone }}</label>
+                <div class="col-xs-10">
+                    <input type="text" name="phoneNr" class="form-control" id="inputPhone" value="+370"
+                           ng-model="main.phoneNr"
+                           ng-minlength="8"
+                           ng-maxlength="15"
+                           required>
+                    <div class="help-block" ng-messages="registrationForm.phoneNr.$error"
+                         ng-if="registrationForm.phoneNr.$touched">
+                        <div ng-messages-include="errorMessages/phoneMessages.html"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error': registrationForm.email.$invalid }">
+                <label for="inputEmail" class="col-xs-2">{{ nameList.email }}</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="email" name="email" id="inputEmail"
+                           ng-model="main.email"/>
+                    <div class="help-block" ng-messages="registrationForm.email.$error">
+                        <div ng-messages-include="errorMessages/emailMessages.html"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputBankDivision" class="col-xs-2">{{ nameList.bankDivision }}</label>
+                <div class="col-xs-10">
+                    <select class="form-control" id="inputBankDivision">
+                        <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">{{ bankDivision
+                            }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error': registrationForm.date.$touched && registrationForm.date.$invalid }">
+                <label for="inputDate" class="col-xs-2">{{ nameList.date }}</label>
+                <div class="col-xs-10">
+                    <input type="datetime" name="date" class="form-control" id="inputDate"
+                           ng-model="main.date"
+                           ng-minlength="10"
+                           ng-maxlength="10"
+                           required>
+                    <div class="help-block" ng-messages="registrationForm.date.$error"
+                         ng-if="registrationForm.date.$touched">
+                        <div ng-messages-include="errorMessages/dateMessages.html"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
+                <div class="col-xs-10">
+                    <select type="text" class="form-control" name="topic" id="inputTopic">
+                        <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputOther" class="col-xs-2">{{ nameList.other }}</label>
+                <div class="col-xs-10">
+                    <textarea class="form-control" rows="5" id="inputOther"></textarea>
+                </div>
+            </div>
+
+
+            <button type="button" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ nameList.confirmButton}}</button>
+
+        </div>
+    </form>
+</div>
+<!--/div ng-controller="ExampleController"-->
 </body>
 </html>
