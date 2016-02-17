@@ -2,10 +2,12 @@ package lt.swedbank.contactForm.services;
 
 import lt.swedbank.contactForm.beans.FieldNames;
 import lt.swedbank.contactForm.beans.Language;
+import lt.swedbank.contactForm.beans.SqlConnection;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 
 /**
  * Created by p998ueh on 2016.02.11.
@@ -32,6 +34,16 @@ public class LanguageService {
         return language.getFieldNamesLT();
     }
 
+    @RequestMapping("/sql")
+    public ArrayList<String> getALLRegistrations() {
+        SqlConnection sqlConnection = new SqlConnection();
+
+        ArrayList<String> result = new ArrayList<String>();
+        result = sqlConnection.selectRegistations("");
+
+        sqlConnection.closeConnection();
+        return result;
+    }
     /*
     @RequestMapping("/lt/contact")
     public FieldNames getLanguageForContactUsScreenLT() {

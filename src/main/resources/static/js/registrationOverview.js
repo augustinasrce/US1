@@ -6,7 +6,7 @@ var app = angular.module('registrationScreenOverview', ['ngMessages']);
          url: '/sql'
        }).then(function successCallback(response) {
         $scope.nameList = response.data.registrationOverviewList;
-
+        $scope.registrationInfo = response.data.variables;
 
         document.title =  $scope.nameList[0];
           });
