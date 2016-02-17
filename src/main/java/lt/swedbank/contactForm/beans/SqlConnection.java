@@ -1,8 +1,7 @@
+/*
 package lt.swedbank.contactForm.beans;
 
-/**
- * Created by BN on 2/17/2016.
- */
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,17 +9,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- * Created by BN on 2/16/2016.
- */
 public class SqlConnection {
 
     // parameters for php m adin in server
-    /*private String url = "jdbc:mysql://contactform-swedbank.rhcloud.com:3306/";
-    private String dbName = "swedContactUs";
-    private String userName = "Program";
-    private String password = "program123";
-    /**/
+    //private String url = "jdbc:mysql://contactform-swedbank.rhcloud.com:3306/";
+    //private String dbName = "swedContactUs";
+    //private String userName = "Program";
+    //private String password = "program123";
+
 
     //parameters for localhost / my pc
     private String url = "jdbc:mysql://localhost:3306/";
@@ -28,7 +24,7 @@ public class SqlConnection {
     private String driver = "com.mysql.jdbc.Driver";
     private String userName = "root";
     private String password = "matematikas";
-    /**/
+
     // connection and statement;
     private Connection conn;
     private Statement st;
@@ -37,7 +33,7 @@ public class SqlConnection {
     {
         try {
             Class.forName(driver).newInstance();
-            conn = DriverManager.getConnection(url+dbName/**/,userName,password);
+            conn = DriverManager.getConnection(url+dbName,userName,password);
             st = conn.createStatement();
 
             //Read more: http://mrbool.com/how-to-connect-with-mysql-database-using-java/25440#ixzz40FfeIIAe
@@ -273,4 +269,5 @@ public class SqlConnection {
         }
     }
 }
+*/
 
