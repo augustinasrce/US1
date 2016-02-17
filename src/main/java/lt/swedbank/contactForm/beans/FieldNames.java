@@ -12,6 +12,7 @@ public class FieldNames {
     ArrayList<String> contactUsConfirmationNameList;
     ArrayList<String> bankDivisionList;
     ArrayList<String> topicList;
+    ArrayList<String> registrationOverviewList;
     Map<String, String> registrationNameTags;
 
     public FieldNames() {
@@ -23,6 +24,7 @@ public class FieldNames {
         bankDivisionList = new ArrayList<String>();
         topicList = new ArrayList<String>();
         registrationNameTags = new HashMap<String, String>();
+        registrationOverviewList = new ArrayList<String>();
 
     }
 
@@ -89,6 +91,8 @@ public class FieldNames {
         registrationNameTags.put("topic","Tema *");
         registrationNameTags.put("other","Pastabos, komentarai");
         registrationNameTags.put("confirmButton","Siųsti");
+
+        registrationOverviewList.add("Registracijos internetu");
     }
 
 
@@ -117,5 +121,7 @@ public class FieldNames {
     public ArrayList<String> getBankDivisionList(){return bankDivisionList;}
 
     public Map<String,String> getRegistrationNameTags(){return registrationNameTags;}
+
+    public ArrayList<String> getRegistrationOverviewList(){return registrationOverviewList;}
 
 }
