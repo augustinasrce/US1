@@ -8,6 +8,8 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+    background-color: #F7F7F7;
+
 }
 body {
   margin: 0;
@@ -1078,15 +1080,15 @@ th {
 }
 html {
   font-size: 10px;
-
+  background-color: #F7F7F7;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
-  background-color: #fff;
+  color:#261758;;
+  background-color: #F7F7F7;
 }
 input,
 button,
@@ -1097,12 +1099,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #6450A5;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #2A243F;
   text-decoration: underline;
 }
 a:focus {
@@ -2555,7 +2557,7 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555;
+  color: #13073A;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -2567,20 +2569,20 @@ output {
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #66afe9;
+  border-color: #13073A;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
           box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
 }
 .form-control::-moz-placeholder {
-  color: #999;
+  color: #13073A;
   opacity: 1;
 }
 .form-control:-ms-input-placeholder {
-  color: #999;
+  color: #13073A;
 }
 .form-control::-webkit-input-placeholder {
-  color: #999;
+  color: #13073A;
 }
 .form-control::-ms-expand {
   background-color: transparent;
@@ -3118,26 +3120,26 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #261758;
+  border-color: #13073A;
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #286090;
-  border-color: #122b40;
+  background-color: #13073A;
+  border-color: #13073A;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #13073A;
+  border-color: #080417;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #13073A;
+  border-color: #13073A;
 }
 .btn-primary:active:hover,
 .btn-primary.active:hover,
@@ -3149,7 +3151,7 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus {
   color: #fff;
-  background-color: #204d74;
+  background-color: #615192;
   border-color: #122b40;
 }
 .btn-primary:active,
@@ -4167,6 +4169,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
 }
 .navbar {
+
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
@@ -4175,6 +4178,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar {
     border-radius: 4px;
+
   }
 }
 @media (min-width: 768px) {
@@ -4592,8 +4596,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+  background-color: #261758;
+  border-color: #261758;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
@@ -4618,7 +4622,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #080808;
+  background-color: #13073A;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -4643,8 +4647,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  color: #fff;
-  background-color: #080808;
+  color: #887CAF;
+  background-color: #13073A;
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
