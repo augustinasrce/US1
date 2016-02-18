@@ -26,6 +26,7 @@ public class LanguageService {
     public void init() {
     }
 
+
     @RequestMapping("/lt")
     public FieldNames getLanguageLT() {
         language = new Language();
@@ -35,7 +36,25 @@ public class LanguageService {
     @RequestMapping("/en")
     public FieldNames getLanguageEN() {
         language = new Language();
-        return language.getFieldNamesLT();
+        return language.getFieldNamesEN();
+    }
+
+    @RequestMapping("/ru")
+    public FieldNames getLanguageRU() {
+        language = new Language();
+        return language.getFieldNamesRU();
+    }
+
+    @RequestMapping("/ee")
+    public FieldNames getLanguageEE() {
+        language = new Language();
+        return language.getFieldNamesEE();
+    }
+
+    @RequestMapping("/lv")
+    public FieldNames getLanguageLV() {
+        language = new Language();
+        return language.getFieldNamesLV();
     }
 
     @RequestMapping(value = "/US1/{dropDownItem}/{textMessage}/{name}/{surname}/{phoneNr}/{email}/{answerType}", method = RequestMethod.PUT)

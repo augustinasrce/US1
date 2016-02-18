@@ -5,21 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <style>
-        body {padding-top: 60px;}
+        body {
+            padding-top: 60px;
+            color: #261758;
+        }
     </style>
     <script src="js/angular.min.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body>
-<div ng-controller="HomeScreenController">
-    <div class="container">
-        <h1>{{ title }}</h1>
-        <a href="registration.html"> {{ register }} </a> <br>
-        <a href="contact.html"> {{ contacts }} </a>
+<body ng-controller="HomeScreenController">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-right container-fluid">
+        <ul class="nav navbar-nav">
+            <li id="lt" class="active"><a href="#">LT</a></li>
+            <li id="en"><a href="#">EN</a></li>
+            <li id="ru"><a href="#">RU</a></li>
+            <li id="ee"><a href="#">EE</a></li>
+            <li id="lv"><a href="#">LV</a></li>
+        </ul>
     </div>
+</nav>
+
+
+<div class="container">
+    <h1>{{ title }}</h1>
+    <a href="registration.html"> {{ register }} </a> <br>
+    <a href="contact.html"> {{ contacts }} </a>
 </div>
+
+
 <!-- for BootStrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
