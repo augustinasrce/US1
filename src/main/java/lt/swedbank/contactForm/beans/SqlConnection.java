@@ -77,8 +77,8 @@ public class SqlConnection {
                 String surname = res.getString("surname");
                 String phone = res.getString("phone_number");
                 String email = res.getString("email");
-                line = String.valueOf(id) + " | " + name + " | " + surname + " | " +
-                        phone + " | " + email;
+                line = String.valueOf(id) + ";" + name + ";" + surname + ";" +
+                        phone + ";" + email;
                 result.add(line);
 //                System.out.println(id + "\t" + name + "\t" + surname + "\t" + phone+ "\t" + email);
             }
@@ -92,7 +92,7 @@ public class SqlConnection {
     }
 
     public void insertClient(int id, String name, String surname, String phone, String email){
-        String query = String.format("INSERT into client(client_id, name, surname, phone_number, email) VALUES(%d,\"%s\", \"%s\" ,\"%s\" ,\"%s\")", id, name, surname, phone, email);
+        String query = String.format("INSERT into Client(client_id, name, surname, phone_number, email) VALUES(%d, \"%s\", \"%s\" ,\"%s\" ,\"%s\")", id, name, surname, phone, email);
         try {
             int value = st.executeUpdate(query);
             if (value == 1)
@@ -119,7 +119,7 @@ public class SqlConnection {
                 String contactBy = res.getString("contact_by");
                 String message = res.getString("message");
                 String client_id = res.getString("Client_client_id");
-                line = String.valueOf(id) + " | " + contactBy + " | " + message + " | " +
+                line = String.valueOf(id) + ";" + contactBy + ";" + message + ";" +
                         client_id;
                 result.add(line);
 //                System.out.println(id + "\t" + name + "\t" + surname + "\t" + phone+ "\t" + email);
@@ -134,7 +134,7 @@ public class SqlConnection {
     }
 
     public void insertIContactUs(int id, String contactBy, String message, int clientId){
-        String query = String.format("INSERT into ContactUs(contactUs_id, contact_by, message, Client_client_id) VALUES(%d,\"%s\", \"%s\" ,\"%d\")", id, contactBy, message, clientId);
+        String query = String.format("INSERT into ContactUs(contactUs_id, contact_by, message, Client_client_id) VALUES(%d, \"%s\", \"%s\" ,\"%d\")", id, contactBy, message, clientId);
         try {
             int value = st.executeUpdate(query);
             if (value == 1)
@@ -163,8 +163,8 @@ public class SqlConnection {
                 String comments = res.getString("comments");
                 String client_id = res.getString("Client_client_id");
                 String branch_id = res.getString("Branch_branch_id");
-                line = String.valueOf(id) + " | " + date + " | " + subject + " | " +
-                        comments + " | " + client_id + " | " + branch_id;
+                line = String.valueOf(id) + ";" + date + ";" + subject + ";" +
+                        comments + ";" + client_id + ";" + branch_id;
                 result.add(line);
 //                System.out.println(id + "\t" + name + "\t" + surname + "\t" + phone+ "\t" + email);
             }
@@ -208,7 +208,7 @@ public class SqlConnection {
                 String contactBy = res.getString("adress");
                 String message = res.getString("workHours");
                 String client_id = res.getString("workHoursInWeekends");
-                line = String.valueOf(id) + " | " + contactBy + " | " + message + " | " +
+                line = String.valueOf(id) + ";" + contactBy + ";" + message + ";" +
                         client_id;
                 result.add(line);
 //                System.out.println(id + "\t" + name + "\t" + surname + "\t" + phone+ "\t" + email);

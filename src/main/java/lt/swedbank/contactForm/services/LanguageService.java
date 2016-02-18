@@ -4,10 +4,13 @@ import lt.swedbank.contactForm.beans.FieldNames;
 import lt.swedbank.contactForm.beans.Language;
 import lt.swedbank.contactForm.beans.SqlConnection;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by p998ueh on 2016.02.11.
@@ -34,16 +37,49 @@ public class LanguageService {
         return language.getFieldNamesLT();
     }
 
+    @RequestMapping(value = "/US1", method = RequestMethod.PUT)
+    public void putContactUs(String dropDownItem,
+                             String textMessage,
+                             String name,
+                             String surname,
+                             String phoneNr,
+                             String email,
+                             String answerType)
+    {
+        SqlConnection sqlConnection = new SqlConnection();
+        sqlConnection.connect();
+
+        sqlConnection.insertClient(10, name, surname, phoneNr, email);
+        sqlConnection.insertIContactUs(10, answerType, textMessage,);
+
+        sqlConnection.closeConnection();;
+    }
+
     @RequestMapping("/sql")
-    public ArrayList<String> getAllRegistrations() {
+    public Map<String, ArrayList<String>> getAllRegistrations() {
         SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
 
         ArrayList<String> result; // = new ArrayList<String>();
         result = sqlConnection.selectRegistations("");
 
+        ArrayList<String> databaseValues;
+        Map<String, ArrayList<String>> dataFromDatabase = new HashMap<>();
+        for (String s : result) {
+            String[] split = s.split(";");
+            databaseValues = new ArrayList<>();
+            databaseValues.add(split[1]);
+            databaseValues.add(split[2]);
+            databaseValues.add(split[3]);
+            databaseValues.add(split[4]);
+            databaseValues.add(split[5]);
+
+            dataFromDatabase.put(split[0], databaseValues);
+
+        }
+
         sqlConnection.closeConnection();
-        return result;
+        return dataFromDatabase;
     }
     /*
     @RequestMapping("/lt/contact")

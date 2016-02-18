@@ -7,6 +7,5 @@ var app = angular.module('registrationScreenOverview', ['ngMessages']);
               }).then(function successCallback(response) {
                                 $scope.registrationInfo = response.data;
                                   });
-//
 
  });
