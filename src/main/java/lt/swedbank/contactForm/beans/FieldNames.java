@@ -233,9 +233,9 @@ public class FieldNames {
     public void setupLanguageEN() {
         homeScreenNameList.add("Contact us");
         homeScreenNameList.add("Online registration for consultation");
-        homeScreenNameList.add("Write to us");
+        homeScreenNameList.add("Contact us");
 
-        contactUsNameList.add("Write to us");
+        contactUsNameList.add("Contact us");
         contactUsNameList.add("Topic *");
         contactUsNameList.add("Text field *");
         contactUsNameList.add("Name *");
