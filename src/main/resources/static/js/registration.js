@@ -11,7 +11,7 @@
         $scope.topics = response.data.topicList;
         $scope.bankDivisions = response.data.bankDivisionList;
 
-        document.title =  response.nameList.title;
+        document.title =  response.data.registrationNameTags.title;
           });
 
  });
