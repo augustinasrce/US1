@@ -34,6 +34,7 @@ public class LanguageService {
         return language.getFieldNamesEN();
     }
 
+
     @RequestMapping("/sql")
     public ArrayList<String> getALLRegistrations() {
         //SqlConnection sqlConnection = new SqlConnection();

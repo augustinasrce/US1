@@ -1,9 +1,10 @@
     var app = angular.module('ContactUsScreen', ['ngMessages']);
+    var language = document.cookie;
 
     app.controller('ContactUsScreenController', function($scope, $http) {
            $http({
              method: 'GET',
-             url: '/lt'
+             url: '/' + language
            }).then(function successCallback(response) {
                $scope.nameList = response.data.contactUsNameList;
                $scope.dropDownListName = response.data.dropDownListName;

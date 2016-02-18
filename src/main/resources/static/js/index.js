@@ -1,10 +1,11 @@
     var language = 'lt';
     var app = angular.module('HomeScreen', []);
+    document.cookie="";
 
 
     app.controller('HomeScreenController', function($scope, $http) {
 
-        get();
+       get();
        $('#en').on('click', function(){
             $('#lv').removeClass('active');
             $('#ee').removeClass('active');
@@ -13,7 +14,53 @@
             $('#en').addClass('active');
             language = 'en';
             get();
+            document.cookie="en";
+       })
+
+     $('#lt').on('click', function(){
+          $('#lv').removeClass('active');
+          $('#ee').removeClass('active');
+          $('#ru').removeClass('active');
+          $('#en').removeClass('active');
+          $('#lt').addClass('active');
+          language = 'lt';
+          get();
+          document.cookie="lt";
+     })
+
+
+       $('#ru').on('click', function(){
+            $('#lv').removeClass('active');
+            $('#ee').removeClass('active');
+            $('#en').removeClass('active');
+            $('#lt').removeClass('active');
+            $('#ru').addClass('active');
+            language = 'ru';
+            get();
+            document.cookie="ru";
           })
+
+     $('#ee').on('click', function(){
+          $('#lv').removeClass('active');
+          $('#en').removeClass('active');
+          $('#ru').removeClass('active');
+          $('#lt').removeClass('active');
+          $('#ee').addClass('active');
+          language = 'ee';
+          get();
+          document.cookie="ee";
+        })
+
+     $('#lv').on('click', function(){
+          $('#ee').removeClass('active');
+          $('#en').removeClass('active');
+          $('#ru').removeClass('active');
+          $('#lt').removeClass('active');
+          $('#lv').addClass('active');
+          language = 'lv';
+          get();
+          document.cookie="lv";
+        })
 
     function get(){
     $http({
@@ -27,12 +74,3 @@
          });
          }
     });
-
-    function checkLanguage(){
-        language = 'lt';
-        $('#lt').addClass("active");
-        $("#en").removeClass("active");
-        $("#ru").removeClass("active");
-        $("#ee").removeClass("active");
-        $("#lv").removeClass("active");
-    }

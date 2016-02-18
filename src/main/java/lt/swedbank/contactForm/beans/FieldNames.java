@@ -28,6 +28,74 @@ public class FieldNames {
 
     }
 
+    public void setupLanguageRU() {
+        homeScreenNameList.add("Свяжитесь с нами");
+        homeScreenNameList.add("Регистрация по интернету");
+        homeScreenNameList.add("Напишите нам");
+
+        contactUsNameList.add("Напишите нам");
+        contactUsNameList.add("Тема *");
+        contactUsNameList.add("Текст сообщения *");
+        contactUsNameList.add("Имя *");
+        contactUsNameList.add("Фамилия *");
+        contactUsNameList.add("Телефон *");
+        contactUsNameList.add("Адрес электронной почты *");
+        contactUsNameList.add("Каким образом предпочитаете получить ответ *");
+        contactUsNameList.add("На заданые вопроса отвечаем по рабочим дням с 8 до 20 ч., " +
+                "по субботам с 9 до 16 часов. Если информация Вам нужна срочно, " +
+                "ждем ваших звонков по тел. 1884(для частных клиентов), 1663(для бизнес клиентов). " +
+                "Из заграницы звоните по тел. +370 5 268 4444(для частных клиентов), " +
+                " +370 5 268 4422 (для бизнес клиентов).");
+        contactUsNameList.add("Отправить");
+
+        contactUsDropDownMenuList.add("Экономия и инвестиции");
+        contactUsDropDownMenuList.add("Пенсии и сбережения");
+        contactUsDropDownMenuList.add("Страхование жизни");
+        contactUsDropDownMenuList.add("Страхование не связаное со здоровьем или жизнью");
+        contactUsDropDownMenuList.add("Кредиты, лизинг");
+        contactUsDropDownMenuList.add("Управление каждодневными финансами");
+
+        contactUsRadioButtonList.add("по телефону");
+        contactUsRadioButtonList.add("по электронной почте");
+        contactUsRadioButtonList.add("по электронной почте и по телефону");
+
+        contactUsConfirmationNameList.add("Здравствуйте, ");
+        contactUsConfirmationNameList.add("благодарим, за пользование „Swedbank“.");
+        contactUsConfirmationNameList.add("На заданые вопроса отвечаем по рабочим дням с 8 до 20 ч., " +
+                "по субботам с 9 до 16 часов. Если информация Вам нужна срочно, " +
+                "ждем ваших звонков по тел. 1884(для частных клиентов), 1663(для бизнес клиентов). " +
+                "Из заграницы звоните по тел. +370 5 268 4444(для частных клиентов), " +
+                " +370 5 268 4422 (для бизнес клиентов).");
+        contactUsConfirmationNameList.add("< Назад");
+
+        bankDivisionList.add("Antakalnio ул. 45");
+        bankDivisionList.add("Ateities ул. 91 (PC „Mandarinas\")");
+        bankDivisionList.add("Gedimino пр. 56");
+        bankDivisionList.add("Konstitucijos пр. 20A, работает Жилищный Центр");
+        bankDivisionList.add("Ozo ул. 25 (PPC „Akropolis\")");
+
+        topicList.add("Экономия и инвестиции");
+        topicList.add("Пенсии и сбережения");
+        topicList.add("Страхование жизни");
+        topicList.add("Страхование не связаное со здоровьем или жизнью");
+        topicList.add("Кредиты, лизинг");
+        topicList.add("Управление каждодневными финансами");
+
+        registrationNameTags.put("title","Регистрация");
+        registrationNameTags.put("header","Регистрация по интернету");
+        registrationNameTags.put("name","Имя *");
+        registrationNameTags.put("surname","Фамилия *");
+        registrationNameTags.put("phone","Телефон *");
+        registrationNameTags.put("email","Адрес электронной почты");
+        registrationNameTags.put("bankDivision","Отдел банка *");
+        registrationNameTags.put("date","Дата *");
+        registrationNameTags.put("topic","Тема *");
+        registrationNameTags.put("other","Замечания и коментарии");
+        registrationNameTags.put("confirmButton","Отправить");
+
+        registrationOverviewList.add("Регистрации по интернету");
+    }
+
     public void setupLanguageLT() {
         homeScreenNameList.add("Susisiekite su mumis");
         homeScreenNameList.add("Registruokitės konsultacijai internetu");
@@ -193,40 +261,78 @@ public class FieldNames {
         contactUsRadioButtonList.add("by E-mail");
         contactUsRadioButtonList.add("by E-mail and phone");
 
-        contactUsConfirmationNameList.add("Hello, ");
-        contactUsConfirmationNameList.add("Thank you for contacting „Swedbank“.");
-        contactUsConfirmationNameList.add("We send feed backs into your questions on workdays 8–20 hours., " +
-                "saturdays 9–16 hours. If you need immediate information, " +
-                "waiting for your calls num. 1884 or num. +370 5 268 4444, " +
-                "if you call from abroad. Wish you all the best!");
-        contactUsConfirmationNameList.add("< Back");
+    }
 
-        bankDivisionList.add("Antakalnio st. 45");
-        bankDivisionList.add("Ateities st. 91 (PC „Mandarinas\")");
-        bankDivisionList.add("Gedimino ave. 56");
-        bankDivisionList.add("Konstitucijos ave. 20A, works in Būsto Centras");
-        bankDivisionList.add("Ozo st. 25 (PPC „Akropolis\")");
+    public void setupLanguageLV() {
 
-        topicList.add("Savings and Investments");
-        topicList.add("Pensions and Savings");
-        topicList.add("Life insurance");
-        topicList.add("Non-life insurance");
-        topicList.add("Loans, leasing");
-        topicList.add("The daily financial management");
+        homeScreenNameList.add("Sazinies ar mums");
+        homeScreenNameList.add("Reģistrēties tiešsaistes konsultācijas");
+        homeScreenNameList.add("Rakstiet mums");
 
-        registrationNameTags.put("title","Registration");
-        registrationNameTags.put("header","Online registration for consultation");
-        registrationNameTags.put("name","Name *");
-        registrationNameTags.put("surname","Surname *");
-        registrationNameTags.put("phone","Phone *");
-        registrationNameTags.put("email","E-mail");
-        registrationNameTags.put("bankDivision","Bank division *");
-        registrationNameTags.put("date","Date *");
-        registrationNameTags.put("topic","Theme *");
-        registrationNameTags.put("other","Comments");
-        registrationNameTags.put("confirmButton","Send");
+        contactUsNameList.add("Rakstiet mums");
+        contactUsNameList.add("Tēma *");
+        contactUsNameList.add("Dokuments ziņojuma *");
+        contactUsNameList.add("Vārds *");
+        contactUsNameList.add("Uzvārds *");
+        contactUsNameList.add("Tālrunis *");
+        contactUsNameList.add("El-pasts *");
+        contactUsNameList.add("Kā jūs vēlaties saņemt atbildi *");
+        contactUsNameList.add("Atbildes uz uzdotajiem darbdienās 8-20 am jautājumiem., " +
+                "Sestdienās 9-16 stundas. Ja jums nepieciešama tūlītēja informācija, " +
+                "Mēs gaidām jūsu telefona zvanu. 1884 (privātajiem klientiem) un 1633 (biznesa klientiem). " +
+                "Ārvalstu zvans tel. +370 5 268 4444 (privātajiem klientiem) " +
+                "Un +370 5 268 4422 (biznesa klientiem).");
+        contactUsNameList.add("Sūtīt");
 
-        registrationOverviewList.add("Online registrations");
+        contactUsDropDownMenuList.add("Uzkrājumi un investīcijas");
+        contactUsDropDownMenuList.add("Pensijas un uzkrāšanu");
+        contactUsDropDownMenuList.add("Dzīvības apdrošināšana");
+        contactUsDropDownMenuList.add("Nedzīvības apdrošināšana");
+        contactUsDropDownMenuList.add("Kredīti, līzings");
+        contactUsDropDownMenuList.add("Dienas finanšu vadība");
+
+        contactUsRadioButtonList.add("pa tālruni");
+        contactUsRadioButtonList.add("pa e-pastu");
+        contactUsRadioButtonList.add("pa e-pastu un tālruni");
+
+
+        contactUsConfirmationNameList.add("Sveiki, ");
+        contactUsConfirmationNameList.add("Paldies, kas attiecas uz Swedbank“.");
+        contactUsConfirmationNameList.add("Atbildes uz uzdotajiem darbdienās 8-20 am jautājumiem., " +
+                "Sestdienās 9-16 stundas. Ja jums nepieciešama tūlītēja informācija, " +
+                "Mēs gaidām jūsu telefona zvanu 1884 vai tel. +370 5 268 4444, " +
+                "Ja jūs zvanāt no ārzemēm Novēlam laba diena!");
+        contactUsConfirmationNameList.add("<atpakaļ");
+
+        bankDivisionList.add("Antakalnio iela 45");
+        bankDivisionList.add("Ateities iela 91 (T/C „Mandarinas\")");
+        bankDivisionList.add("Gedimino iela 56");
+        bankDivisionList.add("Konstitucijos iela 20A, strādā Būsto Centras");
+        bankDivisionList.add("Ozo iela 25 (T/C „Akropolis\")");
+
+        topicList.add("Uzkrājumi un investīcijas");
+        topicList.add("Pensijas un uzkrāšanu");
+        topicList.add("Dzīvības apdrošināšana");
+        topicList.add("Nedzīvības apdrošināšana");
+        topicList.add("Kredīti, līzings");
+        topicList.add("Dienas finanšu vadība");
+
+        registrationNameTags.put("title","Reģistrācija");
+        registrationNameTags.put("header","Reģistrēties apspriešanu tiešsaistē");
+        registrationNameTags.put("name","Vārds *");
+        registrationNameTags.put("surname","Uzvārds *");
+        registrationNameTags.put("phone","Tālrunis *");
+        registrationNameTags.put("email","El-pasts");
+        registrationNameTags.put("bankDivision", "Bankas nodaļa *");
+        registrationNameTags.put("date","Datums *");
+        registrationNameTags.put("topic","Tēma *");
+        registrationNameTags.put("other","Piezīmes, komentāri");
+        registrationNameTags.put("confirmButton","Sūtīt");
+
+
+
+
+        registrationOverviewList.add("Reģistrācijas online");
     }
 
 
