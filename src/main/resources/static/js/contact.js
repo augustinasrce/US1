@@ -9,6 +9,7 @@
                $scope.dropDownListName = response.data.dropDownListName;
                $scope.dropDownList = response.data.contactUsDropDownMenuList;
                $scope.radioButtonList = response.data.contactUsRadioButtonList;
+               $scope.confirmationNameList = response.data.contactUsConfirmationNameList;
 
                document.title = $scope.nameList[0];
              });
@@ -26,4 +27,9 @@
     function showEmailPhoneFields() {
         $("#phone").removeClass("hidden");
         $("#email").removeClass("hidden");
+    }
+
+    function submitForm() {
+       $("#contactForm").addClass("hidden");
+       $("#confirm").removeClass("hidden");
     }

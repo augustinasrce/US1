@@ -95,6 +95,18 @@ public class FieldNames {
         registrationOverviewList.add("Registracijos internetu");
     }
 
+    public void setupLanguageEN(){
+        homeScreenNameList.add("shit we just got international interface :)");
+        homeScreenNameList.add("damn !!");
+        homeScreenNameList.add("WeeeeHoooo");
+
+    }
+
+
+
+
+
+
 
     public ArrayList<String> getHomeScreenNameList() {
         return homeScreenNameList;

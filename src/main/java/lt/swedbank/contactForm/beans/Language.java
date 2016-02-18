@@ -1,8 +1,5 @@
 package lt.swedbank.contactForm.beans;
 
-/**
- * Created by Augustinas on 11 02 2016!
- */
 public class Language {
 
     FieldNames fieldNames;
@@ -18,9 +15,8 @@ public class Language {
 
 
 
-
     public FieldNames getFieldNamesEN(){
-    //   fieldNames.setupLanguageEN();
+        fieldNames.setupLanguageEN();
         return fieldNames;
     }
     public FieldNames getFieldNamesRU(){
