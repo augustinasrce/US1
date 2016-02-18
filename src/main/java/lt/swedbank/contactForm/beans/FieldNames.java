@@ -29,6 +29,7 @@ public class FieldNames {
     }
 
     public void setupLanguageLT() {
+
         homeScreenNameList.add("Susisiekite su mumis");
         homeScreenNameList.add("Registruokitės konsultacijai internetu");
         homeScreenNameList.add("Parašykite mums");
@@ -93,6 +94,7 @@ public class FieldNames {
         registrationNameTags.put("confirmButton","Siųsti");
 
         registrationOverviewList.add("Registracijos internetu");
+
     }
 
     public void setupLanguageEN(){
@@ -103,7 +105,8 @@ public class FieldNames {
     }
 
     public void setupLanguageLV() {
-        homeScreenNameList.add("Susisiekite su mumis");//("Kontakti");
+
+        homeScreenNameList.add("Sazinies ar mums");
         homeScreenNameList.add("Reģistrēties tiešsaistes konsultācijas");
         homeScreenNameList.add("Rakstiet mums");
 
