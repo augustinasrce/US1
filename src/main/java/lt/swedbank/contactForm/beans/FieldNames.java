@@ -102,6 +102,76 @@ public class FieldNames {
 
     }
 
+    public void setupLanguageLV() {
+        homeScreenNameList.add("Susisiekite su mumis");//("Kontakti");
+        homeScreenNameList.add("Reģistrēties tiešsaistes konsultācijas");
+        homeScreenNameList.add("Rakstiet mums");
+
+        contactUsNameList.add("Rakstiet mums");
+        contactUsNameList.add("Tēma *");
+        contactUsNameList.add("Dokuments ziņojuma *");
+        contactUsNameList.add("Vārds *");
+        contactUsNameList.add("Uzvārds *");
+        contactUsNameList.add("Tālrunis *");
+        contactUsNameList.add("El-pasts *");
+        contactUsNameList.add("Kā jūs vēlaties saņemt atbildi *");
+        contactUsNameList.add("Atbildes uz uzdotajiem darbdienās 8-20 am jautājumiem., " +
+                "Sestdienās 9-16 stundas. Ja jums nepieciešama tūlītēja informācija, " +
+                "Mēs gaidām jūsu telefona zvanu. 1884 (privātajiem klientiem) un 1633 (biznesa klientiem). " +
+                "Ārvalstu zvans tel. +370 5 268 4444 (privātajiem klientiem) " +
+                "Un +370 5 268 4422 (biznesa klientiem).");
+        contactUsNameList.add("Sūtīt");
+
+        contactUsDropDownMenuList.add("Uzkrājumi un investīcijas");
+        contactUsDropDownMenuList.add("Pensijas un uzkrāšanu");
+        contactUsDropDownMenuList.add("Dzīvības apdrošināšana");
+        contactUsDropDownMenuList.add("Nedzīvības apdrošināšana");
+        contactUsDropDownMenuList.add("Kredīti, līzings");
+        contactUsDropDownMenuList.add("Dienas finanšu vadība");
+
+        contactUsRadioButtonList.add("pa tālruni");
+        contactUsRadioButtonList.add("pa e-pastu");
+        contactUsRadioButtonList.add("pa e-pastu un tālruni");
+
+
+        contactUsConfirmationNameList.add("Sveiki, ");
+        contactUsConfirmationNameList.add("Paldies, kas attiecas uz Swedbank“.");
+        contactUsConfirmationNameList.add("Atbildes uz uzdotajiem darbdienās 8-20 am jautājumiem., " +
+                "Sestdienās 9-16 stundas. Ja jums nepieciešama tūlītēja informācija, " +
+                "Mēs gaidām jūsu telefona zvanu 1884 vai tel. +370 5 268 4444, " +
+                "Ja jūs zvanāt no ārzemēm Novēlam laba diena!");
+        contactUsConfirmationNameList.add("<atpakaļ");
+
+        bankDivisionList.add("Antakalnio iela 45");
+        bankDivisionList.add("Ateities iela 91 (T/C „Mandarinas\")");
+        bankDivisionList.add("Gedimino iela 56");
+        bankDivisionList.add("Konstitucijos iela 20A, strādā Būsto Centras");
+        bankDivisionList.add("Ozo iela 25 (T/C „Akropolis\")");
+
+        topicList.add("Uzkrājumi un investīcijas");
+        topicList.add("Pensijas un uzkrāšanu");
+        topicList.add("Dzīvības apdrošināšana");
+        topicList.add("Nedzīvības apdrošināšana");
+        topicList.add("Kredīti, līzings");
+        topicList.add("Dienas finanšu vadība");
+
+        registrationNameTags.put("title","Reģistrācija");
+        registrationNameTags.put("header","Reģistrēties apspriešanu tiešsaistē");
+        registrationNameTags.put("name","Vārds *");
+        registrationNameTags.put("surname","Uzvārds *");
+        registrationNameTags.put("phone","Tālrunis *");
+        registrationNameTags.put("email","El-pasts");
+        registrationNameTags.put("bankDivision", "Bankas nodaļa *");
+        registrationNameTags.put("date","Datums *");
+        registrationNameTags.put("topic","Tēma *");
+        registrationNameTags.put("other","Piezīmes, komentāri");
+        registrationNameTags.put("confirmButton","Sūtīt");
+
+
+
+
+        registrationOverviewList.add("Reģistrācijas online");
+    }
 
 
 
