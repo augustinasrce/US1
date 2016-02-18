@@ -13,14 +13,23 @@ public class Language {
         return fieldNames;
     }
 
-
-
     public FieldNames getFieldNamesEN(){
         fieldNames.setupLanguageEN();
         return fieldNames;
     }
+
     public FieldNames getFieldNamesRU(){
-    //    fieldNames.setupLanguageRU();
+        fieldNames.setupLanguageRU();
+        return fieldNames;
+    }
+
+    public FieldNames getFieldNamesEE(){
+        fieldNames.setupLanguageEE();
+        return fieldNames;
+    }
+
+    public FieldNames getFieldNamesLV(){
+        fieldNames.setupLanguageLV();
         return fieldNames;
     }
 }

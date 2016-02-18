@@ -47,7 +47,8 @@
                               ng-minlength="10"
                               ng-maxlength="400"
                               required></textarea>
-                <div class="help-block" ng-messages="contactForm.textMessage.$error" ng-if="contactForm.textMessage.$touched">
+                <div class="help-block" ng-messages="contactForm.textMessage.$error"
+                     ng-if="contactForm.textMessage.$touched">
                     <div ng-messages-include="errorMessages/textareaMessages.html"></div>
                 </div>
             </div>

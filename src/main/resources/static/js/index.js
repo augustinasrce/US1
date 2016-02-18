@@ -1,6 +1,7 @@
     var language = 'lt';
     var app = angular.module('HomeScreen', []);
     document.cookie="";
+    document.cookie="lt";
 
 
     app.controller('HomeScreenController', function($scope, $http) {
