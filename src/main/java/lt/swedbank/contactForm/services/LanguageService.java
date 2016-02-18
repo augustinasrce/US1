@@ -31,7 +31,7 @@ public class LanguageService {
     @RequestMapping("/en")
     public FieldNames getLanguageEN() {
         language = new Language();
-        return language.getFieldNamesLT();
+        return language.getFieldNamesEN();
     }
 
     @RequestMapping("/sql")

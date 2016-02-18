@@ -12,27 +12,28 @@
     <script src="js/angular.min.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body>
+<body ng-controller="HomeScreenController">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-right container-fluid">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">LT</a></li>
-                <li><a href="#">EN</a></li>
-                <li><a href="#">RU</a></li>
-                <li><a href="#">EE</a></li>
-                <li><a href="#">LV</a></li>
-            </ul>
+        <ul class="nav navbar-nav">
+            <li id="lt" class="active"><a href="#">LT</a></li>
+            <li id="en"><a href="#">EN</a></li>
+            <li id="ru"><a href="#">RU</a></li>
+            <li id="ee"><a href="#">EE</a></li>
+            <li id="lv"><a href="#">LV</a></li>
+        </ul>
     </div>
 </nav>
 
-<div ng-controller="HomeScreenController">
-    <div class="container">
-        <h1>{{ title }}</h1>
-        <a href="registration.html"> {{ register }} </a> <br>
-        <a href="contact.html"> {{ contacts }} </a>
-    </div>
+
+<div class="container">
+    <h1>{{ title }}</h1>
+    <a href="registration.html"> {{ register }} </a> <br>
+    <a href="contact.html"> {{ contacts }} </a>
 </div>
+
+
 <!-- for BootStrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
