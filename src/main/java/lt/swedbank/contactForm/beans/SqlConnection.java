@@ -119,8 +119,9 @@ public class SqlConnection {
                 String contactBy = res.getString("contact_by");
                 String message = res.getString("message");
                 String client_id = res.getString("Client_client_id");
+                String subject = res.getString("subject");
                 line = String.valueOf(id) + ";" + contactBy + ";" + message + ";" +
-                        client_id;
+                        client_id + ";" +  subject;
                 result.add(line);
 //                System.out.println(id + "\t" + name + "\t" + surname + "\t" + phone+ "\t" + email);
             }
@@ -133,8 +134,8 @@ public class SqlConnection {
         return result;
     }
 
-    public void insertIContactUs(int id, String contactBy, String message, int clientId){
-        String query = String.format("INSERT into ContactUs(contactUs_id, contact_by, message, Client_client_id) VALUES(%d, \"%s\", \"%s\" ,\"%d\")", id, contactBy, message, clientId);
+    public void insertIContactUs(int id, String contactBy, String message, int clientId, String subject){
+        String query = String.format("INSERT into ContactUs(contactUs_id, contact_by, message, Client_client_id, subject) VALUES(%d, \"%s\", \"%s\" ,\"%d\", \"%s\")", id, contactBy, message, clientId, subject);
         try {
             int value = st.executeUpdate(query);
             if (value == 1)

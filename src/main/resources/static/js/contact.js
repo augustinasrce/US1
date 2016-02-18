@@ -24,7 +24,7 @@
            answerType: $scope.answerType
            });
 
-           $http.put('/US1')
+           $http.put('/US1/'+$('#inputTopic').val()+'/'+$('#inputMessage').val()+'/'+$('#inputName').val()+'/'+$('#inputSurname').val()+'/'+$('#inputPhone').val()+'/'+$('#inputEmail').val()+'/'+$('#inputContactBy').val()+'/')
            .success(function (data, status, headers) {
            $scope.ServerResponse = data;
            })

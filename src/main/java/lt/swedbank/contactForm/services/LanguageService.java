@@ -3,6 +3,7 @@ package lt.swedbank.contactForm.services;
 import lt.swedbank.contactForm.beans.FieldNames;
 import lt.swedbank.contactForm.beans.Language;
 import lt.swedbank.contactForm.beans.SqlConnection;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,20 +38,20 @@ public class LanguageService {
         return language.getFieldNamesLT();
     }
 
-    @RequestMapping(value = "/US1", method = RequestMethod.PUT)
-    public void putContactUs(String dropDownItem,
-                             String textMessage,
-                             String name,
-                             String surname,
-                             String phoneNr,
-                             String email,
-                             String answerType)
+    @RequestMapping(value = "/US1/{dropDownItem}/{textMessage}/{name}/{surname}/{phoneNr}/{email}/{answerType}", method = RequestMethod.PUT)
+    public void putContactUs(@PathVariable String dropDownItem,
+                             @PathVariable String textMessage,
+                             @PathVariable String name,
+                             @PathVariable String surname,
+                             @PathVariable String phoneNr,
+                             @PathVariable String email,
+                             @PathVariable String answerType)
     {
         SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
 
         sqlConnection.insertClient(10, name, surname, phoneNr, email);
-        sqlConnection.insertIContactUs(10, answerType, textMessage,);
+        sqlConnection.insertIContactUs(10, answerType, textMessage, 10, dropDownItem);
 
         sqlConnection.closeConnection();;
     }
