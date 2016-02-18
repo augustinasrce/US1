@@ -2,7 +2,7 @@ package lt.swedbank.contactForm.services;
 
 import lt.swedbank.contactForm.beans.FieldNames;
 import lt.swedbank.contactForm.beans.Language;
-//import lt.swedbank.contactForm.beans.SqlConnection;
+import lt.swedbank.contactForm.beans.SqlConnection;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,12 +36,12 @@ public class LanguageService {
 
     @RequestMapping("/sql")
     public ArrayList<String> getALLRegistrations() {
-        //SqlConnection sqlConnection = new SqlConnection();
+        SqlConnection sqlConnection = new SqlConnection();
 
-        //ArrayList<String> result = new ArrayList<String>();
-        //result = sqlConnection.selectRegistations("");
-        ArrayList<String> result = null;
-        //sqlConnection.closeConnection();
+        ArrayList<String> result = new ArrayList<String>();
+        result = sqlConnection.selectRegistations("");
+        //ArrayList<String> result = null;
+        sqlConnection.closeConnection();
         return result;
     }
     /*
