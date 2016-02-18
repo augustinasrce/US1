@@ -1,4 +1,4 @@
-
+/*
 package lt.swedbank.contactForm.beans;
 
 
@@ -269,5 +269,5 @@ public class SqlConnection {
         }
     }
 }
-
+*/
 
