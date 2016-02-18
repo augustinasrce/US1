@@ -81,17 +81,17 @@ public class FieldNames {
         topicList.add("Кредиты, лизинг");
         topicList.add("Управление каждодневными финансами");
 
-        registrationNameTags.put("title","Регистрация");
-        registrationNameTags.put("header","Регистрация по интернету");
-        registrationNameTags.put("name","Имя *");
-        registrationNameTags.put("surname","Фамилия *");
-        registrationNameTags.put("phone","Телефон *");
-        registrationNameTags.put("email","Адрес электронной почты");
-        registrationNameTags.put("bankDivision","Отдел банка *");
-        registrationNameTags.put("date","Дата *");
-        registrationNameTags.put("topic","Тема *");
-        registrationNameTags.put("other","Замечания и коментарии");
-        registrationNameTags.put("confirmButton","Отправить");
+        registrationNameTags.put("title", "Регистрация");
+        registrationNameTags.put("header", "Регистрация по интернету");
+        registrationNameTags.put("name", "Имя *");
+        registrationNameTags.put("surname", "Фамилия *");
+        registrationNameTags.put("phone", "Телефон *");
+        registrationNameTags.put("email", "Адрес электронной почты");
+        registrationNameTags.put("bankDivision", "Отдел банка *");
+        registrationNameTags.put("date", "Дата *");
+        registrationNameTags.put("topic", "Тема *");
+        registrationNameTags.put("other", "Замечания и коментарии");
+        registrationNameTags.put("confirmButton", "Отправить");
 
         registrationOverviewList.add("Регистрации по интернету");
     }
@@ -148,17 +148,17 @@ public class FieldNames {
         topicList.add("Paskolos, lizingas");
         topicList.add("Kasdienių finansų valdymas");
 
-        registrationNameTags.put("title","Registracija");
-        registrationNameTags.put("header","Registruokitės konsultacijai internetu");
-        registrationNameTags.put("name","Vardas *");
-        registrationNameTags.put("surname","Pavardė *");
-        registrationNameTags.put("phone","Telefonas susisiekti *");
-        registrationNameTags.put("email","El. Paštas");
-        registrationNameTags.put("bankDivision","Banko skyrius *");
-        registrationNameTags.put("date","Data *");
-        registrationNameTags.put("topic","Tema *");
-        registrationNameTags.put("other","Pastabos, komentarai");
-        registrationNameTags.put("confirmButton","Siųsti");
+        registrationNameTags.put("title", "Registracija");
+        registrationNameTags.put("header", "Registruokitės konsultacijai internetu");
+        registrationNameTags.put("name", "Vardas *");
+        registrationNameTags.put("surname", "Pavardė *");
+        registrationNameTags.put("phone", "Telefonas susisiekti *");
+        registrationNameTags.put("email", "El. Paštas");
+        registrationNameTags.put("bankDivision", "Banko skyrius *");
+        registrationNameTags.put("date", "Data *");
+        registrationNameTags.put("topic", "Tema *");
+        registrationNameTags.put("other", "Pastabos, komentarai");
+        registrationNameTags.put("confirmButton", "Siųsti");
 
         registrationOverviewList.add("Registracijos internetu");
     }
@@ -215,17 +215,17 @@ public class FieldNames {
         topicList.add("Laenud ja liisimisega");
         topicList.add("Igapäevased finantsjuhtimine");
 
-        registrationNameTags.put("title","Registreerimine");
-        registrationNameTags.put("header","Registreeri Interneti-arutelu");
-        registrationNameTags.put("name","Nimi *");
-        registrationNameTags.put("surname","Perekonnanimi *");
-        registrationNameTags.put("phone","Telefon kontaktandmed *");
-        registrationNameTags.put("email","E-mail");
-        registrationNameTags.put("bankDivision","Bank Division *");
-        registrationNameTags.put("date","Kuupäev *");
-        registrationNameTags.put("topic","Teema *");
-        registrationNameTags.put("other","Kommentaare");
-        registrationNameTags.put("confirmButton","Saatma");
+        registrationNameTags.put("title", "Registreerimine");
+        registrationNameTags.put("header", "Registreeri Interneti-arutelu");
+        registrationNameTags.put("name", "Nimi *");
+        registrationNameTags.put("surname", "Perekonnanimi *");
+        registrationNameTags.put("phone", "Telefon kontaktandmed *");
+        registrationNameTags.put("email", "E-mail");
+        registrationNameTags.put("bankDivision", "Bank Division *");
+        registrationNameTags.put("date", "Kuupäev *");
+        registrationNameTags.put("topic", "Teema *");
+        registrationNameTags.put("other", "Kommentaare");
+        registrationNameTags.put("confirmButton", "Saatma");
 
         registrationOverviewList.add("Registreerimine Internetis");
     }
@@ -233,20 +233,20 @@ public class FieldNames {
     public void setupLanguageEN() {
         homeScreenNameList.add("Contact us");
         homeScreenNameList.add("Online registration for consultation");
-        homeScreenNameList.add("Write to us");
+        homeScreenNameList.add("Contact us");
 
-        contactUsNameList.add("Write to us");
-        contactUsNameList.add("Theme *");
+        contactUsNameList.add("Contact us");
+        contactUsNameList.add("Topic *");
         contactUsNameList.add("Text field *");
         contactUsNameList.add("Name *");
         contactUsNameList.add("Surname *");
         contactUsNameList.add("Telephone number *");
         contactUsNameList.add("E-mail *");
-        contactUsNameList.add("How do you like to receive an answer *");
-        contactUsNameList.add("We send feed backs into your questions on workdays 8–20 hours., " +
+        contactUsNameList.add("How would you like to receive an answer *");
+        contactUsNameList.add("We answer your questions on workdays 8–20 hours., " +
                 "saturdays 9–16 hours. If you need immediate information, " +
-                "waiting for your calls num. 1884 (private customers) also 1633 (business customer). " +
-                "Call us from abroad num. +370 5 268 4444 (private customers) " +
+                "you can call us 1884 (private customers) also 1633 (business customer). " +
+                "Call us from abroad +370 5 268 4444 (private customers) " +
                 "also +370 5 268 4422 (business customers).");
         contactUsNameList.add("Send");
 
@@ -263,10 +263,11 @@ public class FieldNames {
 
         contactUsConfirmationNameList.add("Hello, ");
         contactUsConfirmationNameList.add("Thank you for contacting „Swedbank“.");
-        contactUsConfirmationNameList.add("We send feed backs into your questions on workdays 8–20 hours., " +
+        contactUsConfirmationNameList.add("We answer your questions on workdays 8–20 hours., " +
                 "saturdays 9–16 hours. If you need immediate information, " +
-                "waiting for your calls num. 1884 or num. +370 5 268 4444, " +
-                "if you call from abroad. Wish you all the best!");
+                "you can call us 1884 (private customers) also 1633 (business customer). " +
+                "Call us from abroad +370 5 268 4444 (private customers) " +
+                "also +370 5 268 4422 (business customers). Wish you all the best!");
         contactUsConfirmationNameList.add("< Back");
 
         bankDivisionList.add("Antakalnio st. 45");
@@ -274,9 +275,6 @@ public class FieldNames {
         bankDivisionList.add("Gedimino ave. 56");
         bankDivisionList.add("Konstitucijos ave. 20A, works in Būsto Centras");
         bankDivisionList.add("Ozo st. 25 (PPC „Akropolis\")");
-        homeScreenNameList.add("Sazinies ar mums");
-        homeScreenNameList.add("Reģistrēties tiešsaistes konsultācijas");
-        homeScreenNameList.add("Rakstiet mums");
 
         topicList.add("Savings and Investments");
         topicList.add("Pensions and Savings");
@@ -353,24 +351,20 @@ public class FieldNames {
         topicList.add("Kredīti, līzings");
         topicList.add("Dienas finanšu vadība");
 
-        registrationNameTags.put("title","Reģistrācija");
-        registrationNameTags.put("header","Reģistrēties apspriešanu tiešsaistē");
-        registrationNameTags.put("name","Vārds *");
-        registrationNameTags.put("surname","Uzvārds *");
-        registrationNameTags.put("phone","Tālrunis *");
-        registrationNameTags.put("email","El-pasts");
+        registrationNameTags.put("title", "Reģistrācija");
+        registrationNameTags.put("header", "Reģistrēties apspriešanu tiešsaistē");
+        registrationNameTags.put("name", "Vārds *");
+        registrationNameTags.put("surname", "Uzvārds *");
+        registrationNameTags.put("phone", "Tālrunis *");
+        registrationNameTags.put("email", "El-pasts");
         registrationNameTags.put("bankDivision", "Bankas nodaļa *");
-        registrationNameTags.put("date","Datums *");
-        registrationNameTags.put("topic","Tēma *");
-        registrationNameTags.put("other","Piezīmes, komentāri");
-        registrationNameTags.put("confirmButton","Sūtīt");
+        registrationNameTags.put("date", "Datums *");
+        registrationNameTags.put("topic", "Tēma *");
+        registrationNameTags.put("other", "Piezīmes, komentāri");
+        registrationNameTags.put("confirmButton", "Sūtīt");
 
         registrationOverviewList.add("Reģistrācijas online");
     }
-
-
-
-
 
 
     public ArrayList<String> getHomeScreenNameList() {
@@ -393,12 +387,20 @@ public class FieldNames {
         return contactUsConfirmationNameList;
     }
 
-    public ArrayList<String> getTopicList(){return topicList;}
+    public ArrayList<String> getTopicList() {
+        return topicList;
+    }
 
-    public ArrayList<String> getBankDivisionList(){return bankDivisionList;}
+    public ArrayList<String> getBankDivisionList() {
+        return bankDivisionList;
+    }
 
-    public Map<String,String> getRegistrationNameTags(){return registrationNameTags;}
+    public Map<String, String> getRegistrationNameTags() {
+        return registrationNameTags;
+    }
 
-    public ArrayList<String> getRegistrationOverviewList(){return registrationOverviewList;}
+    public ArrayList<String> getRegistrationOverviewList() {
+        return registrationOverviewList;
+    }
 
 }

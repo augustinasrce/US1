@@ -22,6 +22,7 @@ public class LanguageService {
     public void init() {
     }
 
+
     @RequestMapping("/lt")
     public FieldNames getLanguageLT() {
         language = new Language();
@@ -34,6 +35,23 @@ public class LanguageService {
         return language.getFieldNamesEN();
     }
 
+    @RequestMapping("/ru")
+    public FieldNames getLanguageRU() {
+        language = new Language();
+        return language.getFieldNamesRU();
+    }
+
+    @RequestMapping("/ee")
+    public FieldNames getLanguageEE() {
+        language = new Language();
+        return language.getFieldNamesEE();
+    }
+
+    @RequestMapping("/lv")
+    public FieldNames getLanguageLV() {
+        language = new Language();
+        return language.getFieldNamesLV();
+    }
 
     @RequestMapping("/sql")
     public ArrayList<String> getALLRegistrations() {
