@@ -28,18 +28,25 @@
     });
 
             function hidePhoneField() {
-                $("#phone").addClass("hidden");
+                $("#inputPhoneDiv").addClass("hidden");
                 $("#inputEmailDiv").removeClass("hidden");
+                $('#inputPhone').removeAttr('required');
+
             };
 
             function hideEmailField() {
                 $("#inputEmailDiv").addClass("hidden");
-                $("#phone").removeClass("hidden");
+                $("#inputPhoneDiv").removeClass("hidden");
+                $('#inputEmail').removeAttr('required');
+                inputEmail.removeAttribute('required');
+
+
             };
 
             function showEmailPhoneFields() {
-                $("#phone").removeClass("hidden");
+                $("#inputPhoneDiv").removeClass("hidden");
                 $("#inputEmailDiv").removeClass("hidden");
+
             }
 
             function submitForm() {

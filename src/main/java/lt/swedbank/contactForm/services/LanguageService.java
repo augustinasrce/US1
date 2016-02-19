@@ -66,7 +66,7 @@ public class LanguageService {
                              @PathVariable String email,
                              @PathVariable String answerType)
     {
-        SqlConnection sqlConnection = new SqlConnection();
+         SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
 
         sqlConnection.insertClient(10, name, surname, phoneNr, email);
@@ -101,7 +101,7 @@ public class LanguageService {
         sqlConnection.closeConnection();
         return dataFromDatabase;
     }
-    /*
+ /*
     @RequestMapping("/lt/contact")
     public FieldNames getLanguageForContactUsScreenLT() {
         language = new Language();
