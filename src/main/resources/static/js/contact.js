@@ -13,31 +13,15 @@
                $scope.confirmationNameList = response.data.contactUsConfirmationNameList;
 
                document.title = $scope.nameList[0];
-                    });
-
-     $scope.UpdateData = function () {
-           var data = $.param({
-           dropDownItem: $scope.dropDownItem,
-           textMessage: $scope.textMessage,
-           name: $scope.name,
-           surname: $scope.surname,
-           phoneNr: $scope.phoneNr,
-           email: $scope.email,
-           answerType: $scope.answerType
            });
 
+     $scope.UpdateData = function () {
            $http.put('/US1/'+$('#inputTopic').val()+'/'+$('#inputMessage').val()+'/'+$('#inputName').val()+'/'+$('#inputSurname').val()+'/'+$('#inputPhone').val()+'/'+$('#inputEmail').val()+'/'+$('#inputContactBy').val()+'/')
            .success(function (data, status, headers) {
-           $scope.ServerResponse = data;
-           })
-//           .error(function (data, status, header, config) {
-//           $scope.ServerResponse =  htmlDecode("Data: " + data +
-//           "\n\n\n\nstatus: " + status +
-//           "\n\n\n\nheaders: " + header +
-//           "\n\n\n\nconfig: " + config);
-//           });
-                };
-                     });
+                $scope.ServerResponse = data;
+            })
+        };
+    });
 
     function hidePhoneField() {
         $("#phone").addClass("hidden");
