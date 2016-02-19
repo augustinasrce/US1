@@ -22,8 +22,8 @@
     <h1>{{ nameList[0] }}</h1>
 </div>
 
-<div class="container">
-    <form ng-submit="submitForm()" name="contactForm" class="form-horizontal" novalidate>
+<div id="formDiv" class="container">
+    <form ng-submit="submitForm()" id="contactForm" name="contactForm" class="form-horizontal" novalidate>
 
         <!-- TopicList -->
         <div class="form-group">
@@ -69,10 +69,9 @@
                 </div>
             </div>
         </div>
-
         <!-- Surname -->
         <div class="form-group"
-             ng-class="{ 'has-error': !contactForm.surname.$pristine && contactForm.surname.$invalid }">
+             ng-class="{ 'has-error': contactForm.surname.$invalid }">
             <label for="inputSurname" class="col-xs-2">{{ nameList[4] }}</label>
             <div class="col-xs-10">
                 <input type="text" name="surname" class="form-control" id="inputSurname"
@@ -83,7 +82,6 @@
                 </div>
             </div>
         </div>
-
         <!-- phone -->
         <div class="form-group" id="inputPhoneDiv"
              ng-class="{ 'has-error': !contactForm.phoneNr.$pristine && contactForm.phoneNr.$invalid}">
@@ -94,17 +92,16 @@
                        ng-model="main.phoneNr"
                        ng-minlength="7"
                        ng-maxlength="20"
-                       Required>
+                       ng-required="isEmailRequired">
                 <div class="help-block" ng-messages="contactForm.phoneNr.$error"
                      ng-if="!contactForm.phoneNr.$pristine">
                     <div ng-messages-include="errorMessages/phoneMessages.html"></div>
                 </div>
             </div>
         </div>
-
         <!-- email -->
         <div class="form-group" id="inputEmailDiv"
-             ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
+             ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine}">
             <label for="inputEmail" class="col-xs-2">{{ nameList[6] }}</label>
             <div class="col-xs-10">
                 <input type="email" name="email" class="form-control" id="inputEmail"
@@ -118,23 +115,21 @@
                 </div>
             </div>
         </div>
-
         <!-- radio Buttons -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList[7] }}</label>
             <div class="col-xs-10 btn-group" data-toggle="buttons">
-                <label class="btn btn-default" onclick="hideEmailField()">
+                <label class="btn btn-default" ng-click="hideEmailField()">
                     <input type="radio" id="inputContactBy" name="answerType">{{ radioButtonList[0] }}
                 </label>
-                <label class="btn btn-default" onclick="hidePhoneField()">
+                <label class="btn btn-default" ng-click="hidePhoneField()">
                     <input type="radio" name="answerType">{{ radioButtonList[1] }}
                 </label>
-                <label class="btn btn-default active" onclick="showEmailPhoneFields()">
+                <label class="btn btn-default active" ng-click="showPhoneEmailFields()">
                     <input type="radio" name="answerType" checked>{{ radioButtonList[2] }}
                 </label>
             </div>
         </div>
-
         <!-- info msg -->
         <div class="form-group">
             <div class="col-xs-12">
@@ -147,7 +142,24 @@
 
     </form>
 </div>
+
+
+<div id="confirmDiv" class="container hidden">
+    <form id="confirmForm" class="form-horizontal" novalidate>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <p>{{ confirmationNameList[0] }}</p><br>
+                <p>{{ confirmationNameList[1] }}</p><br>
+                <p>{{ confirmationNameList[2] }}</p>
+            </div>
+        </div>
+        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3] }}</a>
+    </form>
 </div>
+
+
+</div>
+
 
 <!-- for BootStrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
