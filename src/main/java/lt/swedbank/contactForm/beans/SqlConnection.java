@@ -15,7 +15,7 @@ public class SqlConnection {
     private String url = "jdbc:mysql://contactform-swedbank.rhcloud.com:3306/";
     private String dbName = "FormContactUs";
     private String driver = "com.mysql.jdbc.Driver";
-    private String userName = "Program";
+    private String userName = "Program123";
     private String password = "program123";
 
 
