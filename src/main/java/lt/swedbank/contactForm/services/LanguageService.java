@@ -65,6 +65,27 @@ public class LanguageService {
         sqlConnection.closeConnection();
     }
 
+    @RequestMapping(value = "/US1/{dropDownItem}/{textMessage}/{name}/{phoneNr}/{email}/{answerType}/", method = RequestMethod.PUT)
+    public void putContactUs(@PathVariable String dropDownItem,
+                             @PathVariable String textMessage,
+                             @PathVariable String name,
+                             @PathVariable String phoneNr,
+                             @PathVariable String email,
+                             @PathVariable String answerType) {
+        putContactUs(   dropDownItem,
+                        textMessage,
+                        name,
+                        "",
+                        phoneNr,
+                        email,
+                        answerType);
+    }
+
+
+
+
+
+
     @RequestMapping("/sql")
     public Map<String, ArrayList<String>> getAllRegistrations() {
         SqlConnection sqlConnection = new SqlConnection();

@@ -1,6 +1,3 @@
-<!--WITH HASHMAPS      NameTagsHashMap(name, surname etc.), ArraysNameTagsHashMap(dropdownmenu, radio buttons etc.)
- -->
-
 <!DOCTYPE html>
 <html lang="en" ng-app="RegistrationScreen">
 <head>
@@ -15,7 +12,6 @@
         textarea { resize:none; }
     </style>
     <script src="js/angular.min.js"></script>
-    <script src="//code.angularjs.org/1.4.0/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
     <script src="js/registration.js"></script>
 
@@ -26,9 +22,7 @@
 
     <script>
       $(document).ready(function() {
-
           $.datetimepicker.setLocale('lt');
-
           $('#inputDate').datetimepicker({
               minDate:'currentTime.getFullYear()',
               allowTimes:[
@@ -37,145 +31,151 @@
                   '18:00', '18:30', '19:00', '19:30'
                 ],
                 dayOfWeekStart: 1,
-
           });
-
 <!--Should be method to disable dates-->
            $('#inputDate').datetimepicker({
               disabledDates: ['2016/02/23']
           });
-
-
-
       });
     </script>
-
-
 </head>
-<body ng-app="app" ng-controller="RegistrationScreenController as main">
+<body ng-controller="RegistrationScreenController">
+
 <div class="container">
     <h1>{{ nameList.header }}</h1>
 </div>
-<div class="container">
-    <form name="registrationForm" class="form-horizontal" novalidate>
-        <div class="center-block">
-            <div class="form-group"
-                 ng-class="{ 'has-error': !registrationForm.name.$pristine && registrationForm.name.$invalid }">
-                <label for="inputName" ng-model="inputName" class="col-xs-2">{{ nameList.name }}</label>
-                <div class="col-xs-10">
-                    <input type="text" name="name" class="form-control" id="inputName"
-                           ng-model="main.name"
-                           ng-minlength="5"
-                           ng-maxlength="10"
-                           required>
-                    <div class="help-block" ng-messages="registrationForm.name.$error"
-                         ng-if="!registrationForm.name.$pristine">
-                        <p ng-message="minlength">{{ errorList[0] }}</p>
-                        <p ng-message="maxlength">{{ errorList[1] }}</p>
-                        <p ng-message="required">{{ errorList[2] }}</p>
-                    </div>
+
+<div id="formDiv" class="container">
+    <form ng-submit="submitForm()" name="registrationForm" id="registrationForm" class="form-horizontal" novalidate>
+        <!-- name -->
+        <div class="form-group"
+             ng-class="{ 'has-error': !registrationForm.name.$pristine && registrationForm.name.$invalid }">
+            <label for="inputName" ng-model="inputName" class="col-xs-2">{{ nameList.name }}</label>
+            <div class="col-xs-10">
+                <input type="text" name="name" class="form-control" id="inputName"
+                       ng-model="main.name"
+                       ng-minlength="5"
+                       ng-maxlength="10"
+                       required>
+                <div class="help-block" ng-messages="registrationForm.name.$error"
+                     ng-if="!registrationForm.name.$pristine">
+                    <p ng-message="minlength">{{ errorList[0] }}</p>
+                    <p ng-message="maxlength">{{ errorList[1] }}</p>
+                    <p ng-message="required">{{ errorList[2] }}</p>
                 </div>
             </div>
-
-            <div class="form-group"
-                 ng-class="{ 'has-error': !registrationForm.surname.$pristine && registrationForm.surname.$invalid }">
-                <label for="inputSurname" class="col-xs-2">{{ nameList.surname }}</label>
-                <div class="col-xs-10">
-                    <input type="text" name="surname" class="form-control" id="inputSurname"
-                           ng-model="main.surname"
-                           ng-minlength="5"
-                           ng-maxlength="10"
-                           required>
-                    <div class="help-block" ng-messages="registrationForm.surname.$error"
-                         ng-if="!registrationForm.surname.$pristine">
-                        <p ng-message="minlength">{{ errorList[3] }}</p>
-                        <p ng-message="maxlength">{{ errorList[4] }}</p>
-                        <p ng-message="required">{{ errorList[5] }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group"
-                 ng-class="{ 'has-error': !registrationForm.phoneNr.$pristine && registrationForm.phoneNr.$invalid }">
-                <label for="inputPhone" class="col-xs-2">{{ nameList.phone }}</label>
-                <div class="col-xs-10">
-                    <input type="number" name="phoneNr" class="form-control" id="inputPhone" value="+370"
-                           ng-model="main.phoneNr"
-                           ng-minlength="8"
-                           ng-maxlength="15"
-                           required>
-                    <div class="help-block" ng-messages="registrationForm.phoneNr.$error"
-                         ng-if="!registrationForm.phoneNr.$pristine">
-                        <p ng-message="minlength">{{ errorList[9] }}</p>
-                        <p ng-message="maxlength">{{ errorList[10] }}</p>
-                        <p ng-message="required">{{ errorList[11] }}</p>
-                        <p ng-message="number">{{ errorList[11] }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group" ng-class="{ 'has-error': registrationForm.email.$invalid }">
-                <label for="inputEmail" class="col-xs-2">{{ nameList.email }}</label>
-                <div class="col-xs-10">
-                    <input class="form-control" type="email" name="email" id="inputEmail"
-                           ng-model="main.email"/>
-                    <div class="help-block" ng-messages="registrationForm.email.$error">
-                        <p ng-message="minlength">{{ errorList[12] }}</p>
-                        <p ng-message="maxlength">{{ errorList[13] }}</p>
-                        <p ng-message="required">{{ errorList[14] }}</p>
-                        <p ng-message="email">{{ errorList[15] }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputBankDivision" class="col-xs-2">{{ nameList.bankDivision }}</label>
-                <div class="col-xs-10">
-                    <select class="form-control" id="inputBankDivision">
-                        <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">{{ bankDivision}}
-                        </option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group"
-                 ng-class="{ 'has-error': !registrationForm.date.$pristine && registrationForm.date.$invalid }">
-                <label for="inputDate" class="col-xs-2">{{ nameList.date }}</label>
-                <div class="col-xs-10">
-                    <input type="text"  name="date" id="inputDate" class="form-control"
-                           ng-model="main.date" ng-minlength="16" ng-maxlength="16"required/>
-                    <div class="help-block" ng-messages="registrationForm.date.$error"
-                         ng-if="!registrationForm.date.$pristine">
-                        <p ng-message="minlength">{{ errorList[16] }}</p>
-                        <p ng-message="maxlength">{{ errorList[17] }}</p>
-                        <p ng-message="required">{{ errorList[18] }}</p>
-                        <p ng-message="datetime">{{ errorList[19] }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
-                <div class="col-xs-10">
-                    <select type="text" class="form-control" name="topic" id="inputTopic">
-                        <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputOther" class="col-xs-2">{{ nameList.other }}</label>
-                <div class="col-xs-10">
-                    <textarea class="form-control" rows="5" id="inputOther"></textarea>
-                </div>
-            </div>
-
-
-            <button type="button" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ nameList.confirmButton}}</button>
-
         </div>
+        <!-- surname -->
+        <div class="form-group"
+             ng-class="{ 'has-error': !registrationForm.surname.$pristine && registrationForm.surname.$invalid }">
+            <label for="inputSurname" class="col-xs-2">{{ nameList.surname }}</label>
+            <div class="col-xs-10">
+                <input type="text" name="surname" class="form-control" id="inputSurname"
+                       ng-model="main.surname"
+                       ng-minlength="5"
+                       ng-maxlength="10"
+                       required>
+                <div class="help-block" ng-messages="registrationForm.surname.$error"
+                     ng-if="!registrationForm.surname.$pristine">
+                    <p ng-message="minlength">{{ errorList[3] }}</p>
+                    <p ng-message="maxlength">{{ errorList[4] }}</p>
+                    <p ng-message="required">{{ errorList[5] }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- phone -->
+        <div class="form-group"
+             ng-class="{ 'has-error': !registrationForm.phoneNr.$pristine && registrationForm.phoneNr.$invalid }">
+            <label for="inputPhone" class="col-xs-2">{{ nameList.phone }}</label>
+            <div class="col-xs-10">
+                <input type="number" name="phoneNr" class="form-control" id="inputPhone" value="+370"
+                       ng-model="main.phoneNr"
+                       ng-minlength="8"
+                       ng-maxlength="15"
+                       required>
+                <div class="help-block" ng-messages="registrationForm.phoneNr.$error"
+                     ng-if="!registrationForm.phoneNr.$pristine">
+                    <p ng-message="minlength">{{ errorList[9] }}</p>
+                    <p ng-message="maxlength">{{ errorList[10] }}</p>
+                    <p ng-message="required">{{ errorList[11] }}</p>
+                    <p ng-message="number">{{ errorList[11] }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- email -->
+        <div class="form-group" ng-class="{ 'has-error': registrationForm.email.$invalid }">
+            <label for="inputEmail" class="col-xs-2">{{ nameList.email }}</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="email" name="email" id="inputEmail"
+                       ng-model="main.email"/>
+                <div class="help-block" ng-messages="registrationForm.email.$error">
+                    <p ng-message="minlength">{{ errorList[12] }}</p>
+                    <p ng-message="maxlength">{{ errorList[13] }}</p>
+                    <p ng-message="required">{{ errorList[14] }}</p>
+                    <p ng-message="email">{{ errorList[15] }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- branch -->
+        <div class="form-group">
+            <label for="inputBankDivision" class="col-xs-2">{{ nameList.bankDivision }}</label>
+            <div class="col-xs-10">
+                <select class="form-control" id="inputBankDivision">
+                    <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">{{ bankDivision}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <!-- date -->
+        <div class="form-group"
+             ng-class="{ 'has-error': !registrationForm.date.$pristine && registrationForm.date.$invalid }">
+            <label for="inputDate" class="col-xs-2">{{ nameList.date }}</label>
+            <div class="col-xs-10">
+                <input type="text" name="date" id="inputDate" class="form-control"
+                       ng-model="main.date" ng-minlength="16" ng-maxlength="16" required/>
+                <div class="help-block" ng-messages="registrationForm.date.$error"
+                     ng-if="!registrationForm.date.$pristine">
+                    <p ng-message="minlength">{{ errorList[16] }}</p>
+                    <p ng-message="maxlength">{{ errorList[17] }}</p>
+                    <p ng-message="required">{{ errorList[18] }}</p>
+                    <p ng-message="datetime">{{ errorList[19] }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- topic -->
+        <div class="form-group">
+            <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
+            <div class="col-xs-10">
+                <select type="text" class="form-control" name="topic" id="inputTopic">
+                    <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
+                </select>
+            </div>
+        </div>
+        <!-- comments -->
+        <div class="form-group">
+            <label for="inputOther" class="col-xs-2">{{ nameList.other }}</label>
+            <div class="col-xs-10">
+                <textarea class="form-control" rows="5" id="inputOther"></textarea>
+            </div>
+        </div>
+
+        <input class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="registrationForm.$invalid" type="submit"
+               ng-click="submitForm()" value="{{ nameList.confirmButton}}"/>
+
     </form>
 </div>
-<!--/div ng-controller="ExampleController"-->
+<div id="confirmDiv" class="container hidden">
+    <form id="confirmForm" class="form-horizontal" novalidate>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <p>{{ confirmationNameList[0] }}</p><br>
+                <p>{{ confirmationNameList[1] }}</p><br>
+                <p>{{ confirmationNameList[2] }}</p>
+            </div>
+        </div>
+        <a href="registrationOverview.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3] }}</a>
+    </form>
+</div>
+
 </body>
 </html>

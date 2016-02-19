@@ -22,24 +22,24 @@
         $scope.isEmailRequired = true;
     }
 
-            $scope.hideEmailField = function(){
-                                $("#inputEmailDiv").addClass("hidden");
-                                $("#inputPhoneDiv").removeClass("hidden");
-                                $scope.isEmailRequired = false;
-                                }
+    $scope.hideEmailField = function(){
+        $("#inputEmailDiv").addClass("hidden");
+        $("#inputPhoneDiv").removeClass("hidden");
+        $scope.isEmailRequired = false;
+    }
 
     $http({
      method: 'GET',
      url: '/' + language
     }).then(function successCallback(response) {
-       $scope.nameList = response.data.contactUsNameList;
-       $scope.dropDownListName = response.data.dropDownListName;
-       $scope.dropDownList = response.data.contactUsDropDownMenuList;
-       $scope.radioButtonList = response.data.contactUsRadioButtonList;
-       $scope.confirmationNameList = response.data.contactUsConfirmationNameList;
-       $scope.errorList = response.data.errorMessagesList;
+        $scope.nameList = response.data.contactUsNameList;
+        $scope.dropDownListName = response.data.dropDownListName;
+        $scope.dropDownList = response.data.contactUsDropDownMenuList;
+        $scope.radioButtonList = response.data.contactUsRadioButtonList;
+        $scope.confirmationNameList = response.data.contactUsConfirmationNameList;
+        $scope.errorList = response.data.errorMessagesList;
 
-       document.title = $scope.nameList[0];
+        document.title = $scope.nameList[0];
     });
 
     $scope.UpdateData = function () {

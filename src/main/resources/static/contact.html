@@ -24,7 +24,6 @@
 
 <div id="formDiv" class="container">
     <form ng-submit="submitForm()" id="contactForm" name="contactForm" class="form-horizontal" novalidate>
-
         <!-- TopicList -->
         <div class="form-group">
             <label for="inputTopic" class="col-xs-2">{{ nameList[1] }}</label>
@@ -85,7 +84,6 @@
                 </div>
             </div>
         </div>
-
         <!-- phone -->
         <div class="form-group" id="inputPhoneDiv"
              ng-class="{ 'has-error': contactForm.phoneNr.$invalid && !contactForm.phoneNr.$pristine}">
@@ -126,7 +124,6 @@
                 </div>
             </div>
         </div>
-
         <!-- radio Buttons -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList[7] }}</label>
@@ -142,7 +139,6 @@
                 </label>
             </div>
         </div>
-
         <!-- info msg -->
         <div class="form-group">
             <div class="col-xs-12">
