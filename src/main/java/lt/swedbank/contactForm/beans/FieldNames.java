@@ -105,7 +105,7 @@ public class FieldNames {
         contactUsNameList.add("Tema *");
         contactUsNameList.add("Žinutės tekstas *");
         contactUsNameList.add("Vardas *");
-        contactUsNameList.add("Pavardė *");
+        contactUsNameList.add("Pavardė ");
         contactUsNameList.add("Telefonas *");
         contactUsNameList.add("El. Paštas *");
         contactUsNameList.add("Kaip pageidaujate gauti atsakymą *");
