@@ -84,10 +84,10 @@ public class LanguageService {
         result = sqlConnection.selectRegistations("");
 
         ArrayList<String> databaseValues;
-        Map<String, ArrayList<String>> dataFromDatabase = new HashMap<>();
+        Map<String, ArrayList<String>> dataFromDatabase = new HashMap<String, ArrayList<String>>();
         for (String s : result) {
             String[] split = s.split(";");
-            databaseValues = new ArrayList<>();
+            databaseValues = new ArrayList<String>();
             databaseValues.add(split[1]);
             databaseValues.add(split[2]);
             databaseValues.add(split[3]);
