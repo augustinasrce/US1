@@ -12,18 +12,19 @@ import java.util.ArrayList;
 public class SqlConnection {
 
     // parameters for php m adin in server
-    //private String url = "jdbc:mysql://contactform-swedbank.rhcloud.com:3306/";
-    //private String dbName = "swedContactUs";
-    //private String userName = "Program";
-    //private String password = "program123";
+    private String url = "jdbc:mysql://contactform-swedbank.rhcloud.com:3306/";
+    private String dbName = "FormContactUs";
+    private String driver = "com.mysql.jdbc.Driver";
+    private String userName = "Program";
+    private String password = "program123";
 
 
     //parameters for localhost / my pc
-    private String url = "jdbc:mysql://localhost:3306/";
-    private String dbName = "mydb";
-    private String driver = "com.mysql.jdbc.Driver";
-    private String userName = "root";
-    private String password = "matematikas";
+//    private String url = "jdbc:mysql://localhost:3306/";
+//    private String dbName = "mydb";
+//    private String driver = "com.mysql.jdbc.Driver";
+//    private String userName = "root";
+//    private String password = "matematikas";
 
     // connection and statement;
     private Connection conn;
