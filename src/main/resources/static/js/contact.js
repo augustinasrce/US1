@@ -21,23 +21,28 @@
                 $scope.ServerResponse = data;
             })
         };
+
+
+
+
     });
 
-    function hidePhoneField() {
-        $("#phone").addClass("hidden");
-        $("#email").removeClass("hidden");
-    }
+            function hidePhoneField() {
+                $("#phone").addClass("hidden");
+                $("#inputEmailDiv").removeClass("hidden");
+            };
 
-    function hideEmailField() {
-        $("#email").addClass("hidden");
-        $("#phone").removeClass("hidden");
-    }
-    function showEmailPhoneFields() {
-        $("#phone").removeClass("hidden");
-        $("#email").removeClass("hidden");
-    }
+            function hideEmailField() {
+                $("#inputEmailDiv").addClass("hidden");
+                $("#phone").removeClass("hidden");
+            };
 
-    function submitForm() {
-       $("#contactForm").addClass("hidden");
-       $("#confirm").removeClass("hidden");
-    }
+            function showEmailPhoneFields() {
+                $("#phone").removeClass("hidden");
+                $("#inputEmailDiv").removeClass("hidden");
+            }
+
+            function submitForm() {
+               $("#contactForm").addClass("hidden");
+               $("#confirm").removeClass("hidden");
+            }
