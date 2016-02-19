@@ -106,7 +106,6 @@ public class SqlConnection {
                 line = String.valueOf(id) + ";" + subject + ";" + message + ";" +
                         date + ";" + bank_branch + ";" + client_name + ";" + client_surname + ";" + client_phone_number + ";" + client_email;
                 result.add(line);
-//                System.out.println(id + "\t" + name + "\t" + surname + "\t" + phone+ "\t" + email);
             }
         } catch (Exception e) {
             System.out.printf(e.getMessage());
