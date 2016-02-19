@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class SqlConnection {
 
     // parameters for php m adin in server
-    private String url = "jdbc:mysql://contactform-swedbank.rhcloud.com:3306/";
+    private String url = "jdbc:mysql://127.7.138.2:3306/";
     private String dbName = "FormContactUs";
     private String driver = "com.mysql.jdbc.Driver";
     private String userName = "Program123";

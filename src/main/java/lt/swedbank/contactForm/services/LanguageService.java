@@ -21,12 +21,6 @@ public class LanguageService {
 
     Language language = null;
 
-    String testas = null;
-    @PostConstruct
-    public void init() {
-    }
-
-
     @RequestMapping("/lt")
     public FieldNames getLanguageLT() {
         language = new Language();
@@ -57,21 +51,18 @@ public class LanguageService {
         return language.getFieldNamesLV();
     }
 
-    @RequestMapping(value = "/US1/{dropDownItem}/{textMessage}/{name}/{surname}/{phoneNr}/{email}/{answerType}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/US1/{dropDownItem}/{textMessage}/{name}/{surname}/{phoneNr}/{email}/{answerType}/", method = RequestMethod.PUT)
     public void putContactUs(@PathVariable String dropDownItem,
                              @PathVariable String textMessage,
                              @PathVariable String name,
                              @PathVariable String surname,
                              @PathVariable String phoneNr,
                              @PathVariable String email,
-                             @PathVariable String answerType)
-    {
-         SqlConnection sqlConnection = new SqlConnection();
+                             @PathVariable String answerType) {
+        SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
-
         sqlConnection.insertContactUsbigTable(dropDownItem, textMessage, answerType, name, surname, phoneNr, email);
-
-        sqlConnection.closeConnection();;
+        sqlConnection.closeConnection();
     }
 
     @RequestMapping("/sql")
