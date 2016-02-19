@@ -69,8 +69,8 @@ public class LanguageService {
          SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
 
-        sqlConnection.insertClient(10, name, surname, phoneNr, email);
-        sqlConnection.insertIContactUs(10, answerType, textMessage, 10, dropDownItem);
+        sqlConnection.insertClient(name, surname, phoneNr, email);
+        sqlConnection.insertIContactUs(answerType, textMessage, 10, dropDownItem);
 
         sqlConnection.closeConnection();;
     }

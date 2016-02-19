@@ -46,7 +46,7 @@
                               ng-model="main.textMessage"
                               ng-minlength="5"
                               ng-maxlength="400"
-                              required></textarea>
+                              Required></textarea>
                 <div class="help-block" ng-messages="contactForm.textMessage.$error"
                      ng-if="!contactForm.textMessage.$pristine">
                     <div ng-messages-include="errorMessages/textareaMessages.html"></div>
@@ -63,7 +63,7 @@
                        ng-model="main.name"
                        ng-minlength="2"
                        ng-maxlength="40"
-                       required>
+                       Required>
                 <div class="help-block" ng-messages="contactForm.name.$error" ng-if="!contactForm.name.$pristine">
                     <div ng-messages-include="errorMessages/nameMessages.html"></div>
                 </div>
@@ -71,10 +71,16 @@
         </div>
 
         <!-- Surname -->
-        <div class="form-group">
-            <label for="inputSurname" ng-model="inputSurname" class="col-xs-2">{{ nameList[4] }}</label>
+        <div class="form-group"
+             ng-class="{ 'has-error': !contactForm.surname.$pristine && contactForm.surname.$invalid }">
+            <label for="inputSurname" class="col-xs-2">{{ nameList[4] }}</label>
             <div class="col-xs-10">
-                <input type="text" name="surname" class="form-control" id="inputSurname" >
+                <input type="text" name="surname" class="form-control" id="inputSurname"
+                       ng-model="main.surname"
+                       ng-maxlength="40">
+                <div class="help-block" ng-messages="contactForm.surname.$error" ng-if="!contactForm.surname.$pristine">
+                    <div ng-messages-include="errorMessages/surnameMessages.html"></div>
+                </div>
             </div>
         </div>
 
@@ -87,7 +93,7 @@
                        ng-model="main.phoneNr"
                        ng-minlength="7"
                        ng-maxlength="20"
-                       required>
+                       Required>
                 <div class="help-block" ng-messages="contactForm.phoneNr.$error"
                      ng-if="!contactForm.phoneNr.$pristine">
                     <div ng-messages-include="errorMessages/phoneMessages.html"></div>
@@ -104,7 +110,7 @@
                        ng-model="main.email"
                        ng-minlength="5"
                        ng-maxlength="50"
-                       required>
+                       ng-required="isEmailRequired">
                 <div class="help-block" ng-messages="contactForm.email.$error"
                      ng-if="!contactForm.email.$pristine">
                     <div ng-messages-include="errorMessages/emailMessages.html"></div>

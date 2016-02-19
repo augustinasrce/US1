@@ -89,8 +89,8 @@ public class SqlConnection {
         return result;
     }
 
-    public void insertClient(int id, String name, String surname, String phone, String email){
-        String query = String.format("INSERT into Client(client_id, name, surname, phone_number, email) VALUES(%d, \"%s\", \"%s\" ,\"%s\" ,\"%s\")", id, name, surname, phone, email);
+    public void insertClient(String name, String surname, String phone, String email){
+        String query = String.format("INSERT into Client(name, surname, phone_number, email) VALUES(\"%s\", \"%s\" ,\"%s\" ,\"%s\")", name, surname, phone, email);
         try {
             int value = st.executeUpdate(query);
             if (value == 1)
@@ -132,8 +132,8 @@ public class SqlConnection {
         return result;
     }
 
-    public void insertIContactUs(int id, String contactBy, String message, int clientId, String subject){
-        String query = String.format("INSERT into ContactUs(contactUs_id, contact_by, message, Client_client_id, subject) VALUES(%d, \"%s\", \"%s\" ,\"%d\", \"%s\")", id, contactBy, message, clientId, subject);
+    public void insertIContactUs(String contactBy, String message, int clientId, String subject){
+        String query = String.format("INSERT into ContactUs(contact_by, message, Client_client_id, subject) VALUES(\"%s\", \"%s\" ,\"%d\", \"%s\")", contactBy, message, clientId, subject);
         try {
             int value = st.executeUpdate(query);
             if (value == 1)
@@ -178,9 +178,9 @@ public class SqlConnection {
         return result;
     }
 
-    public void insertRegistraions(int id, String date, String subject, String comments, int clientId, int branchId){
-        String query = String.format("insert into registrations(registration_id, date, subject, comments, Client_client_id, Branch_branch_id)" +
-                "values(%d, \"%s\", \"%s\", \"%s\", %d, %d);", id, date, subject, comments, clientId, branchId);
+    public void insertRegistraions(String date, String subject, String comments, int clientId, int branchId){
+        String query = String.format("insert into registrations(date, subject, comments, Client_client_id, Branch_branch_id)" +
+                "values(\"%s\", \"%s\", \"%s\", %d, %d);", date, subject, comments, clientId, branchId);
         try {
             int value = st.executeUpdate(query);
             if (value == 1)
@@ -221,9 +221,9 @@ public class SqlConnection {
         return result;
     }
 
-    public void insertBranch(int id, String adress, String workHours, String workHoursInWeekends){
-        String query = String.format("insert into branch(branch_id, adress, workHours, workHoursInWeekends)" +
-                "values(%d, \"%s\", \"%s\", \"%s\");\n", id, adress, workHours, workHoursInWeekends);
+    public void insertBranch(String adress, String workHours, String workHoursInWeekends){
+        String query = String.format("insert into branch(adress, workHours, workHoursInWeekends)" +
+                "values(\"%s\", \"%s\", \"%s\");\n", adress, workHours, workHoursInWeekends);
         try {
             int value = st.executeUpdate(query);
             if (value == 1)
