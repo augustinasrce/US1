@@ -12,6 +12,7 @@
         $scope.bankDivisions = response.data.bankDivisionList;
 
         document.title =  response.data.registrationNameTags.title;
+
           });
 
  });
