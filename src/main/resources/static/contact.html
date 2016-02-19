@@ -22,8 +22,8 @@
     <h1>{{ nameList[0] }}</h1>
 </div>
 
-<div class="container">
-    <form ng-submit="submitForm()" name="contactForm" class="form-horizontal" novalidate>
+<div id="formDiv" class="container">
+    <form ng-submit="submitForm()" id="contactForm" name="contactForm" class="form-horizontal" novalidate>
 
         <!-- TopicList -->
         <div class="form-group">
@@ -35,8 +35,6 @@
                 </select>
             </div>
         </div>
-
-
         <!-- Message -->
         <div class="form-group"
              ng-class="{ 'has-error': !contactForm.textMessage.$pristine && contactForm.textMessage.$invalid }">
@@ -55,7 +53,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Name -->
         <div class="form-group"
              ng-class="{ 'has-error': !contactForm.name.$pristine && contactForm.name.$invalid }">
@@ -73,7 +70,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Surname -->
         <div class="form-group"
              ng-class="{ 'has-error': !contactForm.surname.$pristine && contactForm.surname.$invalid }">
@@ -92,26 +88,28 @@
 
         <!-- phone -->
         <div class="form-group" id="inputPhoneDiv"
-             ng-class="{ 'has-error': !contactForm.phoneNr.$pristine && contactForm.phoneNr.$invalid}">
+             ng-class="{ 'has-error': contactForm.phoneNr.$invalid && !contactForm.phoneNr.$pristine}">
             <label for="inputPhone" class="col-xs-2">{{ nameList[5] }}</label>
             <div class="col-xs-10">
                 <input type="text" name="phoneNr" class="form-control" id="inputPhone"
                        ng-model="main.phoneNr"
-                       ng-minlength="7"
+                       ng-minLength="7"
                        ng-maxlength="20"
-                       Required>
+                       ng-required="isPhoneRequired">
                 <div class="help-block" ng-messages="contactForm.phoneNr.$error"
-                     ng-if="!contactForm.phoneNr.$pristine">
+                     ng-show="contactForm.phoneNr.$invalid && !contactForm.phoneNr.$pristine">
+
                     <p ng-message="minlength">{{ errorList[9] }}</p>
                     <p ng-message="maxlength">{{ errorList[10] }}</p>
                     <p ng-message="required">{{ errorList[11] }}</p>
                     <p ng-message="number">{{ errorList[11] }}</p>
+                </div>
             </div>
         </div>
 
         <!-- email -->
         <div class="form-group" id="inputEmailDiv"
-             ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
+             ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine}">
             <label for="inputEmail" class="col-xs-2">{{ nameList[6] }}</label>
             <div class="col-xs-10">
                 <input type="email" name="email" class="form-control" id="inputEmail"
@@ -120,7 +118,7 @@
                        ng-maxlength="50"
                        ng-required="isEmailRequired">
                 <div class="help-block" ng-messages="contactForm.email.$error"
-                     ng-if="!contactForm.email.$pristine">
+                     ng-show="contactForm.email.$invalid && !contactForm.email.$pristine">
                     <p ng-message="minlength">{{ errorList[12] }}</p>
                     <p ng-message="maxlength">{{ errorList[13] }}</p>
                     <p ng-message="required">{{ errorList[14] }}</p>
@@ -133,13 +131,13 @@
         <div class="form-group">
             <label class="col-xs-2">{{ nameList[7] }}</label>
             <div class="col-xs-10 btn-group" data-toggle="buttons">
-                <label class="btn btn-default" onclick="hideEmailField()">
+                <label class="btn btn-default" ng-click="hideEmailField()">
                     <input type="radio" id="inputContactBy" name="answerType">{{ radioButtonList[0] }}
                 </label>
-                <label class="btn btn-default" onclick="hidePhoneField()">
+                <label class="btn btn-default" ng-click="hidePhoneField()">
                     <input type="radio" name="answerType">{{ radioButtonList[1] }}
                 </label>
-                <label class="btn btn-default active" onclick="showEmailPhoneFields()">
+                <label class="btn btn-default active" ng-click="showPhoneEmailFields()">
                     <input type="radio" name="answerType" checked>{{ radioButtonList[2] }}
                 </label>
             </div>
