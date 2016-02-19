@@ -1,7 +1,17 @@
     var app = angular.module('ContactUsScreen', ['ngMessages']);
     var language = document.cookie;
 
+
     app.controller('ContactUsScreenController', function($scope, $http) {
+
+            $scope.isEmailRequired = true;
+
+            $scope.hideEmailField = function(){
+                                $("#inputEmailDiv").addClass("hidden");
+                                $("#inputPhoneDiv").removeClass("hidden");
+                                $scope.isEmailRequired = false;
+                                }
+
            $http({
              method: 'GET',
              url: '/' + language
@@ -27,29 +37,4 @@
 
     });
 
-            function hidePhoneField() {
-                $("#inputPhoneDiv").addClass("hidden");
-                $("#inputEmailDiv").removeClass("hidden");
-                $('#inputPhone').removeAttr('required');
 
-            };
-
-            function hideEmailField() {
-                $("#inputEmailDiv").addClass("hidden");
-                $("#inputPhoneDiv").removeClass("hidden");
-                $('#inputEmail').removeAttr('required');
-                inputEmail.removeAttribute('required');
-
-
-            };
-
-            function showEmailPhoneFields() {
-                $("#inputPhoneDiv").removeClass("hidden");
-                $("#inputEmailDiv").removeClass("hidden");
-
-            }
-
-            function submitForm() {
-               $("#contactForm").addClass("hidden");
-               $("#confirm").removeClass("hidden");
-            }
