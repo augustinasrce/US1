@@ -66,11 +66,10 @@ public class LanguageService {
                              @PathVariable String email,
                              @PathVariable String answerType)
     {
-        SqlConnection sqlConnection = new SqlConnection();
+         SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
 
-        sqlConnection.insertClient(10, name, surname, phoneNr, email);
-        sqlConnection.insertIContactUs(10, answerType, textMessage, 10, dropDownItem);
+        sqlConnection.insertContactUsbigTable(dropDownItem, textMessage, answerType, name, surname, phoneNr, email);
 
         sqlConnection.closeConnection();;
     }
@@ -81,7 +80,7 @@ public class LanguageService {
         sqlConnection.connect();
 
         ArrayList<String> result; // = new ArrayList<String>();
-        result = sqlConnection.selectRegistations("");
+        result = sqlConnection.selectRegistrationBigTable("");
 
         ArrayList<String> databaseValues;
         Map<String, ArrayList<String>> dataFromDatabase = new HashMap<String, ArrayList<String>>();
@@ -101,7 +100,7 @@ public class LanguageService {
         sqlConnection.closeConnection();
         return dataFromDatabase;
     }
-    /*
+ /*
     @RequestMapping("/lt/contact")
     public FieldNames getLanguageForContactUsScreenLT() {
         language = new Language();
