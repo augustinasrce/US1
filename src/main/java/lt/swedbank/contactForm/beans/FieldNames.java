@@ -1,5 +1,6 @@
 package lt.swedbank.contactForm.beans;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,7 @@ public class FieldNames {
     ArrayList<String> bankDivisionList;
     ArrayList<String> topicList;
     ArrayList<String> registrationOverviewList;
+    ArrayList<String> errorMessagesList;
     Map<String, String> registrationNameTags;
 
     public FieldNames() {
@@ -25,6 +27,7 @@ public class FieldNames {
         topicList = new ArrayList<String>();
         registrationNameTags = new HashMap<String, String>();
         registrationOverviewList = new ArrayList<String>();
+        errorMessagesList = new ArrayList<String>();
 
     }
 
@@ -37,7 +40,7 @@ public class FieldNames {
         contactUsNameList.add("Тема *");
         contactUsNameList.add("Текст сообщения *");
         contactUsNameList.add("Имя *");
-        contactUsNameList.add("Фамилия *");
+        contactUsNameList.add("Фамилия");
         contactUsNameList.add("Телефон *");
         contactUsNameList.add("Адрес электронной почты *");
         contactUsNameList.add("Каким образом предпочитаете получить ответ *");
@@ -94,6 +97,32 @@ public class FieldNames {
         registrationNameTags.put("confirmButton", "Отправить");
 
         registrationOverviewList.add("Регистрации по интернету");
+
+        errorMessagesList.add("Ваше имя слишком короткое!");
+        errorMessagesList.add("Ваше имя слишком длинное!");
+        errorMessagesList.add("Введите свое имя!");
+
+        errorMessagesList.add("Ваша фамилия слишком короткая!");
+        errorMessagesList.add("Ваша фамилия слишком длинная!");
+        errorMessagesList.add("Введите свою фамилию!");
+
+        errorMessagesList.add("Текст введеного сообщения слишком короткий!");
+        errorMessagesList.add("Текст введеного сообщения слишком длинный!");
+        errorMessagesList.add("Введите текст сообщения!");
+
+        errorMessagesList.add("Номер вашего телефона слишком короткий!");
+        errorMessagesList.add("Номер вашего телефона слишком длинный!");
+        errorMessagesList.add("Введите номер телефона!");
+
+        errorMessagesList.add("Введите адрес электронной почты!");
+        errorMessagesList.add("Адрес вашей электронной почты слишком короткий!");
+        errorMessagesList.add("Адрес вашей электронной почты слишком длинный!");
+        errorMessagesList.add("Неверно введен адрес электронной почты!");
+
+        errorMessagesList.add("Введеная дата слишком короткая!");
+        errorMessagesList.add("Введеная дата слишком длинная!");
+        errorMessagesList.add("Введите дату!");
+        errorMessagesList.add("Дата введена неверно!");
     }
 
     public void setupLanguageLT() {
@@ -161,6 +190,34 @@ public class FieldNames {
         registrationNameTags.put("confirmButton", "Siųsti");
 
         registrationOverviewList.add("Registracijos internetu");
+
+        errorMessagesList.add("Jūsų vardas per trumpas!");
+        errorMessagesList.add("Jūsų vardas per ilgas!");
+        errorMessagesList.add("Įveskite savo vardą!");
+
+        errorMessagesList.add("Jūsų pavardė per trumpa!");
+        errorMessagesList.add("Jūsų pavardė per ilga!");
+        errorMessagesList.add("Įveskite savo pavardę!");
+
+        errorMessagesList.add("Įvestas žinutės tekstas per trumpas!");
+        errorMessagesList.add("Įvestas žinutės tekstas per ilgas!");
+        errorMessagesList.add("Įveskite žinutės tekstą!");
+
+        errorMessagesList.add("Jūsų telefono numeris per trumpas!");
+        errorMessagesList.add("Jūsų telefono numeris per ilgas!");
+        errorMessagesList.add("Įveskite telefono numerį!");
+
+        errorMessagesList.add("Įveskite elektroninio pašto adresą!");
+        errorMessagesList.add("Jūsų elektroninio pašto adresas per trumpas!");
+        errorMessagesList.add("Jūsų elektroninio pašto adresas per ilgas!");
+        errorMessagesList.add("Neteisingai įvestas elektroninio pašto adresas!");
+
+        errorMessagesList.add("Įvesta data per trumpa!");
+        errorMessagesList.add("Įvesta data per ilga!");
+        errorMessagesList.add("Įveskite datą!");
+        errorMessagesList.add("Neteisingai įvesta data!");
+
+
     }
 
     public void setupLanguageEE() {
@@ -172,7 +229,7 @@ public class FieldNames {
         contactUsNameList.add("Teema *");
         contactUsNameList.add("Tekstisõnumeid *");
         contactUsNameList.add("Nimi *");
-        contactUsNameList.add("Perekonnanimi *");
+        contactUsNameList.add("Perekonnanimi");
         contactUsNameList.add("Telefon *");
         contactUsNameList.add("E-mail *");
         contactUsNameList.add("Kuidas teile meeldib saada vastus*");
@@ -228,6 +285,32 @@ public class FieldNames {
         registrationNameTags.put("confirmButton", "Saatma");
 
         registrationOverviewList.add("Registreerimine Internetis");
+
+        errorMessagesList.add("Teie nimi on liiga lühike!");
+        errorMessagesList.add("Teie nimi on liiga pikk!");
+        errorMessagesList.add("Sisestama oma nimi!");
+
+        errorMessagesList.add("Teie perekonnanimi on liiga lühike!");
+        errorMessagesList.add("Teie perekonnanimi on liiga pikk!");
+        errorMessagesList.add("Sisestama oma perekonnanimi!");
+
+        errorMessagesList.add ("Sisenenud sõnumi teksti on liiga lühike!");
+        errorMessagesList.add ("Sisenenud sõnumi teksti on liiga pikk!");
+        errorMessagesList.add ("Sisestama oma sõnum!");
+
+        errorMessagesList.add("Teie telefoni number on liiga lühike!");
+        errorMessagesList.add("Teie telefoni number on liiga pikk!");
+        errorMessagesList.add("Sisestama telefoninumber!");
+
+        errorMessagesList.add("Sisesta e-posti aadress!");
+        errorMessagesList.add("Teie e-posti aadress on liiga lühike!");
+        errorMessagesList.add("Teie e-posti aadress on liiga pikk!");
+        errorMessagesList.add("Vale e-posti aadress!");
+
+        errorMessagesList.add ("Kuupäev kantakse liiga lühike!");
+        errorMessagesList.add ("Kuupäev Sisestatud on liiga pikk!");
+        errorMessagesList.add ("Sisestage kuupäev!");
+        errorMessagesList.add ("Valesti sisestatud kuupäeva!");
     }
 
     public void setupLanguageEN() {
@@ -239,7 +322,7 @@ public class FieldNames {
         contactUsNameList.add("Topic *");
         contactUsNameList.add("Text field *");
         contactUsNameList.add("Name *");
-        contactUsNameList.add("Surname *");
+        contactUsNameList.add("Surname");
         contactUsNameList.add("Telephone number *");
         contactUsNameList.add("E-mail *");
         contactUsNameList.add("How would you like to receive an answer *");
@@ -294,6 +377,33 @@ public class FieldNames {
         registrationNameTags.put("topic", "Theme *");
         registrationNameTags.put("other", "Comments");
         registrationNameTags.put("confirmButton", "Send");
+
+        errorMessagesList.add("Name to short!");
+        errorMessagesList.add("Name to long!");
+        errorMessagesList.add("Enter your name!");
+
+        errorMessagesList.add("Surname to short!");
+        errorMessagesList.add("Surname to long!");
+        errorMessagesList.add("Enter your surname!");
+
+        errorMessagesList.add("Length of your message is to short!");
+        errorMessagesList.add("Length of your message is to long!");
+        errorMessagesList.add("Enter your message!");
+
+        errorMessagesList.add("Phone number to short!");
+        errorMessagesList.add("Phone number to long!");
+        errorMessagesList.add("Enter your phone number!");
+
+        errorMessagesList.add("Enter your e-mail!");
+        errorMessagesList.add("E-mail to short!");
+        errorMessagesList.add("E-mail to long!");
+        errorMessagesList.add("Incorrect e-mail!");
+
+        errorMessagesList.add("Date to short!");
+        errorMessagesList.add("Date to long!");
+        errorMessagesList.add("Enter date!");
+        errorMessagesList.add("Incorrect date!");
+
     }
 
     public void setupLanguageLV() {
@@ -305,7 +415,7 @@ public class FieldNames {
         contactUsNameList.add("Tēma *");
         contactUsNameList.add("Dokuments ziņojuma *");
         contactUsNameList.add("Vārds *");
-        contactUsNameList.add("Uzvārds *");
+        contactUsNameList.add("Uzvārds");
         contactUsNameList.add("Tālrunis *");
         contactUsNameList.add("El-pasts *");
         contactUsNameList.add("Kā jūs vēlaties saņemt atbildi *");
@@ -364,6 +474,32 @@ public class FieldNames {
         registrationNameTags.put("confirmButton", "Sūtīt");
 
         registrationOverviewList.add("Reģistrācijas online");
+
+        errorMessagesList.add("Tavs vārds ir pārāk īss!");
+        errorMessagesList.add("Tavs vārds ir pārāk garš!");
+        errorMessagesList.add("Ievadiet savu vārdu!");
+
+        errorMessagesList.add("Tavs uzvārds ir pārāk īss!");
+        errorMessagesList.add("Tavs uzvārds ir pārāk garš!");
+        errorMessagesList.add("Ievadiet savu uzvārdu!");
+
+        errorMessagesList.add("Ievadīta ziņojuma teksts ir pārāk īss!");
+        errorMessagesList.add("Ievadīta ziņojuma teksts ir pārāk garš!");
+        errorMessagesList.add("Ievadiet savu ziņu");
+
+        errorMessagesList.add("Jūsu tālruņa numurs ir pārāk īss!");
+        errorMessagesList.add("Jūsu tālruņa numurs ir pārāk garš!");
+        errorMessagesList.add("Ievadiet tālruņa numuru!");
+
+        errorMessagesList.add("Ievadiet e-pasta adresi!");
+        errorMessagesList.add("Jūsu e-pasta adrese ir pārāk īss!");
+        errorMessagesList.add ("Jūsu e-pasta adrese ir pārāk gara!");
+        errorMessagesList.add ("Nepareizi e-pasta adresi!");
+
+        errorMessagesList.add("Datums ievadīta ir pārāk īss!");
+        errorMessagesList.add("Datums ievadīta ir pārāk garš!");
+        errorMessagesList.add("Ievadiet datumu!");
+        errorMessagesList.add("Nepareizi ievadīts datums!");
     }
 
 
@@ -401,6 +537,10 @@ public class FieldNames {
 
     public ArrayList<String> getRegistrationOverviewList() {
         return registrationOverviewList;
+    }
+
+    public ArrayList<String> getErrorMessagesList() {
+        return errorMessagesList;
     }
 
 }

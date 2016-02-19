@@ -22,8 +22,8 @@
     <h1>{{ nameList[0] }}</h1>
 </div>
 
-<div id="formDiv" class="container">
-    <form ng-submit="submitForm()" id="contactForm" name="contactForm" class="form-horizontal" novalidate>
+<div class="container">
+    <form ng-submit="submitForm()" name="contactForm" class="form-horizontal" novalidate>
 
         <!-- TopicList -->
         <div class="form-group">
@@ -49,7 +49,9 @@
                               Required></textarea>
                 <div class="help-block" ng-messages="contactForm.textMessage.$error"
                      ng-if="!contactForm.textMessage.$pristine">
-                    <div ng-messages-include="errorMessages/textareaMessages.html"></div>
+                    <p ng-message="minlength">{{ errorList[6] }}</p>
+                    <p ng-message="maxlength">{{ errorList[7] }}</p>
+                    <p ng-message="required">{{ errorList[8] }}</p>
                 </div>
             </div>
         </div>
@@ -65,43 +67,51 @@
                        ng-maxlength="40"
                        Required>
                 <div class="help-block" ng-messages="contactForm.name.$error" ng-if="!contactForm.name.$pristine">
-                    <div ng-messages-include="errorMessages/nameMessages.html"></div>
+                    <p ng-message="minlength">{{ errorList[0] }}</p>
+                    <p ng-message="maxlength">{{ errorList[1] }}</p>
+                    <p ng-message="required">{{ errorList[2] }}</p>
                 </div>
             </div>
         </div>
+
         <!-- Surname -->
         <div class="form-group"
-             ng-class="{ 'has-error': contactForm.surname.$invalid }">
+             ng-class="{ 'has-error': !contactForm.surname.$pristine && contactForm.surname.$invalid }">
             <label for="inputSurname" class="col-xs-2">{{ nameList[4] }}</label>
             <div class="col-xs-10">
                 <input type="text" name="surname" class="form-control" id="inputSurname"
                        ng-model="main.surname"
                        ng-maxlength="40">
                 <div class="help-block" ng-messages="contactForm.surname.$error" ng-if="!contactForm.surname.$pristine">
-                    <div ng-messages-include="errorMessages/surnameMessages.html"></div>
+                    <p ng-message="minlength">{{ errorList[3] }}</p>
+                    <p ng-message="maxlength">{{ errorList[4] }}</p>
+                    <p ng-message="required">{{ errorList[5] }}</p>
                 </div>
             </div>
         </div>
+
         <!-- phone -->
         <div class="form-group" id="inputPhoneDiv"
              ng-class="{ 'has-error': !contactForm.phoneNr.$pristine && contactForm.phoneNr.$invalid}">
             <label for="inputPhone" class="col-xs-2">{{ nameList[5] }}</label>
             <div class="col-xs-10">
-
-                <input type="text" name="phoneNr" class="form-control" id="inputPhone" value="+370"
+                <input type="text" name="phoneNr" class="form-control" id="inputPhone"
                        ng-model="main.phoneNr"
                        ng-minlength="7"
                        ng-maxlength="20"
-                       ng-required="isEmailRequired">
+                       Required>
                 <div class="help-block" ng-messages="contactForm.phoneNr.$error"
                      ng-if="!contactForm.phoneNr.$pristine">
-                    <div ng-messages-include="errorMessages/phoneMessages.html"></div>
-                </div>
+                    <p ng-message="minlength">{{ errorList[9] }}</p>
+                    <p ng-message="maxlength">{{ errorList[10] }}</p>
+                    <p ng-message="required">{{ errorList[11] }}</p>
+                    <p ng-message="number">{{ errorList[11] }}</p>
             </div>
         </div>
+
         <!-- email -->
         <div class="form-group" id="inputEmailDiv"
-             ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine}">
+             ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
             <label for="inputEmail" class="col-xs-2">{{ nameList[6] }}</label>
             <div class="col-xs-10">
                 <input type="email" name="email" class="form-control" id="inputEmail"
@@ -111,25 +121,30 @@
                        ng-required="isEmailRequired">
                 <div class="help-block" ng-messages="contactForm.email.$error"
                      ng-if="!contactForm.email.$pristine">
-                    <div ng-messages-include="errorMessages/emailMessages.html"></div>
+                    <p ng-message="minlength">{{ errorList[12] }}</p>
+                    <p ng-message="maxlength">{{ errorList[13] }}</p>
+                    <p ng-message="required">{{ errorList[14] }}</p>
+                    <p ng-message="email">{{ errorList[15] }}</p>
                 </div>
             </div>
         </div>
+
         <!-- radio Buttons -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList[7] }}</label>
             <div class="col-xs-10 btn-group" data-toggle="buttons">
-                <label class="btn btn-default" ng-click="hideEmailField()">
+                <label class="btn btn-default" onclick="hideEmailField()">
                     <input type="radio" id="inputContactBy" name="answerType">{{ radioButtonList[0] }}
                 </label>
-                <label class="btn btn-default" ng-click="hidePhoneField()">
+                <label class="btn btn-default" onclick="hidePhoneField()">
                     <input type="radio" name="answerType">{{ radioButtonList[1] }}
                 </label>
-                <label class="btn btn-default active" ng-click="showPhoneEmailFields()">
+                <label class="btn btn-default active" onclick="showEmailPhoneFields()">
                     <input type="radio" name="answerType" checked>{{ radioButtonList[2] }}
                 </label>
             </div>
         </div>
+
         <!-- info msg -->
         <div class="form-group">
             <div class="col-xs-12">
@@ -159,7 +174,6 @@
 
 
 </div>
-
 
 <!-- for BootStrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
