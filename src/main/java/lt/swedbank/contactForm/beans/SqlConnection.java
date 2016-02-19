@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class SqlConnection {
 
-    //parameters for php m adin in server
-    private String url = "jdbc:mysql://localhost:3306/";
+    //parameters for openshift
+    private String url = "jdbc:mysql://127.7.138.2:3306/";
     private String driver = "com.mysql.jdbc.Driver";
     private String dbName = "swedContactUs";
     private String userName = "Program";
