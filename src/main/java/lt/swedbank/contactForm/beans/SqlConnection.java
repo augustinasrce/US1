@@ -9,23 +9,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SqlConnection {
-
-    // parameters for php m adin in server
     private String url = "jdbc:mysql://127.7.138.2:3306/";
     private String dbName = "FormContactUs";
     private String driver = "com.mysql.jdbc.Driver";
     private String userName = "Program123";
     private String password = "program123";
 
-
-    //parameters for localhost / my pc
-//    private String url = "jdbc:mysql://localhost:3306/";
-//    private String dbName = "mydb";
-//    private String driver = "com.mysql.jdbc.Driver";
-//    private String userName = "root";
-//    private String password = "matematikas";
-
-    // connection and statement;
     private Connection conn;
     private Statement st;
 
@@ -34,10 +23,7 @@ public class SqlConnection {
             Class.forName(driver).newInstance();
             conn = DriverManager.getConnection(url + dbName, userName, password);
             st = conn.createStatement();
-
-            //Read more: http://mrbool.com/how-to-connect-with-mysql-database-using-java/25440#ixzz40FfeIIAe
-
-            return true;
+             return true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -56,7 +42,6 @@ public class SqlConnection {
         ArrayList<String> result = new ArrayList<String>();
         String line = "";
 
-        // default query
         if (query.equals(""))
             query = "SELECT * FROM ContactUs";
 
@@ -74,7 +59,6 @@ public class SqlConnection {
                 line = String.valueOf(id) + ";" + subject + ";" + message + ";" +
                         contact_by + ";" + client_name + ";" + client_surname + ";" + client_phone_number + ";" + client_email;
                 result.add(line);
-//                System.out.println(id + "\t" + name + "\t" + surname + "\t" + phone+ "\t" + email);
             }
         } catch (Exception e) {
             System.out.printf(e.getMessage());
