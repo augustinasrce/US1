@@ -61,7 +61,7 @@ app.directive('myValidator', function ($parse) {
               elm.bind('keypress', function(e) {
               var key = e.keyCode || e.charCode;
 
-        if( key == 8 || key == 46 )
+        if(key == 8)
             return true;
 
                 var char = String.fromCharCode(e.which || e.charCode || e.keyCode),

@@ -89,7 +89,7 @@
              ng-class="{ 'has-error': contactForm.phoneNr.$invalid && !contactForm.phoneNr.$pristine}">
             <label for="inputPhone" class="col-xs-2">{{ nameList[5] }}</label>
             <div class="col-xs-10">
-                <input type="text" my-validator valid-values="validValues" name="phoneNr" class="form-control" id="inputPhone"
+                <input  my-validator valid-values="validValues" name="phoneNr" class="form-control" id="inputPhone"
                        ng-model="main.phoneNr"
                        ng-minLength="7"
                        ng-maxlength="20"

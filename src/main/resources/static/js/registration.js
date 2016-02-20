@@ -3,7 +3,7 @@
 
  app.controller('RegistrationScreenController',  function($scope, $http) {
 
- $scope.validValues = ['+','1','2','3','4','5','6','7','8','9','0','.'];
+ $scope.validValues = ['+','1','2','3','4','5','6','7','8','9','0'];
 
     $http({
         method: 'GET',
@@ -39,7 +39,7 @@
                elm.bind('keypress', function(e) {
                var key = e.keyCode || e.charCode;
 
-         if( key == 8 || key == 46 )
+         if(key == 8)
              return true;
 
                  var char = String.fromCharCode(e.which || e.charCode || e.keyCode),
