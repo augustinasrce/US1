@@ -4,7 +4,8 @@
 
     app.controller('ContactUsScreenController', function($scope, $http) {
 
-    document.getElementById("inputPhone").value = "+";
+    //document.getElementById("inputPhone").value = "+";
+    $scope.validValues = ['+','1','2','3','4','5','6','7','8','9','0'];
     $scope.isEmailRequired = true;
     $scope.isPhoneRequired = true;
 
@@ -49,6 +50,32 @@
             $("#confirmDiv").removeClass("hidden");
         })
     };
+});
+
+app.directive('myValidator', function ($parse) {
+    return {
+        scope: {
+          validValues: '=validValues'
+        },
+        link: function(scope, elm, attrs) {
+              elm.bind('keypress', function(e) {
+              var key = e.keyCode || e.charCode;
+
+        if( key == 8 || key == 46 )
+            return true;
+
+                var char = String.fromCharCode(e.which || e.charCode || e.keyCode),
+                  matches = [];
+                angular.forEach(scope.validValues, function(value, key) {
+                  if (char === value) matches.push(char);
+                }, matches);
+                if (matches.length == 0) {
+                  e.preventDefault();
+                  return false;
+                }
+              });
+        }
+    }
 });
 
 
