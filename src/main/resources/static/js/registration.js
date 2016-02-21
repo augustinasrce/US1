@@ -36,8 +36,8 @@ var language = document.cookie;
     };
 
     $scope.registration = function(){
-        $("#formDiv").addClass("hidden");
-        $("#overviewDiv").removeClass("hidden");
+        $("#overviewDiv").addClass("hidden");
+        $("#formDiv").removeClass("hidden");
     }
  });
 
