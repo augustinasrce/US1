@@ -35,19 +35,11 @@ var language = document.cookie;
         })
     };
 
-    $scope.registrationForm = function(){
+    $scope.registration = function(){
         $("#formDiv").addClass("hidden");
         $("#overviewDiv").removeClass("hidden");
     }
-
-
-
  });
-
-
-
-
-
 
  app.directive('myValidator', function ($parse) {
      return {

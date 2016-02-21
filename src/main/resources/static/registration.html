@@ -52,7 +52,7 @@
 
 </div>
 <div class="container">
-    <table style="width:100%">
+    <table class="table table-condensed">
         <tr ng-repeat="x in registrationInfo">
             <td>{{ x[0] }}</td>
             <td>{{ x[1] }}</td>
@@ -60,11 +60,11 @@
         </tr>
     </table>
     <input class="col-xs-offset-10 col-xs-2 btn btn-primary" type="submit"
-           ng-click="registrationForm()" value="Register"/>
+           ng-click="registration()" value="Register"/>
 </div>
 
 
-<div id="formDiv" class="container">
+<div id="formDiv" class="container hidden">
     <form ng-submit="submitForm()" name="registrationForm" id="registrationForm" class="form-horizontal" novalidate>
         <!-- name -->
         <div class="form-group"
