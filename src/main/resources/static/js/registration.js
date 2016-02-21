@@ -11,8 +11,6 @@ var language = document.cookie;
           }).then(function successCallback(response) {
                             $scope.registrationInfo = response.data;
                               });
-
-
     $http({
         method: 'GET',
         url: '/'+ language
@@ -24,8 +22,6 @@ var language = document.cookie;
 
         document.title =  response.data.registrationNameTags.title;
     });
-
-
     $scope.submitForm = function () {
         $http.put('/registration/')
         //+$('#inputTopic').val()+'/'+$('#inputMessage').val()+'/'+$('#inputName').val()+'/'+$('#inputSurname').val()+'/'+$('#inputPhone').val()+'/'+$('#inputEmail').val()+'/'+$('#inputContactBy').val()+'/')
