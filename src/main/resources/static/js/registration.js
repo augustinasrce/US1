@@ -1,15 +1,22 @@
-    var app = angular.module('RegistrationScreen', ['ngMessages']);
-    var language = document.cookie;
+var app = angular.module('RegistrationScreen', ['ngMessages']);
+var language = document.cookie;
 
  app.controller('RegistrationScreenController',  function($scope, $http) {
 
  $scope.validValues = ['+','1','2','3','4','5','6','7','8','9','0'];
 
     $http({
+            method: 'GET',
+            url: '/sql'
+          }).then(function successCallback(response) {
+                            $scope.registrationInfo = response.data;
+                              });
+
+
+    $http({
         method: 'GET',
         url: '/'+ language
     }).then(function successCallback(response) {
-        //document.getElementById("inputPhone").value = "+";
         $scope.nameList = response.data.registrationNameTags;
         $scope.topics = response.data.topicList;
         $scope.bankDivisions = response.data.bankDivisionList;
@@ -28,7 +35,19 @@
         })
     };
 
+    $scope.registrationForm = function(){
+        $("#formDiv").addClass("hidden");
+        $("#overviewDiv").removeClass("hidden");
+    }
+
+
+
  });
+
+
+
+
+
 
  app.directive('myValidator', function ($parse) {
      return {
