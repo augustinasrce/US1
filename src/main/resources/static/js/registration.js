@@ -18,6 +18,7 @@ var language = document.cookie;
         $scope.nameList = response.data.registrationNameTags;
         $scope.topics = response.data.topicList;
         $scope.bankDivisions = response.data.bankDivisionList;
+        $scope.confirmationNameList = response.data.registrationConfirmationNameList;
         $scope.errorList = response.data.errorMessagesList;
 
         document.title =  response.data.registrationNameTags.title;

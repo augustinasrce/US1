@@ -15,6 +15,7 @@ public class FieldNames {
     ArrayList<String> topicList;
     ArrayList<String> registrationOverviewList;
     ArrayList<String> errorMessagesList;
+    ArrayList<String> registrationConfirmationNameList;
     Map<String, String> registrationNameTags;
 
     public FieldNames() {
@@ -28,6 +29,7 @@ public class FieldNames {
         registrationNameTags = new HashMap<String, String>();
         registrationOverviewList = new ArrayList<String>();
         errorMessagesList = new ArrayList<String>();
+        registrationConfirmationNameList = new ArrayList<String>();
 
     }
 
@@ -163,6 +165,18 @@ public class FieldNames {
                 "laukiame Jūsų skambučių telefonu 1884 arba tel. +370 5 268 4444, " +
                 "jei skambinate iš užsienio. Linkime geros dienos!");
         contactUsConfirmationNameList.add("< Atgal");
+
+
+        registrationConfirmationNameList.add("Sveiki, ");
+        registrationConfirmationNameList.add("dėkojame, kad kreipiatės į „Swedbank“.");
+        registrationConfirmationNameList.add("Į pateiktus klausimus atsakome darbo dienomis 8–20 val., " +
+                "šeštadieniais 9–16 valandomis. Jeigu Jums reikalinga skubi informacija, " +
+                "laukiame Jūsų skambučių telefonu 1884 arba tel. +370 5 268 4444, " +
+                "jei skambinate iš užsienio. Linkime geros dienos!");
+        registrationConfirmationNameList.add("< Atgal");
+
+
+
 
         bankDivisionList.add("Antakalnio g. 45");
         bankDivisionList.add("Ateities g. 91 (PC „Mandarinas\")");
