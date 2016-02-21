@@ -167,15 +167,10 @@ public class FieldNames {
         contactUsConfirmationNameList.add("< Atgal");
 
 
-        registrationConfirmationNameList.add("Sveiki, ");
-        registrationConfirmationNameList.add("dėkojame, kad kreipiatės į „Swedbank“.");
-        registrationConfirmationNameList.add("Į pateiktus klausimus atsakome darbo dienomis 8–20 val., " +
-                "šeštadieniais 9–16 valandomis. Jeigu Jums reikalinga skubi informacija, " +
-                "laukiame Jūsų skambučių telefonu 1884 arba tel. +370 5 268 4444, " +
-                "jei skambinate iš užsienio. Linkime geros dienos!");
+        registrationConfirmationNameList.add("Tittle ");
+        registrationConfirmationNameList.add("Ačiū, kad domitės banko paslaugomis.");
+        registrationConfirmationNameList.add("Jeigu Jums reikalinga skubi informacija, laukiame Jūsų skambučių telefonu 1884, darbo dienomis 8-20 val., šeštadieniais 9-16 val.");
         registrationConfirmationNameList.add("< Atgal");
-
-
 
 
         bankDivisionList.add("Antakalnio g. 45");

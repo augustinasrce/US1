@@ -191,16 +191,56 @@
 
     </form>
 </div>
+
+
 <div id="confirmDiv" class="container hidden">
     <form id="confirmForm" class="form-horizontal" novalidate>
+        <!-- name -->
         <div class="form-group">
-            <div class="col-xs-12">
-                <p>{{ confirmationNameList[0] }}</p><br>
-                <p>{{ confirmationNameList[1] }}</p><br>
-                <p>{{ confirmationNameList[2] }}</p>
-            </div>
+            <label class="col-xs-2">{{ nameList.name }}</label>
+            <label class="col-xs-10">{{ inputName.value }}</label>
         </div>
-        <a href="registration.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3]
+        <!-- surname -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.surname }}</label>
+            <label class="col-xs-10">{{ inputSurname.value }}</label>
+        </div>
+        <!-- phone -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.phone }}</label>
+            <label class="col-xs-10">{{ inputPhone.value }}</label>
+        </div>
+        <!-- email -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.email }}</label>
+            <label class="col-xs-10">{{ inputEmail.value }}</label>
+        </div>
+        <!-- branch -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.bankDivision }}</label>
+            <label class="col-xs-10">{{ inputBankDivision.value }}</label>
+        </div>
+        <!-- date -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.date }}</label>
+            <label class="col-xs-10">{{ inputDate.value }}</label>
+        </div>
+        <!-- topic -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.topic }}</label>
+            <label class="col-xs-10">{{ inputTopic.value }}</label>
+        </div>
+        <!-- comments -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.other }}</label>
+            <label class="col-xs-2">{{ inputOther.value }}</label>
+        </div>
+        <hr>
+        <div class="form-group">
+            <p>{{ confirmationNameList[1] }}</p>
+            <p>{{ confirmationNameList[2] ]}</p>
+        </div>
+        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3]
             }}</a>
     </form>
 </div>
