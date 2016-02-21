@@ -46,20 +46,18 @@
     <h1>{{ nameList.header }}</h1>
 </div>
 
-<div id="overviewDiv" class="container hidden">
-    <h1>{{ registrationInfo[1] }}</h1>
-    <h1>{{ registrationInfo[2] }}</h1>
-
-</div>
-<div class="container">
+<div id="overviewDiv" class="container">
     <table class="table table-condensed">
+        <thead class="thead-inverse">
         <tr>
-            <td>{{ x[0] }}</td>
-            <td>{{ x[1] }}</td>
-            <td>Date</td>
-
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date</th>
         </tr>
+        </thead>
         <tr ng-repeat="x in registrationInfo">
+            <td>{{ x[0] }}</td>
             <td>{{ x[0] }}</td>
             <td>{{ x[1] }}</td>
             <td>{{ x[2] }}</td>
