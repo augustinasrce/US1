@@ -23,8 +23,14 @@ var language = document.cookie;
         document.title =  response.data.registrationNameTags.title;
     });
     $scope.submitForm = function () {
-        $http.put('/registration/')
-        //+$('#inputTopic').val()+'/'+$('#inputMessage').val()+'/'+$('#inputName').val()+'/'+$('#inputSurname').val()+'/'+$('#inputPhone').val()+'/'+$('#inputEmail').val()+'/'+$('#inputContactBy').val()+'/')
+        $http.put('/registration/'  +$('#inputName').val()+'/'
+                                    +$('#inputSurname').val()+'/'
+                                    +$('#inputPhone').val()+'/'
+                                    +$('#inputEmail').val()+'/'
+                                    +$('#inputBankDivision').val()+'/'
+                                    +$('#inputDate').val()+'/'
+                                    +$('#inputTopic').val()+'/'
+                                    +$('#inputOther').val()+'/')
         .success(function (data, status, headers) {
             $("#formDiv").addClass("hidden");
             $("#confirmDiv").removeClass("hidden");

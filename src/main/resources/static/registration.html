@@ -37,6 +37,8 @@
               disabledDates: ['2016/02/23']
           });
       });
+
+
     </script>
 </head>
 <body ng-controller="RegistrationScreenController">
@@ -71,7 +73,7 @@
 
 
 <div id="formDiv" class="container hidden">
-    <form ng-submit="submitForm()" name="registrationForm" id="registrationForm" class="form-horizontal" novalidate>
+    <form id="registrationForm" name="registrationForm" class="form-horizontal" novalidate>
         <!-- name -->
         <div class="form-group"
              ng-class="{ 'has-error': !registrationForm.name.$pristine && registrationForm.name.$invalid }">
@@ -81,12 +83,12 @@
                        ng-model="main.name"
                        ng-minlength="5"
                        ng-maxlength="10"
-                       required>
+                       Required>
                 <div class="help-block" ng-messages="registrationForm.name.$error"
                      ng-if="!registrationForm.name.$pristine">
                     <p ng-message="minlength">{{ errorList[0] }}</p>
                     <p ng-message="maxlength">{{ errorList[1] }}</p>
-                    <p ng-message="required">{{ errorList[2] }}</p>
+                    <p ng-message="Required">{{ errorList[2] }}</p>
                 </div>
             </div>
         </div>
@@ -99,12 +101,12 @@
                        ng-model="main.surname"
                        ng-minlength="5"
                        ng-maxlength="10"
-                       required>
+                       Required>
                 <div class="help-block" ng-messages="registrationForm.surname.$error"
                      ng-if="!registrationForm.surname.$pristine">
                     <p ng-message="minlength">{{ errorList[3] }}</p>
                     <p ng-message="maxlength">{{ errorList[4] }}</p>
-                    <p ng-message="required">{{ errorList[5] }}</p>
+                    <p ng-message="Required">{{ errorList[5] }}</p>
                 </div>
             </div>
         </div>
@@ -117,12 +119,12 @@
                        ng-model="main.phoneNr"
                        ng-minlength="8"
                        ng-maxlength="15"
-                       required>
+                       Required>
                 <div class="help-block" ng-messages="registrationForm.phoneNr.$error"
                      ng-if="!registrationForm.phoneNr.$pristine">
                     <p ng-message="minlength">{{ errorList[9] }}</p>
                     <p ng-message="maxlength">{{ errorList[10] }}</p>
-                    <p ng-message="required">{{ errorList[11] }}</p>
+                    <p ng-message="Required">{{ errorList[11] }}</p>
                     <p ng-message="number">{{ errorList[11] }}</p>
                 </div>
             </div>
@@ -136,7 +138,7 @@
                 <div class="help-block" ng-messages="registrationForm.email.$error">
                     <p ng-message="minlength">{{ errorList[12] }}</p>
                     <p ng-message="maxlength">{{ errorList[13] }}</p>
-                    <p ng-message="required">{{ errorList[14] }}</p>
+                    <p ng-message="Required">{{ errorList[14] }}</p>
                     <p ng-message="email">{{ errorList[15] }}</p>
                 </div>
             </div>
@@ -157,12 +159,12 @@
             <label for="inputDate" class="col-xs-2">{{ nameList.date }}</label>
             <div class="col-xs-10">
                 <input type="text" name="date" id="inputDate" class="form-control"
-                       ng-model="main.date" ng-minlength="16" ng-maxlength="16" required/>
+                       ng-model="main.date" ng-minlength="16" ng-maxlength="16" Required/>
                 <div class="help-block" ng-messages="registrationForm.date.$error"
                      ng-if="!registrationForm.date.$pristine">
                     <p ng-message="minlength">{{ errorList[16] }}</p>
                     <p ng-message="maxlength">{{ errorList[17] }}</p>
-                    <p ng-message="required">{{ errorList[18] }}</p>
+                    <p ng-message="Required">{{ errorList[18] }}</p>
                     <p ng-message="datetime">{{ errorList[19] }}</p>
                 </div>
             </div>
@@ -198,7 +200,8 @@
                 <p>{{ confirmationNameList[2] }}</p>
             </div>
         </div>
-        <a href="registrationOverview.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3] }}</a>
+        <a href="registrationOverview.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3]
+            }}</a>
     </form>
 </div>
 

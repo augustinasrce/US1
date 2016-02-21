@@ -81,9 +81,20 @@ public class LanguageService {
                         answerType);
     }
 
-
-
-
+    @RequestMapping(value = "/registration/{name}/{surname}/{phoneNr}/{email}/{bankDivision}/{date}/{topic}/{others}/", method = RequestMethod.PUT)
+    public void putRegistrations(@PathVariable String name,
+                             @PathVariable String surname,
+                             @PathVariable String phoneNr,
+                             @PathVariable String email,
+                             @PathVariable String bankDivision,
+                             @PathVariable String date,
+                             @PathVariable String topic,
+                             @PathVariable String others) {
+        SqlConnection sqlConnection = new SqlConnection();
+        sqlConnection.connect();
+        sqlConnection.insertRegistrationBigTable(name, surname, phoneNr, email, bankDivision, date, topic,others);
+        sqlConnection.closeConnection();
+    }
 
 
     @RequestMapping("/sql")

@@ -1,4 +1,3 @@
-
 package lt.swedbank.contactForm.beans;
 
 
@@ -23,7 +22,7 @@ public class SqlConnection {
             Class.forName(driver).newInstance();
             conn = DriverManager.getConnection(url + dbName, userName, password);
             st = conn.createStatement();
-             return true;
+            return true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -71,9 +70,9 @@ public class SqlConnection {
                                         String contact_by, String client_name,
                                         String client_surname, String client_phone_number, String client_email) {
         String query = String.format("insert into ContactUs(subject, message, contact_by, client_name, client_surname," +
-                "client_phone_number, client_email)" +
-                "values(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");\n",
-                        subject, message, contact_by, client_name, client_surname, client_phone_number, client_email);
+                        "client_phone_number, client_email)" +
+                        "values(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");\n",
+                subject, message, contact_by, client_name, client_surname, client_phone_number, client_email);
         try {
             int value = st.executeUpdate(query);
             if (value == 1)
@@ -113,13 +112,13 @@ public class SqlConnection {
         return result;
     }
 
-    public void insertRegistrationBigTable(String subject, String message,
-                                           String date, String bank_branch, String client_name,
-                                           String client_surname, String client_phone_number, String client_email) {
-        String query = String.format("insert into ContactUs(subject, message, date, bank_branch, client_name, client_surname," +
-                "client_phone_number, client_email)" +
-                "values(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");\n", subject, message, date, bank_branch, client_name, client_surname, client_phone_number, client_email);
-        try {
+    public void insertRegistrationBigTable(String name, String surname, String phoneNr, String email, String bankDivision, String date, String topic, String others) {
+        String query = String.format(
+                "insert into Registrations(client_name, client_surname, client_phone_number, client_email, bank_branch, date," +
+                "subject, comments)" +
+                        "values(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");\n",
+                name, surname, date, phoneNr, email, bankDivision, date, topic, others);
+            try {
             int value = st.executeUpdate(query);
             if (value == 1)
                 System.out.println("Successfully inserted value");
