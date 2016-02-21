@@ -4,6 +4,7 @@ var language = document.cookie;
  app.controller('RegistrationScreenController',  function($scope, $http) {
 
  $scope.validValues = ['+','1','2','3','4','5','6','7','8','9','0'];
+ $scope.plus = ['+'];
 
     $http({
             method: 'GET',
@@ -42,32 +43,18 @@ var language = document.cookie;
         $("#overviewDiv").addClass("hidden");
         $("#formDiv").removeClass("hidden");
     }
- });
-
- app.directive('myValidator', function ($parse) {
-     return {
-         scope: {
-           validValues: '=validValues'
-         },
-         link: function(scope, elm, attrs) {
-               elm.bind('keypress', function(e) {
-               var key = e.keyCode || e.charCode;
-
-         if(key == 8)
-             return true;
-
-                 var char = String.fromCharCode(e.which || e.charCode || e.keyCode),
-                   matches = [];
-                 angular.forEach(scope.validValues, function(value, key) {
-                   if (char === value) matches.push(char);
-                 }, matches);
-                 if (matches.length == 0) {
-                   e.preventDefault();
-                   return false;
-                 }
-               });
-         }
-     }
+    $('#inputPhone').keypress(function(event) {
+        var code = (event.keyCode ? event.keyCode : event.which);
+        if(code == 8)
+            return true;
+        if (!(
+                (code >= 48 && code <= 57) //numbers
+                || (code == 43) //period
+            )
+            || (code == 43 && $(this).val().indexOf('+') != -1)
+           )
+            event.preventDefault();
+    });
  });
 
 
