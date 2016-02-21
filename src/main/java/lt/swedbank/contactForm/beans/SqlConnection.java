@@ -87,7 +87,6 @@ public class SqlConnection {
         ArrayList<String> result = new ArrayList<String>();
         String line = "";
 
-        // default query
         if (query.equals(""))
             query = "SELECT * FROM Registrations";
 
