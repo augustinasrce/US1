@@ -36,10 +36,10 @@ var language = document.cookie;
         url: '/'+ language
     }).then(function successCallback(response) {
         $scope.nameList = response.data.registrationNameTags;
-        $scope.topics = response.data.topicList;
-        $scope.bankDivisions = response.data.bankDivisionList;
+        $scope.topics = response.data.topics;
+        $scope.bankDivisions = response.data.bankDivisions;
         $scope.confirmationNameList = response.data.registrationConfirmationNameList;
-        $scope.errorList = response.data.errorMessagesList;
+        $scope.errorList = response.data.errorMessagesMap;
 
         document.title =  response.data.registrationNameTags.title;
     });
