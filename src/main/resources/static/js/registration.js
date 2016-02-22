@@ -70,4 +70,3 @@ var language = document.cookie;
  });
 
 
-
