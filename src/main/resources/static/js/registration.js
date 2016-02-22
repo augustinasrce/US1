@@ -6,12 +6,26 @@ var language = document.cookie;
  $scope.validValues = ['+','1','2','3','4','5','6','7','8','9','0'];
  $scope.plus = ['+'];
 
-    $http({
-            method: 'GET',
-            url: '/sql'
-          }).then(function successCallback(response) {
-                            $scope.registrationInfo = response.data;
-                              });
+
+
+    $(document).ready(function() {
+             $.datetimepicker.setLocale('lt');
+
+            var availableTimeList =  $http({
+                                             method: 'GET',
+                                             url: '/times'
+                                         }).then(function successCallback(response) {
+
+                                               $( "#inputDate" ).datetimepicker({
+                                                                    minDate: 0,
+                                                                    allowTimes: response.data,
+                                                                    format:	'Y-m-d H:i',
+                                                                 });
+                                            });
+
+        });
+
+
     $http({
         method: 'GET',
         url: '/'+ language
@@ -25,14 +39,7 @@ var language = document.cookie;
         document.title =  response.data.registrationNameTags.title;
     });
 
-     $scope.get = function () {
-         $http({
-                     method: 'GET',
-                     url: '/dates'
-                 }).then(function successCallback(response) {
-                     return response.data;
-                 });
-    };
+
 
     $scope.submitForm = function () {
         $http.put('/registration/'  +$('#inputName').val()+'/'
