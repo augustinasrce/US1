@@ -154,7 +154,7 @@
         <div class="form-group">
             <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
             <div class="col-xs-10">
-                <select type="text" class="form-control" name="topic" id="inputTopic">
+                <select ng-model="main.topic" type="text" class="form-control" name="topic" id="inputTopic">
                     <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
                 </select>
             </div>
@@ -163,7 +163,7 @@
         <div class="form-group">
             <label for="inputOther" class="col-xs-2">{{ nameList.other }}</label>
             <div class="col-xs-10">
-                <textarea class="form-control" rows="5" id="inputOther"></textarea>
+                <textarea ng-model="main.comment" class="form-control" rows="5" id="inputOther"></textarea>
             </div>
         </div>
 
@@ -211,12 +211,12 @@
         <!-- topic -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.topic }}</label>
-            <label class="col-xs-10">{{ main }}</label>
+            <label class="col-xs-10">{{ main.topic }}</label>
         </div>
         <!-- comments -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.other }}</label>
-            <label class="col-xs-2">{{ main. }}</label>
+            <label class="col-xs-2">{{ main.comment }}</label>
         </div>
         <hr>
         <div class="form-group">
