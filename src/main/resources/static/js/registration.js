@@ -24,6 +24,16 @@ var language = document.cookie;
 
         document.title =  response.data.registrationNameTags.title;
     });
+
+     $scope.get = function () {
+         $http({
+                     method: 'GET',
+                     url: '/dates'
+                 }).then(function successCallback(response) {
+                     return response.data;
+                 });
+    };
+
     $scope.submitForm = function () {
         $http.put('/registration/'  +$('#inputName').val()+'/'
                                     +$('#inputSurname').val()+'/'
@@ -43,6 +53,7 @@ var language = document.cookie;
         $("#overviewDiv").addClass("hidden");
         $("#formDiv").removeClass("hidden");
     }
+
     $('#inputPhone').keypress(function(event) {
         var code = (event.keyCode ? event.keyCode : event.which);
         if(code == 8)
@@ -55,6 +66,7 @@ var language = document.cookie;
            )
             event.preventDefault();
     });
+
  });
 
 

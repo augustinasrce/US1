@@ -13,31 +13,27 @@
     </style>
     <script src="js/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
     <script src="js/registration.js"></script>
 
     <!--datetimepicker-->
     <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
     <script src="js/jquery.js"></script>
-    <script src="js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+    <script src="js/datetimepicker/jquery.datetimepicker.full.js"></script>
 
-    <script>
+    <script >
+
       $(document).ready(function() {
-          $.datetimepicker.setLocale('lt');
-          $('#inputDate').datetimepicker({
-              minDate:'currentTime.getFullYear()',
-              allowTimes:[
-                  '08:00', '08:30', '09:00', '09:30', '10:00', '10:30','11:00', '11:30','12:00', '12:30',
-                  '13:00', '13:30', '14:00', '14:30', '15:00', '15:30','16:00', '16:30','17:00', '17:30',
-                  '18:00', '18:30', '19:00', '19:30'
-                ],
-                dayOfWeekStart: 1,
-          });
-<!--Should be method to disable dates-->
-           $('#inputDate').datetimepicker({
-              disabledDates: ['2016/02/23']
-          });
-      });
+           $.datetimepicker.setLocale('lt');
 
+             $(function() {
+                 $( "#inputDate" ).datetimepicker({
+                    minDate: 0,
+                    format:	'Y-m-d H:i',
+                 });
+             });
+
+      });
 
     </script>
 </head>
@@ -240,8 +236,7 @@
             <p>{{ confirmationNameList[1] }}</p>
             <p>{{ confirmationNameList[2] ]}</p>
         </div>
-        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3]
-            }}</a>
+        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3]}}</a>
     </form>
 </div>
 

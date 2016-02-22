@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -123,6 +122,17 @@ public class LanguageService {
         sqlConnection.closeConnection();
         return dataFromDatabase;
     }
+
+//    @RequestMapping("/dates")
+//    public ArrayList<String> getDates(){
+//        ArrayList<String> dates = new ArrayList<String>();
+//        dates.add("2016/02/23");
+//        return dates;
+//    }
+
+
+
+
  /*
     @RequestMapping("/lt/contact")
     public FieldNames getLanguageForContactUsScreenLT() {
