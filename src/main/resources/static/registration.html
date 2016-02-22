@@ -49,12 +49,12 @@
         </tr>
     </table>
     <input class="col-xs-offset-10 col-xs-2 btn btn-primary" type="submit"
-           ng-click="registration()" value="{{buttons.registration}}"/>
+           ng-click="registration()" value="Register"/>
 </div>
 
 
-<div id="formDiv" class="container hidden">
-    <form id="registrationForm" name="registrationForm" class="form-horizontal" novalidate>
+<div id="formDiv" class="container">
+    <form id="registrationForm" name="registrationForm" class="form-horizontal" ng-model-options="{ updateOn: 'default'}" novalidate>
         <!-- name -->
         <div class="form-group"
              ng-class="{ 'has-error': !registrationForm.name.$pristine && registrationForm.name.$invalid }">
@@ -117,21 +117,26 @@
                 <input class="form-control" type="email" name="email" id="inputEmail"
                        ng-model="main.email"/>
                 <div class="help-block" ng-messages="registrationForm.email.$error">
-                    <p ng-message="minlength">{{ errorList.emailTooShort }}</p>
-                    <p ng-message="maxlength">{{ errorList.emailTooLong }}</p>
-                    <p ng-message="Required">{{ errorList.enterEmail }}</p>
-                    <p ng-message="email">{{ errorList.wrongEmailFormat }}</p>
+                    <p ng-message="minlength">{{ errorList[12] }}</p>
+                    <p ng-message="maxlength">{{ errorList[13] }}</p>
+                    <p ng-message="Required">{{ errorList[14] }}</p>
+                    <p ng-message="email">{{ errorList[15] }}</p>
                 </div>
             </div>
         </div>
         <!-- branch -->
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{ 'has-error': !registrationForm.bankDivision.$touched && registrationForm.bankDivision.$invalid }">
             <label for="inputBankDivision" class="col-xs-2">{{ nameList.bankDivision }}</label>
             <div class="col-xs-10">
-                <select class="form-control" id="inputBankDivision" >
+                <select type="text" name="bankDivision" class="form-control" id="inputBankDivision"
+                        ng-model="main.bankDivision" required>
                     <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">{{ bankDivision}}
                     </option>
                 </select>
+                <div class="help-block" ng-messages="registrationForm.bankDivision.$error"
+                     ng-if="!registrationForm.bankDivision.$touched">
+                </div>
             </div>
         </div>
         <!-- date -->
@@ -151,26 +156,30 @@
             </div>
         </div>
         <!-- topic -->
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{ 'has-error': !registrationForm.topic.$touched && registrationForm.topic.$invalid }">
             <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
             <div class="col-xs-10">
-                <select type="text" class="form-control" name="topic" id="inputTopic">
+                <select type="text" class="form-control" name="topic" id="inputTopic" ng-model="main.topic" required>
                     <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
                 </select>
+                <div class="help-block" ng-messages="registrationForm.topic.$error"
+                     ng-if="!registrationForm.topic.$touched">
+                </div>
             </div>
         </div>
         <!-- comments -->
         <div class="form-group">
             <label for="inputOther" class="col-xs-2">{{ nameList.other }}</label>
             <div class="col-xs-10">
-                <textarea class="form-control" rows="5" id="inputOther"></textarea>
+                <textarea ng-model="main.comment" class="form-control" rows="5" id="inputOther"></textarea>
             </div>
         </div>
 
+        <button type="button" class="btn btn-default" onclick="">Back</button>
 
         <input class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="registrationForm.$invalid" type="submit"
-               ng-click="submitForm()" value="{{ buttons.send}}"> </input>
-
+               ng-click="submitForm()" value="{{ nameList.confirmButton}}">
     </form>
 </div>
 
@@ -220,9 +229,9 @@
         <hr>
         <div class="form-group">
             <p>{{ confirmationNameList[1] }}</p>
-            <p>{{ confirmationNameList[2] }}</p>
+            <p>{{ confirmationNameList[2] ]}</p>
         </div>
-        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{buttons.back}}</a>
+        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3]}}</a>
     </form>
 </div>
 

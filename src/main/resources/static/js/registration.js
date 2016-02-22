@@ -51,6 +51,7 @@ var language = document.cookie;
 
     $('#inputEmail').val("-");
     $('#inputOther').val("-");
+        console.log('was called');
         $http.put('/registration/'  +$('#inputName').val()+'/'
                                     +$('#inputSurname').val()+'/'
                                     +$('#inputPhone').val()+'/'

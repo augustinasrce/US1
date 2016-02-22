@@ -1117,7 +1117,7 @@ var DateFormatter;
 
 		minDate: 'currentTime.getFullYear()',
 		maxDate: false,
-		minTime: false,
+		minTime: true,
 		maxTime: false,
 		disabledMinTime: false,
 		disabledMaxTime: false,
