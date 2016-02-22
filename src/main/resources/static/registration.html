@@ -24,7 +24,9 @@
       $(document).ready(function() {
           $.datetimepicker.setLocale('lt');
           $('#inputDate').datetimepicker({
+              timeFormat: 'HH:mm',
               minDate:'currentTime.getFullYear()',
+              minTime: '11:00',
               allowTimes:[
                   '08:00', '08:30', '09:00', '09:30', '10:00', '10:30','11:00', '11:30','12:00', '12:30',
                   '13:00', '13:30', '14:00', '14:30', '15:00', '15:30','16:00', '16:30','17:00', '17:30',
@@ -233,7 +235,7 @@
         <!-- comments -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.other }}</label>
-            <label class="col-xs-2">{{ inputOther.value }}</label>
+            <label class="col-xs-2">{{ $('#inputOther').val() }}</label>
         </div>
         <hr>
         <div class="form-group">
