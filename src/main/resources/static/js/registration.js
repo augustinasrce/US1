@@ -37,6 +37,19 @@ var language = document.cookie;
             $("#formDiv").addClass("hidden");
             $("#confirmDiv").removeClass("hidden");
         })
+
+         $http.put('/registration1/'  +$('#inputName').val()+'/'
+                                            +$('#inputSurname').val()+'/'
+                                            +$('#inputPhone').val()+'/'
+                                            +$('#inputEmail').val()+'/'
+                                            +$('#inputBankDivision').val()+'/'
+                                            +$('#inputDate').val()+'/'
+                                            +$('#inputTopic').val()+'/'
+                                            +$('#inputOther').val()+'/')
+                .success(function (data, status, headers) {
+                    $("#formDiv").addClass("hidden");
+                    $("#confirmDiv").removeClass("hidden");
+                })
     };
 
     $scope.registration = function(){

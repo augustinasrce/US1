@@ -3,10 +3,7 @@ package lt.swedbank.contactForm.services;
 import lt.swedbank.contactForm.beans.FieldNames;
 import lt.swedbank.contactForm.beans.Language;
 import lt.swedbank.contactForm.beans.SqlConnection;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -90,6 +87,21 @@ public class LanguageService {
                              @PathVariable String date,
                              @PathVariable String topic,
                              @PathVariable String others) {
+        SqlConnection sqlConnection = new SqlConnection();
+        sqlConnection.connect();
+        sqlConnection.insertRegistrationBigTable(name, surname, phoneNr, email, bankDivision, date, topic,others);
+        sqlConnection.closeConnection();
+    }
+
+    @RequestMapping(value = "/registration1/{name}/{surname}/{phoneNr}/{email}/{bankDivision}/{date}/{topic}/{others}/", method = RequestMethod.PUT)
+    public void putRegistrations2(@PathVariable String name,
+                                 @PathVariable String surname,
+                                 @PathVariable String phoneNr,
+                                 @RequestParam(value = "email", required = false) String email,
+                                 @PathVariable String bankDivision,
+                                 @PathVariable String date,
+                                 @PathVariable String topic,
+                                 @RequestParam(value = "others", required = false) String others) {
         SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
         sqlConnection.insertRegistrationBigTable(name, surname, phoneNr, email, bankDivision, date, topic,others);
