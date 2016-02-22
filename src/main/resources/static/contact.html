@@ -18,6 +18,18 @@
 </head>
 <body ng-app="app" ng-controller="ContactUsScreenController as main">
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-right container-fluid">
+        <ul class="nav navbar-nav">
+            <li id="lt" class="active"><a href="#">LT</a></li>
+            <li id="en"><a href="#">EN</a></li>
+            <li id="ru"><a href="#">RU</a></li>
+            <li id="ee"><a href="#">EE</a></li>
+            <li id="lv"><a href="#">LV</a></li>
+        </ul>
+    </div>
+</nav>
+
 <div class="container">
     <h1>{{ nameList.header }}</h1>
 </div>
@@ -29,7 +41,7 @@
             <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
             <div class="col-xs-10">
                 <select type="text" name="topic" class="form-control" id="inputTopic" ng-model="main.topic" required>
-                    <option ng-repeat="dropDownItem in dropDownList" value="{{ dropDownItem }}">{{ dropDownItem }}
+                    <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}
                     </option>
                 </select>
                 <div class="help-block" ng-messages="contactForm.topic.$error"

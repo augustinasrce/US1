@@ -94,7 +94,7 @@ public class FieldNames {
 
     }
     public void setupContactUsNameMapEE() {
-        contactUsNameMap.put("title", "Kirjuta meile");
+        contactUsNameMap.put("header", "Kirjuta meile");
         contactUsNameMap.put("topic", "Teema *");
         contactUsNameMap.put("message", "Tekstisõnumeid *");
         contactUsNameMap.put("name", "Nimi *");
@@ -110,7 +110,7 @@ public class FieldNames {
     }
     public void setupContactUsNameMapEN() {
 
-        contactUsNameMap.put("title", "Contact us");
+        contactUsNameMap.put("header", "Contact us");
         contactUsNameMap.put("topic", "Topic *");
         contactUsNameMap.put("message", "Text field *");
         contactUsNameMap.put("name", "Name *");
@@ -125,7 +125,7 @@ public class FieldNames {
                 "also +370 5 268 4422 (business customers).");
     }
     public void setupContactUsNameMapLV() {
-        contactUsNameMap.put("title", "Rakstiet mums");
+        contactUsNameMap.put("header", "Rakstiet mums");
         contactUsNameMap.put("topic", "Tēma *");
         contactUsNameMap.put("message", "Dokuments ziņojuma *");
         contactUsNameMap.put("name", "Vārds *");

@@ -31,19 +31,6 @@ var language = document.cookie;
     });
 
 
-    $http({
-        method: 'GET',
-        url: '/'+ language
-    }).then(function successCallback(response) {
-        $scope.nameList = response.data.registrationNameTags;
-        $scope.topics = response.data.topics;
-        $scope.bankDivisions = response.data.bankDivisions;
-        $scope.confirmationNameList = response.data.registrationConfirmationNameList;
-        $scope.errorList = response.data.errorMessagesMap;
-        $scope.buttons = response.data.buttonsMap;
-
-        document.title =  response.data.registrationNameTags.title;
-    });
 
 
 
@@ -83,6 +70,79 @@ var language = document.cookie;
            )
             event.preventDefault();
     });
+
+    get();
+           $('#en').on('click', function(){
+                $('#lv').removeClass('active');
+                $('#ee').removeClass('active');
+                $('#ru').removeClass('active');
+                $('#lt').removeClass('active');
+                $('#en').addClass('active');
+                language = 'en';
+                get();
+                document.cookie="en";
+           })
+
+         $('#lt').on('click', function(){
+              $('#lv').removeClass('active');
+              $('#ee').removeClass('active');
+              $('#ru').removeClass('active');
+              $('#en').removeClass('active');
+              $('#lt').addClass('active');
+              language = 'lt';
+              get();
+              document.cookie="lt";
+         })
+
+
+           $('#ru').on('click', function(){
+                $('#lv').removeClass('active');
+                $('#ee').removeClass('active');
+                $('#en').removeClass('active');
+                $('#lt').removeClass('active');
+                $('#ru').addClass('active');
+                language = 'ru';
+                get();
+                document.cookie="ru";
+              })
+
+         $('#ee').on('click', function(){
+              $('#lv').removeClass('active');
+              $('#en').removeClass('active');
+              $('#ru').removeClass('active');
+              $('#lt').removeClass('active');
+              $('#ee').addClass('active');
+              language = 'ee';
+              get();
+              document.cookie="ee";
+            })
+
+         $('#lv').on('click', function(){
+              $('#ee').removeClass('active');
+              $('#en').removeClass('active');
+              $('#ru').removeClass('active');
+              $('#lt').removeClass('active');
+              $('#lv').addClass('active');
+              language = 'lv';
+              get();
+              document.cookie="lv";
+            })
+
+        function get(){
+            $http({
+                    method: 'GET',
+                    url: '/'+ language
+                }).then(function successCallback(response) {
+                    $scope.nameList = response.data.registrationNameTags;
+                    $scope.topics = response.data.topics;
+                    $scope.bankDivisions = response.data.bankDivisions;
+                    $scope.confirmationNameList = response.data.registrationConfirmationNameList;
+                    $scope.errorList = response.data.errorMessagesMap;
+                    $scope.buttons = response.data.buttonsMap;
+
+                    document.title =  response.data.registrationNameTags.title;
+                });
+        }
 
  });
 
