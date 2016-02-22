@@ -74,7 +74,7 @@
 </div>
 
 
-<div id="formDiv" class="container hidden">
+<div id="formDiv" class="container">
     <form id="registrationForm" name="registrationForm" class="form-horizontal" novalidate>
         <!-- name -->
         <div class="form-group"
@@ -195,17 +195,17 @@
 </div>
 
 
-<div id="confirmDiv" class="container hidden">
+<div id="confirmDiv" class="container">
     <form id="confirmForm" class="form-horizontal" novalidate>
         <!-- name -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.name }}</label>
-            <label class="col-xs-10">{{ inputName.value }}</label>
+            <label class="col-xs-10">{{ main.name }}</label>
         </div>
         <!-- surname -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.surname }}</label>
-            <label class="col-xs-10">{{ inputSurname.value }}</label>
+            <label class="col-xs-10">{{ registrationForm.main.surname }}</label>
         </div>
         <!-- phone -->
         <div class="form-group">
