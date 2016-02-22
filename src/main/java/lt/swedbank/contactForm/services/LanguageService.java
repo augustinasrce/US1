@@ -5,7 +5,6 @@ import lt.swedbank.contactForm.beans.Language;
 import lt.swedbank.contactForm.beans.SqlConnection;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -138,6 +137,17 @@ public class LanguageService {
         sqlConnection.closeConnection();
         return dataFromDatabase;
     }
+
+    @RequestMapping("/times")
+    public ArrayList<String> getTimes(){
+        ArrayList<String> times = new ArrayList<String>();
+        for(Integer i=8; i<20 ; i++) {
+            times.add(i.toString() + ":00");
+            times.add(i.toString() + ":30");
+        }
+        return times;
+    }
+
  /*
     @RequestMapping("/lt/contact")
     public FieldNames getLanguageForContactUsScreenLT() {

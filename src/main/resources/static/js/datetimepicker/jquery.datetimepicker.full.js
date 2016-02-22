@@ -1100,7 +1100,7 @@ var DateFormatter;
 		formatDate:	'Y/m/d',
 
 		startDate:	false, // new Date(), '1986/12/08', '-1970/01/05','-1970/01/05',
-		step: 60,
+		step: 30,
 		monthChangeSpinner: true,
 
 		closeOnDateSelect: false,
@@ -1115,7 +1115,7 @@ var DateFormatter;
 		defaultTime: false,	// use formatTime format (ex. '10:00' for formatTime:	'H:i')
 		defaultDate: false,	// use formatDate format (ex new Date() or '1986/12/08' or '-1970/01/05' or '-1970/01/05')
 
-		minDate: false,
+		minDate: 'currentTime.getFullYear()',
 		maxDate: false,
 		minTime: false,
 		maxTime: false,
@@ -1143,7 +1143,7 @@ var DateFormatter;
 		hours12: false,
 		next: 'xdsoft_next',
 		prev : 'xdsoft_prev',
-		dayOfWeekStart: 0,
+		dayOfWeekStart: 1,
 		parentID: 'body',
 		timeHeightInTimePicker: 25,
 		timepickerScrollbar: true,
@@ -1160,7 +1160,7 @@ var DateFormatter;
 		mask: false,
 		validateOnBlur: true,
 		allowBlank: true,
-		yearStart: 1950,
+		yearStart: 2016,
 		yearEnd: 2050,
 		monthStart: 0,
 		monthEnd: 11,

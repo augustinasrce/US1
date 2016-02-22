@@ -7,11 +7,30 @@ var language = document.cookie;
  $scope.plus = ['+'];
 
     $http({
-            method: 'GET',
-            url: '/sql'
-          }).then(function successCallback(response) {
-                            $scope.registrationInfo = response.data;
-                              });
+        method: 'GET',
+        url: '/sql'
+      }).then(function successCallback(response) {
+                        $scope.registrationInfo = response.data;
+    });
+
+    $(document).ready(function() {
+             $.datetimepicker.setLocale('lt');
+
+            var availableTimeList =  $http({
+         method: 'GET',
+         url: '/times'
+    }).then(function successCallback(response) {
+
+           $( "#inputDate" ).datetimepicker({
+                                minDate: 0,
+                                allowTimes: response.data,
+                                format:	'Y-m-d H:i',
+                             });
+        });
+
+    });
+
+
     $http({
         method: 'GET',
         url: '/'+ language
@@ -24,6 +43,9 @@ var language = document.cookie;
 
         document.title =  response.data.registrationNameTags.title;
     });
+
+
+
     $scope.submitForm = function () {
         $http.put('/registration/'  +$('#inputName').val()+'/'
                                     +$('#inputSurname').val()+'/'
@@ -56,6 +78,7 @@ var language = document.cookie;
         $("#overviewDiv").addClass("hidden");
         $("#formDiv").removeClass("hidden");
     }
+
     $('#inputPhone').keypress(function(event) {
         var code = (event.keyCode ? event.keyCode : event.which);
         if(code == 8)
@@ -68,6 +91,7 @@ var language = document.cookie;
            )
             event.preventDefault();
     });
+
  });
 
 

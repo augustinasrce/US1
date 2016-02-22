@@ -13,35 +13,14 @@
     </style>
     <script src="js/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
     <script src="js/registration.js"></script>
 
     <!--datetimepicker-->
     <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
     <script src="js/jquery.js"></script>
-    <script src="js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+    <script src="js/datetimepicker/jquery.datetimepicker.full.js"></script>
 
-    <script>
-      $(document).ready(function() {
-          $.datetimepicker.setLocale('lt');
-          $('#inputDate').datetimepicker({
-              timeFormat: 'HH:mm',
-              minDate:'currentTime.getFullYear()',
-              minTime: '11:00',
-              allowTimes:[
-                  '08:00', '08:30', '09:00', '09:30', '10:00', '10:30','11:00', '11:30','12:00', '12:30',
-                  '13:00', '13:30', '14:00', '14:30', '15:00', '15:30','16:00', '16:30','17:00', '17:30',
-                  '18:00', '18:30', '19:00', '19:30'
-                ],
-                dayOfWeekStart: 1,
-          });
-<!--Should be method to disable dates-->
-           $('#inputDate').datetimepicker({
-              disabledDates: ['2016/02/23']
-          });
-      });
-
-
-    </script>
 </head>
 <body ng-controller="RegistrationScreenController">
 
@@ -149,8 +128,9 @@
         <div class="form-group">
             <label for="inputBankDivision" class="col-xs-2">{{ nameList.bankDivision }}</label>
             <div class="col-xs-10">
-                <select class="form-control" id="inputBankDivision">
-                    <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">{{ bankDivision}}
+                <select ng-model="main.bank" class="form-control" id="inputBankDivision">
+                    <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">
+                        {{ bankDivision}}
                     </option>
                 </select>
             </div>
@@ -175,7 +155,7 @@
         <div class="form-group">
             <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
             <div class="col-xs-10">
-                <select type="text" class="form-control" name="topic" id="inputTopic">
+                <select ng-model="main.topic" type="text" class="form-control" name="topic" id="inputTopic">
                     <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
                 </select>
             </div>
@@ -184,9 +164,12 @@
         <div class="form-group">
             <label for="inputOther" class="col-xs-2">{{ nameList.other }}</label>
             <div class="col-xs-10">
-                <textarea class="form-control" rows="5" id="inputOther"></textarea>
+                <textarea ng-model="main.comment" class="form-control" rows="5" id="inputOther"></textarea>
             </div>
         </div>
+
+        <input class="col-xs-2 btn btn-primary" type="submit"
+               ng-click="backForm()" value="< Back"/>
 
         <input class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="registrationForm.$invalid" type="submit"
                ng-click="submitForm()" value="{{ nameList.confirmButton}}"/>
@@ -195,55 +178,54 @@
 </div>
 
 
-<div id="confirmDiv" class="container hidden">
+<div id="confirmDiv" class="container">
     <form id="confirmForm" class="form-horizontal" novalidate>
         <!-- name -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.name }}</label>
-            <label class="col-xs-10">{{ inputName.value }}</label>
+            <label class="col-xs-10">{{ main.name }}</label>
         </div>
         <!-- surname -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.surname }}</label>
-            <label class="col-xs-10">{{ inputSurname.value }}</label>
+            <label class="col-xs-10">{{ main.surname }}</label>
         </div>
         <!-- phone -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.phone }}</label>
-            <label class="col-xs-10">{{ inputPhone.value }}</label>
+            <label class="col-xs-10">{{ main.phoneNr }}</label>
         </div>
         <!-- email -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.email }}</label>
-            <label class="col-xs-10">{{ inputEmail.value }}</label>
+            <label class="col-xs-10">{{ main.email }}</label>
         </div>
         <!-- branch -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.bankDivision }}</label>
-            <label class="col-xs-10">{{ inputBankDivision.value }}</label>
+            <label class="col-xs-10">{{ main.bank }}</label>
         </div>
         <!-- date -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.date }}</label>
-            <label class="col-xs-10">{{ inputDate.value }}</label>
+            <label class="col-xs-10">{{ main.date }}</label>
         </div>
         <!-- topic -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.topic }}</label>
-            <label class="col-xs-10">{{ inputTopic.value }}</label>
+            <label class="col-xs-10">{{ main.topic }}</label>
         </div>
         <!-- comments -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.other }}</label>
-            <label class="col-xs-2">{{ $('#inputOther').val() }}</label>
+            <label class="col-xs-2">{{ main.comment }}</label>
         </div>
         <hr>
         <div class="form-group">
             <p>{{ confirmationNameList[1] }}</p>
             <p>{{ confirmationNameList[2] ]}</p>
         </div>
-        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3]
-            }}</a>
+        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[2]}}</a>
     </form>
 </div>
 
