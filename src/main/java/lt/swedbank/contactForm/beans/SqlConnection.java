@@ -114,10 +114,9 @@ public class SqlConnection {
 
     public void insertRegistrationBigTable(String name, String surname, String phoneNr, String email, String bankDivision, String date, String topic, String others) {
         String query = String.format(
-                "insert into Registrations(client_name, client_surname, client_phone_number, client_email, bank_branch, date," +
-                "subject, comments)" +
+                "insert into Registrations(client_name, client_surname, client_phone_number, client_email, bank_branch, date, subject, comments)" +
                         "values(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");\n",
-                name, surname, date, phoneNr, email, bankDivision, date, topic, others);
+                name, surname, phoneNr, email, bankDivision, date, topic, others);
             try {
             int value = st.executeUpdate(query);
             if (value == 1)
