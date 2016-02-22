@@ -114,6 +114,9 @@ public class LanguageService {
             databaseValues.add(split[3]);
             databaseValues.add(split[4]);
             databaseValues.add(split[5]);
+            databaseValues.add(split[6]);
+            databaseValues.add(split[7]);
+            databaseValues.add(split[8]);
 
             dataFromDatabase.put(split[0], databaseValues);
 
