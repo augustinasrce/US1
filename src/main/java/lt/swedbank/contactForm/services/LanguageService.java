@@ -92,20 +92,6 @@ public class LanguageService {
         sqlConnection.closeConnection();
     }
 
-    @RequestMapping(value = "/registration1/{name}/{surname}/{phoneNr}/{email}/{bankDivision}/{date}/{topic}/{others}/", method = RequestMethod.PUT)
-    public void putRegistrations2(@PathVariable String name,
-                                 @PathVariable String surname,
-                                 @PathVariable String phoneNr,
-                                 @RequestParam(value = "email", required = false) String email,
-                                 @PathVariable String bankDivision,
-                                 @PathVariable String date,
-                                 @PathVariable String topic,
-                                 @RequestParam(value = "others", required = false) String others) {
-        SqlConnection sqlConnection = new SqlConnection();
-        sqlConnection.connect();
-        sqlConnection.insertRegistrationBigTable(name, surname, phoneNr, email, bankDivision, date, topic,others);
-        sqlConnection.closeConnection();
-    }
 
 
     @RequestMapping("/sql")
