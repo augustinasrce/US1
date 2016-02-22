@@ -40,6 +40,7 @@ var language = document.cookie;
         $scope.bankDivisions = response.data.bankDivisions;
         $scope.confirmationNameList = response.data.registrationConfirmationNameList;
         $scope.errorList = response.data.errorMessagesMap;
+        $scope.buttons = response.data.buttonsMap;
 
         document.title =  response.data.registrationNameTags.title;
     });

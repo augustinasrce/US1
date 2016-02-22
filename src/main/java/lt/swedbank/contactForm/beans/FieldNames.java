@@ -15,7 +15,7 @@ public class FieldNames {
     Map<String, String> registrationNameTags;
     Map<String, String> buttonsMap;
 
-    List<String>  registrationConfirmationNameList;
+    List<String> registrationConfirmationNameList;
     List<String> registrationOverviewList;
     List<String> contactUsConfirmationNameList;
     List<String> bankDivisions;
@@ -34,7 +34,6 @@ public class FieldNames {
         registrationOverviewList = new ArrayList<String>();
         registrationConfirmationNameList = new ArrayList<String>();
         errorMessagesMap = new HashMap<String, String>();
-
     }
 
     public void setupHomeScreenNameMapLT() {
@@ -445,22 +444,27 @@ public class FieldNames {
     public void setupButtonsLT(){
         buttonsMap.put("send","Siųsti");
         buttonsMap.put("back","< Atgal");
+        buttonsMap.put("registration","Registruotis");
     }
     public void setupButtonsRU(){
         buttonsMap.put("send","Отправить");
         buttonsMap.put("back","< Назад");
+        buttonsMap.put("registration","Registruotis");
     }
     public void setupButtonsEE(){
         buttonsMap.put("send","Saatma");
         buttonsMap.put("back","< Tagasi");
+        buttonsMap.put("registration","Registruotis");
     }
     public void setupButtonsEN(){
         buttonsMap.put("send","Send");
         buttonsMap.put("back","< Back");
+        buttonsMap.put("registration","Register");
     }
     public void setupButtonsLV(){
-        buttonsMap.put("confirmButton","Sūtīt");
+        buttonsMap.put("send","Sūtīt");
         buttonsMap.put("back","< atpakaļ");
+        buttonsMap.put("registration","Registruotis");
         
     }
     
@@ -623,4 +627,7 @@ public class FieldNames {
         return errorMessagesMap;
     }
 
+    public Map<String, String> getButtonsMap() {
+        return buttonsMap;
+    }
 }

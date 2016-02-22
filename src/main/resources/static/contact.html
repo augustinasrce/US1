@@ -19,17 +19,17 @@
 <body ng-app="app" ng-controller="ContactUsScreenController as main">
 
 <div class="container">
-    <h1>{{ nameList[0] }}</h1>
+    <h1>{{ nameList.header }}</h1>
 </div>
 
 <div id="formDiv" class="container">
     <form id="contactForm" name="contactForm" class="form-horizontal" novalidate>
         <!-- TopicList -->
         <div class="form-group">
-            <label for="inputTopic" class="col-xs-2">{{ nameList[1] }}</label>
+            <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
             <div class="col-xs-10">
                 <select class="form-control" id="inputTopic">
-                    <option ng-repeat="dropDownItem in dropDownList" value="{{ dropDownItem }}">{{ dropDownItem }}
+                    <option ng-repeat="dropDownItem in topics" value="{{ dropDownItem }}">{{ dropDownItem }}
                     </option>
                 </select>
             </div>
@@ -37,7 +37,7 @@
         <!-- Message -->
         <div class="form-group"
              ng-class="{ 'has-error': !contactForm.textMessage.$pristine && contactForm.textMessage.$invalid }">
-            <label for="inputMessage" class="col-xs-2">{{ nameList[2] }}</label>
+            <label for="inputMessage" class="col-xs-2">{{ nameList.message }}</label>
             <div class="col-xs-10">
                     <textarea type="text" name="textMessage" class="form-control" id="inputMessage" rows="4"
                               ng-model="main.textMessage"
@@ -46,16 +46,16 @@
                               Required></textarea>
                 <div class="help-block" ng-messages="contactForm.textMessage.$error"
                      ng-if="!contactForm.textMessage.$pristine">
-                    <p ng-message="minlength">{{ errorList[6] }}</p>
-                    <p ng-message="maxlength">{{ errorList[7] }}</p>
-                    <p ng-message="required">{{ errorList[8] }}</p>
+                    <p ng-message="minlength">{{ errorList.messageTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.messageTooLong}}</p>
+                    <p ng-message="required">{{ errorList.enterMessage}}</p>
                 </div>
             </div>
         </div>
         <!-- Name -->
         <div class="form-group"
              ng-class="{ 'has-error': !contactForm.name.$pristine && contactForm.name.$invalid }">
-            <label for="inputName" ng-model="inputName" class="col-xs-2">{{ nameList[3] }}</label>
+            <label for="inputName" ng-model="inputName" class="col-xs-2">{{ nameList.name }}</label>
             <div class="col-xs-10">
                 <input type="text" name="name" class="form-control" id="inputName"
                        ng-model="main.name"
@@ -63,31 +63,31 @@
                        ng-maxlength="40"
                        Required>
                 <div class="help-block" ng-messages="contactForm.name.$error" ng-if="!contactForm.name.$pristine">
-                    <p ng-message="minlength">{{ errorList[0] }}</p>
-                    <p ng-message="maxlength">{{ errorList[1] }}</p>
-                    <p ng-message="required">{{ errorList[2] }}</p>
+                    <p ng-message="minlength">{{ errorList.nameTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.nameTooLong }}</p>
+                    <p ng-message="required">{{ errorList.enterName }}</p>
                 </div>
             </div>
         </div>
         <!-- Surname -->
         <div class="form-group"
              ng-class="{ 'has-error': !contactForm.surname.$pristine && contactForm.surname.$invalid }">
-            <label for="inputSurname" class="col-xs-2">{{ nameList[4] }}</label>
+            <label for="inputSurname" class="col-xs-2">{{ nameList.surname }}</label>
             <div class="col-xs-10">
                 <input type="text" name="surname" class="form-control" id="inputSurname"
                        ng-model="main.surname"
                        ng-maxlength="40">
                 <div class="help-block" ng-messages="contactForm.surname.$error" ng-if="!contactForm.surname.$pristine">
-                    <p ng-message="minlength">{{ errorList[3] }}</p>
-                    <p ng-message="maxlength">{{ errorList[4] }}</p>
-                    <p ng-message="required">{{ errorList[5] }}</p>
+                    <p ng-message="minlength">{{ errorList.surnameTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.surnameTooLong }}</p>
+                    <p ng-message="required">{{ errorList.enterSurname }}</p>
                 </div>
             </div>
         </div>
         <!-- phone -->
         <div class="form-group" id="inputPhoneDiv"
              ng-class="{ 'has-error': contactForm.phoneNr.$invalid && !contactForm.phoneNr.$pristine}">
-            <label for="inputPhone" class="col-xs-2">{{ nameList[5] }}</label>
+            <label for="inputPhone" class="col-xs-2">{{ nameList.phone }}</label>
             <div class="col-xs-10">
                 <input type="text" name="phoneNr" class="form-control" id="inputPhone"
                        ng-model="main.phoneNr"
@@ -96,17 +96,17 @@
                        ng-required="isPhoneRequired">
                 <div class="help-block" ng-messages="contactForm.phoneNr.$error"
                      ng-show="contactForm.phoneNr.$invalid && !contactForm.phoneNr.$pristine">
-                    <p ng-message="minlength">{{ errorList[9] }}</p>
-                    <p ng-message="maxlength">{{ errorList[10] }}</p>
-                    <p ng-message="required">{{ errorList[11] }}</p>
-                    <p ng-message="number">{{ errorList[11] }}</p>
+                    <p ng-message="minlength">{{ errorList.phoneTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.phoneTooLong }}</p>
+                    <p ng-message="required">{{ errorList.enterPhone }}</p>
+                    <p ng-message="number">{{ errorList.enterPhone }}</p>
                 </div>
             </div>
         </div>
         <!-- email -->
         <div class="form-group" id="inputEmailDiv"
              ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine}">
-            <label for="inputEmail" class="col-xs-2">{{ nameList[6] }}</label>
+            <label for="inputEmail" class="col-xs-2">{{ nameList.email }}</label>
             <div class="col-xs-10">
                 <input type="email" name="email" class="form-control" id="inputEmail"
                        ng-model="main.email"
@@ -115,37 +115,39 @@
                        ng-required="isEmailRequired">
                 <div class="help-block" ng-messages="contactForm.email.$error"
                      ng-show="contactForm.email.$invalid && !contactForm.email.$pristine">
-                    <p ng-message="minlength">{{ errorList[12] }}</p>
-                    <p ng-message="maxlength">{{ errorList[13] }}</p>
-                    <p ng-message="required">{{ errorList[14] }}</p>
-                    <p ng-message="email">{{ errorList[15] }}</p>
+                    <p ng-message="minlength">{{ errorList.emailTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.emailTooLong }}</p>
+                    <p ng-message="required">{{ errorList.enterEmail }}</p>
+                    <p ng-message="email">{{ errorList.enterEmail }}</p>
                 </div>
             </div>
         </div>
         <!-- radio Buttons -->
         <div class="form-group">
-            <label class="col-xs-2">{{ nameList[7] }}</label>
+            <label class="col-xs-2">{{ nameList.responseType}}</label>
             <div class="col-xs-10 btn-group" data-toggle="buttons">
                 <label class="btn btn-default" ng-click="hideEmailField()">
-                    <input type="radio" id="inputContactBy" name="answerType">{{ radioButtonList[0] }}
+                    <input type="radio" id="inputContactBy" name="answerType">{{ radioButtonList.phone }}
                 </label>
                 <label class="btn btn-default" ng-click="hidePhoneField()">
-                    <input type="radio" name="answerType">{{ radioButtonList[1] }}
+                    <input type="radio" name="answerType">{{ radioButtonList.email }}
                 </label>
                 <label class="btn btn-default active" ng-click="showPhoneEmailFields()">
-                    <input type="radio" name="answerType" checked>{{ radioButtonList[2] }}
+                    <input type="radio" name="answerType" checked>{{ radioButtonList.phoneAndEmail }}
                 </label>
             </div>
         </div>
         <!-- info msg -->
         <div class="form-group">
             <div class="col-xs-12">
-                <p>{{ nameList[8] }}</p>
+                <p>{{ nameList.info }}</p>
             </div>
         </div>
 
-        <input class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="contactForm.$invalid" type="submit"
-               ng-click="UpdateData()" value="{{ nameList[9] }}"/>
+        <a href="index.html" class="col-xs-2 btn btn-primary">{{buttons.back}}</a>
+
+        <input class="col-xs-offset-8 col-xs-2 btn btn-primary" ng-disabled="contactForm.$invalid" type="submit"
+               ng-click="UpdateData()" value="{{ buttons.send }}"/>
 
     </form>
 </div>
@@ -160,9 +162,11 @@
                 <p>{{ confirmationNameList[2] }}</p>
             </div>
         </div>
-        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3] }}</a>
+
     </form>
+
 </div>
+
 
 
 </div>
