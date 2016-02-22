@@ -36,10 +36,11 @@ var language = document.cookie;
         url: '/'+ language
     }).then(function successCallback(response) {
         $scope.nameList = response.data.registrationNameTags;
-        $scope.topics = response.data.topicList;
-        $scope.bankDivisions = response.data.bankDivisionList;
+        $scope.topics = response.data.topics;
+        $scope.bankDivisions = response.data.bankDivisions;
         $scope.confirmationNameList = response.data.registrationConfirmationNameList;
-        $scope.errorList = response.data.errorMessagesList;
+        $scope.errorList = response.data.errorMessagesMap;
+        $scope.buttons = response.data.buttonsMap;
 
         document.title =  response.data.registrationNameTags.title;
     });
@@ -47,6 +48,9 @@ var language = document.cookie;
 
 
     $scope.submitForm = function () {
+
+    $('#inputEmail').val("-");
+    $('#inputOther').val("-");
         $http.put('/registration/'  +$('#inputName').val()+'/'
                                     +$('#inputSurname').val()+'/'
                                     +$('#inputPhone').val()+'/'

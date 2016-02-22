@@ -32,12 +32,14 @@
      method: 'GET',
      url: '/' + language
     }).then(function successCallback(response) {
-        $scope.nameList = response.data.contactUsNameList;
-        $scope.dropDownListName = response.data.dropDownListName;
-        $scope.dropDownList = response.data.contactUsDropDownMenuList;
-        $scope.radioButtonList = response.data.contactUsRadioButtonList;
+        $scope.nameList = response.data.contactUsNameMap;
+      //  $scope.dropDownListName = response.data.dropDownListName;  // ??
+        $scope.topics = response.data.topics;  // ??
+        $scope.radioButtonList = response.data.contactUsRadioButtonMap;
         $scope.confirmationNameList = response.data.contactUsConfirmationNameList;
-        $scope.errorList = response.data.errorMessagesList;
+        $scope.errorList = response.data.errorMessagesMap;
+
+        $scope.buttons = response.data.buttonsMap;
 
         document.title = $scope.nameList[0];
     });

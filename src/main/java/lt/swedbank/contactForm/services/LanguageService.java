@@ -3,10 +3,7 @@ package lt.swedbank.contactForm.services;
 import lt.swedbank.contactForm.beans.FieldNames;
 import lt.swedbank.contactForm.beans.Language;
 import lt.swedbank.contactForm.beans.SqlConnection;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -96,6 +93,7 @@ public class LanguageService {
     }
 
 
+
     @RequestMapping("/sql")
     public Map<String, ArrayList<String>> getAllRegistrations() {
         SqlConnection sqlConnection = new SqlConnection();
@@ -127,7 +125,7 @@ public class LanguageService {
     }
 
     @RequestMapping("/times")
-    public ArrayList<String> getTimes(){
+    public  ArrayList<String> getTimes(){
         ArrayList<String> times = new ArrayList<String>();
         for(Integer i=8; i<20 ; i++) {
             times.add(i.toString() + ":00");
@@ -135,6 +133,15 @@ public class LanguageService {
         }
         return times;
     }
+//
+//    @RequestMapping("/takenTimes")
+//    public  Map<String,ArrayList<String>> getTakenTimes(){
+//        Map<String,ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+//        ArrayList<String> times = new ArrayList<String>();
+//        times.add("11:00");
+//        map.put("2016-02-26", times);
+//        return map;
+//    }
 
  /*
     @RequestMapping("/lt/contact")
@@ -210,6 +217,4 @@ public class LanguageService {
 
         }
 */
-
-
 }

@@ -49,7 +49,7 @@
         </tr>
     </table>
     <input class="col-xs-offset-10 col-xs-2 btn btn-primary" type="submit"
-           ng-click="registration()" value="Register"/>
+           ng-click="registration()" value="{{buttons.registration}}"/>
 </div>
 
 
@@ -67,9 +67,9 @@
                        Required>
                 <div class="help-block" ng-messages="registrationForm.name.$error"
                      ng-if="!registrationForm.name.$pristine">
-                    <p ng-message="minlength">{{ errorList[0] }}</p>
-                    <p ng-message="maxlength">{{ errorList[1] }}</p>
-                    <p ng-message="Required">{{ errorList[2] }}</p>
+                    <p ng-message="minlength">{{ errorList.nameTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.nameTooLong }}</p>
+                    <p ng-message="Required">{{ errorList.enterName}}</p>
                 </div>
             </div>
         </div>
@@ -85,9 +85,9 @@
                        Required>
                 <div class="help-block" ng-messages="registrationForm.surname.$error"
                      ng-if="!registrationForm.surname.$pristine">
-                    <p ng-message="minlength">{{ errorList[3] }}</p>
-                    <p ng-message="maxlength">{{ errorList[4] }}</p>
-                    <p ng-message="Required">{{ errorList[5] }}</p>
+                    <p ng-message="minlength">{{ errorList.surnameTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.surnameTooLong }}</p>
+                    <p ng-message="Required">{{ errorList.enterSurname }}</p>
                 </div>
             </div>
         </div>
@@ -103,10 +103,10 @@
                        Required>
                 <div class="help-block" ng-messages="registrationForm.phoneNr.$error"
                      ng-if="!registrationForm.phoneNr.$pristine">
-                    <p ng-message="minlength">{{ errorList[9] }}</p>
-                    <p ng-message="maxlength">{{ errorList[10] }}</p>
-                    <p ng-message="Required">{{ errorList[11] }}</p>
-                    <p ng-message="number">{{ errorList[11] }}</p>
+                    <p ng-message="minlength">{{ errorList.phoneTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.phoneTooLong }}</p>
+                    <p ng-message="Required">{{ errorList.enterPhone }}</p>
+                    <p ng-message="number">{{ errorList.enterPhone  }}</p>
                 </div>
             </div>
         </div>
@@ -117,10 +117,10 @@
                 <input class="form-control" type="email" name="email" id="inputEmail"
                        ng-model="main.email"/>
                 <div class="help-block" ng-messages="registrationForm.email.$error">
-                    <p ng-message="minlength">{{ errorList[12] }}</p>
-                    <p ng-message="maxlength">{{ errorList[13] }}</p>
-                    <p ng-message="Required">{{ errorList[14] }}</p>
-                    <p ng-message="email">{{ errorList[15] }}</p>
+                    <p ng-message="minlength">{{ errorList.emailTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.emailTooLong }}</p>
+                    <p ng-message="Required">{{ errorList.enterEmail }}</p>
+                    <p ng-message="email">{{ errorList.wrongEmailFormat }}</p>
                 </div>
             </div>
         </div>
@@ -128,9 +128,8 @@
         <div class="form-group">
             <label for="inputBankDivision" class="col-xs-2">{{ nameList.bankDivision }}</label>
             <div class="col-xs-10">
-                <select ng-model="main.bank" class="form-control" id="inputBankDivision">
-                    <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">
-                        {{ bankDivision}}
+                <select class="form-control" id="inputBankDivision" >
+                    <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">{{ bankDivision}}
                     </option>
                 </select>
             </div>
@@ -144,10 +143,10 @@
                        ng-model="main.date" ng-minlength="16" ng-maxlength="16" Required/>
                 <div class="help-block" ng-messages="registrationForm.date.$error"
                      ng-if="!registrationForm.date.$pristine">
-                    <p ng-message="minlength">{{ errorList[16] }}</p>
-                    <p ng-message="maxlength">{{ errorList[17] }}</p>
-                    <p ng-message="Required">{{ errorList[18] }}</p>
-                    <p ng-message="datetime">{{ errorList[19] }}</p>
+                    <p ng-message="minlength">{{ errorList.dateTooShort }}</p>
+                    <p ng-message="maxlength">{{ errorList.dateTooLong }}</p>
+                    <p ng-message="Required">{{ errorList.enterDate }}</p>
+                    <p ng-message="datetime">{{ errorList.wrongDateFormat }}</p>
                 </div>
             </div>
         </div>
@@ -155,7 +154,7 @@
         <div class="form-group">
             <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
             <div class="col-xs-10">
-                <select ng-model="main.topic" type="text" class="form-control" name="topic" id="inputTopic">
+                <select type="text" class="form-control" name="topic" id="inputTopic">
                     <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
                 </select>
             </div>
@@ -164,15 +163,13 @@
         <div class="form-group">
             <label for="inputOther" class="col-xs-2">{{ nameList.other }}</label>
             <div class="col-xs-10">
-                <textarea ng-model="main.comment" class="form-control" rows="5" id="inputOther"></textarea>
+                <textarea class="form-control" rows="5" id="inputOther"></textarea>
             </div>
         </div>
 
-        <input class="col-xs-2 btn btn-primary" type="submit"
-               ng-click="backForm()" value="< Back"/>
 
         <input class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="registrationForm.$invalid" type="submit"
-               ng-click="submitForm()" value="{{ nameList.confirmButton}}"/>
+               ng-click="submitForm()" value="{{ buttons.send}}"> </input>
 
     </form>
 </div>
@@ -188,44 +185,44 @@
         <!-- surname -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.surname }}</label>
-            <label class="col-xs-10">{{ main.surname }}</label>
+            <label class="col-xs-10">{{ registrationForm.main.surname }}</label>
         </div>
         <!-- phone -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.phone }}</label>
-            <label class="col-xs-10">{{ main.phoneNr }}</label>
+            <label class="col-xs-10">{{ inputPhone.value }}</label>
         </div>
         <!-- email -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.email }}</label>
-            <label class="col-xs-10">{{ main.email }}</label>
+            <label class="col-xs-10">{{ inputEmail.value }}</label>
         </div>
         <!-- branch -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.bankDivision }}</label>
-            <label class="col-xs-10">{{ main.bank }}</label>
+            <label class="col-xs-10">{{ inputBankDivision.value }}</label>
         </div>
         <!-- date -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.date }}</label>
-            <label class="col-xs-10">{{ main.date }}</label>
+            <label class="col-xs-10">{{ inputDate.value }}</label>
         </div>
         <!-- topic -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.topic }}</label>
-            <label class="col-xs-10">{{ main.topic }}</label>
+            <label class="col-xs-10">{{ inputTopic.value }}</label>
         </div>
         <!-- comments -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.other }}</label>
-            <label class="col-xs-2">{{ main.comment }}</label>
+            <label class="col-xs-2">{{ $('#inputOther').val() }}</label>
         </div>
         <hr>
         <div class="form-group">
             <p>{{ confirmationNameList[1] }}</p>
-            <p>{{ confirmationNameList[2] ]}</p>
+            <p>{{ confirmationNameList[2] }}</p>
         </div>
-        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[2]}}</a>
+        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{buttons.back}}</a>
     </form>
 </div>
 

@@ -68,9 +68,9 @@
          method: 'GET',
          url: '/'+language
          }).then(function successCallback(response) {
-            $scope.title = response.data.homeScreenNameList[0];
-            $scope.register = response.data.homeScreenNameList[1];
-            $scope.contacts = response.data.homeScreenNameList[2];
+            $scope.title = response.data.homeScreenNameMap.header;
+            $scope.register = response.data.homeScreenNameMap.registrationLink;
+            $scope.contacts = response.data.homeScreenNameMap.contactUsLink;
             document.title = $scope.title;
          });
          }
