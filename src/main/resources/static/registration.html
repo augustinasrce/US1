@@ -141,16 +141,16 @@
         </div>
         <!-- date -->
         <div class="form-group"
-             ng-class="{ 'has-error': !registrationForm.date.$pristine && registrationForm.date.$invalid }">
+             ng-class="{ 'has-error': !registrationForm.date.$touched && registrationForm.date.$invalid }">
             <label for="inputDate" class="col-xs-2">{{ nameList.date }}</label>
             <div class="col-xs-10">
                 <input type="text" name="date" id="inputDate" class="form-control"
-                       ng-model="main.date" ng-minlength="16" ng-maxlength="16" Required/>
+                       ng-model="main.date" ng-minlength="16" ng-maxlength="16" required/>
                 <div class="help-block" ng-messages="registrationForm.date.$error"
-                     ng-if="!registrationForm.date.$pristine">
+                     ng-if="!registrationForm.date.$touched">
                     <p ng-message="minlength">{{ errorList.dateTooShort }}</p>
                     <p ng-message="maxlength">{{ errorList.dateTooLong }}</p>
-                    <p ng-message="Required">{{ errorList.enterDate }}</p>
+                    <p ng-message="required">{{ errorList.enterDate }}</p>
                     <p ng-message="datetime">{{ errorList.wrongDateFormat }}</p>
                 </div>
             </div>

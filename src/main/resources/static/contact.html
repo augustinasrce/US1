@@ -19,14 +19,14 @@
 <body ng-app="app" ng-controller="ContactUsScreenController as main">
 
 <div class="container">
-    <h1>{{ nameList[0] }}</h1>
+    <h1>{{ nameList.header }}</h1>
 </div>
 
 <div id="formDiv" class="container">
     <form id="contactForm" name="contactForm" class="form-horizontal" novalidate>
         <!-- TopicList -->
         <div class="form-group" ng-class="{ 'has-error': !contactForm.topic.$touched && contactForm.topic.$invalid }">
-            <label for="inputTopic" class="col-xs-2">{{ nameList[1] }}</label>
+            <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
             <div class="col-xs-10">
                 <select type="text" name="topic" class="form-control" id="inputTopic" ng-model="main.topic" required>
                     <option ng-repeat="dropDownItem in dropDownList" value="{{ dropDownItem }}">{{ dropDownItem }}
