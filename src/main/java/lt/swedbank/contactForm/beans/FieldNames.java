@@ -7,15 +7,16 @@ import java.util.List;
 import java.util.Map;
 
 public class FieldNames {
+    
     Map<String, String> homeScreenNameMap;
     Map<String, String> contactUsNameMap;
     Map<String, String> contactUsRadioButtonMap;
-
-    Map<String, String> registrationOverviewMap;
     Map<String, String> errorMessagesMap;
-    Map<String, String> registrationConfirmationNameMap;
     Map<String, String> registrationNameTags;
+    Map<String, String> buttonsMap;
 
+    List<String>  registrationConfirmationNameList;
+    List<String> registrationOverviewList;
     List<String> contactUsConfirmationNameList;
     List<String> bankDivisions;
     List<String> topics;
@@ -23,22 +24,15 @@ public class FieldNames {
 
     public FieldNames() {
         homeScreenNameMap = new HashMap<String, String>();
-        
         contactUsNameMap = new HashMap<String, String>();
         contactUsRadioButtonMap = new HashMap<String, String>();
         contactUsConfirmationNameList = new ArrayList<String>();
-
         bankDivisions = new ArrayList<String>();
         topics = new ArrayList<String>();
-        
-        
-        
+        buttonsMap = new HashMap<String, String>();
         registrationNameTags = new HashMap<String, String>();
-
-        registrationOverviewMap = new HashMap<String, String>();
-
-        registrationConfirmationNameMap = new HashMap<String, String>();
-
+        registrationOverviewList = new ArrayList<String>();
+        registrationConfirmationNameList = new ArrayList<String>();
         errorMessagesMap = new HashMap<String, String>();
 
     }
@@ -285,7 +279,6 @@ public class FieldNames {
         registrationNameTags.put("date", "Kuupäev *");
         registrationNameTags.put("topic", "Teema *");
         registrationNameTags.put("other", "Kommentaare");}
-
     public void setupRegistrationNameTagsEN(){
         registrationNameTags.put("title", "Registration");
         registrationNameTags.put("header", "Online registration for consultation");
@@ -421,7 +414,6 @@ public class FieldNames {
         errorMessagesMap.put("enterDate","Enter date!");
         errorMessagesMap.put("wrongDateFormat","Incorrect date!");
     }
-
     public void setupErrorMessagesMapLV(){
         errorMessagesMap.put("nameTooShort","Tavs vārds ir pārāk īss!");
         errorMessagesMap.put("nameTooLong","Tavs vārds ir pārāk garš!");
@@ -450,6 +442,27 @@ public class FieldNames {
         errorMessagesMap.put("wrongDateFormat","Nepareizi ievadīts datums!");
     }
     
+    public void setupButtonsLT(){
+        buttonsMap.put("send","Siųsti");
+        buttonsMap.put("back","< Atgal");
+    }
+    public void setupButtonsRU(){
+        buttonsMap.put("send","Отправить");
+        buttonsMap.put("back","< Назад");
+    }
+    public void setupButtonsEE(){
+        buttonsMap.put("send","Saatma");
+        buttonsMap.put("back","< Tagasi");
+    }
+    public void setupButtonsEN(){
+        buttonsMap.put("send","Send");
+        buttonsMap.put("back","< Back");
+    }
+    public void setupButtonsLV(){
+        buttonsMap.put("confirmButton","Sūtīt");
+        buttonsMap.put("back","< atpakaļ");
+        
+    }
     
     public void setupLanguageLT() {
 
@@ -460,28 +473,23 @@ public class FieldNames {
         setupTopicsLT();
         setupRegistrationNameTagsLT();
         setupErrorMessagesMapLT();
-        
-        contactUsNameMap.put("Siųsti");
+        setupButtonsLT();
 
-        contactUsConfirmationNameMap.add("Sveiki, ");
-        contactUsConfirmationNameMap.add("dėkojame, kad kreipiatės į „Swedbank“.");
-        contactUsConfirmationNameMap.add("Į pateiktus klausimus atsakome darbo dienomis 8–20 val., " +
+        contactUsConfirmationNameList.add("Sveiki, ");
+        contactUsConfirmationNameList.add("dėkojame, kad kreipiatės į „Swedbank“.");
+        contactUsConfirmationNameList.add("Į pateiktus klausimus atsakome darbo dienomis 8–20 val., " +
                 "šeštadieniais 9–16 valandomis. Jeigu Jums reikalinga skubi informacija, " +
                 "laukiame Jūsų skambučių telefonu 1884 arba tel. +370 5 268 4444, " +
                 "jei skambinate iš užsienio. Linkime geros dienos!");
-        contactUsConfirmationNameMap.add("< Atgal");
 
 
-        registrationConfirmationNameMap.add("Tittle ");
-        registrationConfirmationNameMap.add("Ačiū, kad domitės banko paslaugomis.");
-        registrationConfirmationNameMap.add("Jeigu Jums reikalinga skubi informacija, laukiame Jūsų skambučių telefonu 1884, darbo dienomis 8-20 val., šeštadieniais 9-16 val.");
-        registrationConfirmationNameMap.add("< Atgal");
-        
-        registrationNameTags.put("confirmButton", "Siųsti");
+        registrationConfirmationNameList.add("Title ");
+        registrationConfirmationNameList.add("Ačiū, kad domitės banko paslaugomis.");
+        registrationConfirmationNameList.add("Jeigu Jums reikalinga skubi informacija, laukiame Jūsų skambučių telefonu 1884, " +
+                "darbo dienomis 8-20 val., šeštadieniais 9-16 val.");
 
-        registrationOverviewMap.add("Registracijos internetu");
 
-       
+        registrationOverviewList.add("Registracijos internetu");
 
 
     }
@@ -494,35 +502,18 @@ public class FieldNames {
         setupTopicsRU();
         setupRegistrationNameTagsRU();
         setupErrorMessagesMapRU();
-        contactUsNameMap.put("","Отправить");
+        setupButtonsRU();
 
-        contactUsDropDownMenuMap.add("Экономия и инвестиции");
-        contactUsDropDownMenuMap.add("Пенсии и сбережения");
-        contactUsDropDownMenuMap.add("Страхование жизни");
-        contactUsDropDownMenuMap.add("Страхование не связаное со здоровьем или жизнью");
-        contactUsDropDownMenuMap.add("Кредиты, лизинг");
-        contactUsDropDownMenuMap.add("Управление каждодневными финансами");
-
-        contactUsRadioButtonMap.put("","по телефону");
-        contactUsRadioButtonMap.put("","по электронной почте");
-        contactUsRadioButtonMap.put("","по электронной почте и по телефону");
-
-        contactUsConfirmationNameMap.add("Здравствуйте, ");
-        contactUsConfirmationNameMap.add("благодарим, за пользование „Swedbank“.");
-        contactUsConfirmationNameMap.add("На заданые вопроса отвечаем по рабочим дням с 8 до 20 ч., " +
+        contactUsConfirmationNameList.add("Здравствуйте, ");
+        contactUsConfirmationNameList.add("благодарим, за пользование „Swedbank“.");
+        contactUsConfirmationNameList.add("На заданые вопроса отвечаем по рабочим дням с 8 до 20 ч., " +
                 "по субботам с 9 до 16 часов. Если информация Вам нужна срочно, " +
                 "ждем ваших звонков по тел. 1884(для частных клиентов), 1663(для бизнес клиентов). " +
                 "Из заграницы звоните по тел. +370 5 268 4444(для частных клиентов), " +
                 " +370 5 268 4422 (для бизнес клиентов).");
-        contactUsConfirmationNameMap.add("< Назад");
-        
 
-       
 
-     
-        registrationNameTags.put("confirmButton", "Отправить");
-
-        registrationOverviewMap.add("Регистрации по интернету");
+        registrationOverviewList.add("Регистрации по интернету");
 
        
     }
@@ -535,40 +526,17 @@ public class FieldNames {
         setupTopicsEE();
         setupRegistrationNameTagsEE();
         setupErrorMessagesMapEE();
-        
-        contactUsNameMap.put("Saatma");
+        setupButtonsEE();
 
-        contactUsDropDownMenuMap.add("Säästud ja investeeringud");
-        contactUsDropDownMenuMap.add("Pensionid ja kogunemine");
-        contactUsDropDownMenuMap.add("Elukindlustus");
-        contactUsDropDownMenuMap.add("Kahjukindlustus");
-        contactUsDropDownMenuMap.add("Laenud ja liisimisega");
-        contactUsDropDownMenuMap.add("Igapäevased finantsjuhtimine");
-
-
-        contactUsConfirmationNameMap.add("Tere, ");
-        contactUsConfirmationNameMap.add("täname, et võtsite „Swedbank“.");
-        contactUsConfirmationNameMap.add("Vastused küsimustele tööpäeviti 8–20 h., " +
+        contactUsConfirmationNameList.add("Tere, ");
+        contactUsConfirmationNameList.add("täname, et võtsite „Swedbank“.");
+        contactUsConfirmationNameList.add("Vastused küsimustele tööpäeviti 8–20 h., " +
                 "laupäeviti 9–16 tööaeg. Kui teil on vaja vahetu teave, " +
                 "ootame teie telefonikõne 1884 või num. +370 5 268 4444, " +
                 "kui heMapate välismaalt. Soovime hea päev!");
-        contactUsConfirmationNameMap.add("Tagasi");
 
-        
 
-        registrationNameTags.put("title", "Registreerimine");
-        registrationNameTags.put("header", "Registreeri Interneti-arutelu");
-        registrationNameTags.put("name", "Nimi *");
-        registrationNameTags.put("surname", "Perekonnanimi *");
-        registrationNameTags.put("phone", "Telefon kontaktandmed *");
-        registrationNameTags.put("email", "E-mail");
-        registrationNameTags.put("bankDivision", "Bank Division *");
-        registrationNameTags.put("date", "Kuupäev *");
-        registrationNameTags.put("topic", "Teema *");
-        registrationNameTags.put("other", "Kommentaare");
-        registrationNameTags.put("confirmButton", "Saatma");
-
-        registrationOverviewMap.add("Registreerimine Internetis");
+        registrationOverviewList.add("Registreerimine Internetis");
 
 
     }
@@ -581,34 +549,20 @@ public class FieldNames {
         setupTopicsEN();
         setupRegistrationNameTagsEN();
         setupErrorMessagesMapEN();
+        setupButtonsEN();
+        
+        registrationOverviewList.add("Online registrations");
 
-        contactUsNameMap.put("","Send");
-
-        contactUsDropDownMenuMap.add("Savings and Investments");
-        contactUsDropDownMenuMap.add("Pensions and Savings");
-        contactUsDropDownMenuMap.add("Life insurance");
-        contactUsDropDownMenuMap.add("Non-life insurance");
-        contactUsDropDownMenuMap.add("Loans, leasing");
-        contactUsDropDownMenuMap.add("The daily financial management");
-
-
-        contactUsConfirmationNameMap.add("Hello, ");
-        contactUsConfirmationNameMap.add("Thank you for contacting „Swedbank“.");
-        contactUsConfirmationNameMap.add("We answer your questions on workdays 8–20 hours., " +
+        contactUsConfirmationNameList.add("Hello, ");
+        contactUsConfirmationNameList.add("Thank you for contacting „Swedbank“.");
+        contactUsConfirmationNameList.add("We answer your questions on workdays 8–20 hours., " +
                 "saturdays 9–16 hours. If you need immediate information, " +
                 "you can call us 1884 (private customers) also 1633 (business customer). " +
                 "Call us from abroad +370 5 268 4444 (private customers) " +
                 "also +370 5 268 4422 (business customers). Wish you all the best!");
-        contactUsConfirmationNameMap.add("< Back");
-
-       
-
-        
-        registrationNameTags.put("confirmButton", "Send");
 
 
     }
-
     public void setupLanguageLV() {
         
         setupHomeScreenNameMapLV();
@@ -617,33 +571,17 @@ public class FieldNames {
         setupBankDivisionsLV();
         setupTopicsLV();
         setupRegistrationNameTagsLV();
-        contactUsNameMap.put("","Sūtīt");
+        setupErrorMessagesMapLV();
+        setupButtonsLV();
 
-
-        contactUsDropDownMenuMap.add("Uzkrājumi un investīcijas");
-        contactUsDropDownMenuMap.add("Pensijas un uzkrāšanu");
-        contactUsDropDownMenuMap.add("Dzīvības apdrošināšana");
-        contactUsDropDownMenuMap.add("Nedzīvības apdrošināšana");
-        contactUsDropDownMenuMap.add("Kredīti, līzings");
-        contactUsDropDownMenuMap.add("Dienas finanšu vadība");
-
-        registrationOverviewMap.add("Online registrations");
-       
-
-
-        contactUsConfirmationNameMap.add("Sveiki, ");
-        contactUsConfirmationNameMap.add("Paldies, kas attiecas uz Swedbank“.");
-        contactUsConfirmationNameMap.add("Atbildes uz uzdotajiem darbdienās 8-20 am jautājumiem., " +
+        contactUsConfirmationNameList.add("Sveiki, ");
+        contactUsConfirmationNameList.add("Paldies, kas attiecas uz Swedbank“.");
+        contactUsConfirmationNameList.add("Atbildes uz uzdotajiem darbdienās 8-20 am jautājumiem., " +
                 "Sestdienās 9-16 stundas. Ja jums nepieciešama tūlītēja informācija, " +
                 "Mēs gaidām jūsu telefona zvanu 1884 vai tel. +370 5 268 4444, " +
                 "Ja jūs zvanāt no ārzemēm Novēlam laba diena!");
-        contactUsConfirmationNameMap.add("< atpakaļ");
         
-
-      
-        registrationNameTags.put("confirmButton", "Sūtīt");
-
-        registrationOverviewMap.add("Reģistrācijas online");
+        registrationOverviewList.add("Reģistrācijas online");
 
 
     }
@@ -657,23 +595,19 @@ public class FieldNames {
         return contactUsNameMap;
     }
 
-    public Map<String, String> getContactUsDropDownMenuMap() {
-        return contactUsDropDownMenuMap;
-    }
-
     public Map<String, String> getContactUsRadioButtonMap() {
         return contactUsRadioButtonMap;
     }
 
-    public Map<String, String> getContactUsConfirmationNameMap() {
-        return contactUsConfirmationNameMap;
+    public List<String> getcontactUsConfirmationNameList() {
+        return contactUsConfirmationNameList;
     }
 
-    public Map<String, String> gettopics() {
+    public List<String> gettopics() {
         return topics;
     }
 
-    public Map<String, String> getbankDivisions() {
+    public List<String> getbankDivisions() {
         return bankDivisions;
     }
 
@@ -681,8 +615,8 @@ public class FieldNames {
         return registrationNameTags;
     }
 
-    public Map<String, String> getRegistrationOverviewMap() {
-        return registrationOverviewMap;
+    public List<String> getRegistrationOverviewMap() {
+        return registrationOverviewList;
     }
 
     public Map<String, String> getErrorMessagesMap() {
