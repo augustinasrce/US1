@@ -47,6 +47,9 @@ var language = document.cookie;
 
 
     $scope.submitForm = function () {
+
+    $('#inputEmail').val("-");
+    $('#inputOther').val("-");
         $http.put('/registration/'  +$('#inputName').val()+'/'
                                     +$('#inputSurname').val()+'/'
                                     +$('#inputPhone').val()+'/'

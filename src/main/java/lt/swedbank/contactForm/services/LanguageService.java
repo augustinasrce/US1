@@ -3,10 +3,7 @@ package lt.swedbank.contactForm.services;
 import lt.swedbank.contactForm.beans.FieldNames;
 import lt.swedbank.contactForm.beans.Language;
 import lt.swedbank.contactForm.beans.SqlConnection;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -94,6 +91,7 @@ public class LanguageService {
         sqlConnection.insertRegistrationBigTable(name, surname, phoneNr, email, bankDivision, date, topic,others);
         sqlConnection.closeConnection();
     }
+
 
 
     @RequestMapping("/sql")
