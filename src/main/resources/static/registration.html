@@ -128,9 +128,8 @@
         <div class="form-group">
             <label for="inputBankDivision" class="col-xs-2">{{ nameList.bankDivision }}</label>
             <div class="col-xs-10">
-                <select ng-model="main.bank" class="form-control" id="inputBankDivision">
-                    <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">
-                        {{ bankDivision}}
+                <select class="form-control" id="inputBankDivision">
+                    <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">{{ bankDivision}}
                     </option>
                 </select>
             </div>
@@ -155,7 +154,7 @@
         <div class="form-group">
             <label for="inputTopic" class="col-xs-2">{{ nameList.topic }}</label>
             <div class="col-xs-10">
-                <select ng-model="main.topic" type="text" class="form-control" name="topic" id="inputTopic">
+                <select type="text" class="form-control" name="topic" id="inputTopic">
                     <option ng-repeat="topic in topics" value="{{ topic }}">{{ topic }}</option>
                 </select>
             </div>
@@ -164,12 +163,9 @@
         <div class="form-group">
             <label for="inputOther" class="col-xs-2">{{ nameList.other }}</label>
             <div class="col-xs-10">
-                <textarea ng-model="main.comment" class="form-control" rows="5" id="inputOther"></textarea>
+                <textarea class="form-control" rows="5" id="inputOther"></textarea>
             </div>
         </div>
-
-        <input class="col-xs-2 btn btn-primary" type="submit"
-               ng-click="backForm()" value="< Back"/>
 
         <input class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="registrationForm.$invalid" type="submit"
                ng-click="submitForm()" value="{{ nameList.confirmButton}}"/>
@@ -188,44 +184,44 @@
         <!-- surname -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.surname }}</label>
-            <label class="col-xs-10">{{ main.surname }}</label>
+            <label class="col-xs-10">{{ registrationForm.main.surname }}</label>
         </div>
         <!-- phone -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.phone }}</label>
-            <label class="col-xs-10">{{ main.phoneNr }}</label>
+            <label class="col-xs-10">{{ inputPhone.value }}</label>
         </div>
         <!-- email -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.email }}</label>
-            <label class="col-xs-10">{{ main.email }}</label>
+            <label class="col-xs-10">{{ inputEmail.value }}</label>
         </div>
         <!-- branch -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.bankDivision }}</label>
-            <label class="col-xs-10">{{ main.bank }}</label>
+            <label class="col-xs-10">{{ inputBankDivision.value }}</label>
         </div>
         <!-- date -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.date }}</label>
-            <label class="col-xs-10">{{ main.date }}</label>
+            <label class="col-xs-10">{{ inputDate.value }}</label>
         </div>
         <!-- topic -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.topic }}</label>
-            <label class="col-xs-10">{{ main.topic }}</label>
+            <label class="col-xs-10">{{ inputTopic.value }}</label>
         </div>
         <!-- comments -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.other }}</label>
-            <label class="col-xs-2">{{ main.comment }}</label>
+            <label class="col-xs-2">{{ $('#inputOther').val() }}</label>
         </div>
         <hr>
         <div class="form-group">
             <p>{{ confirmationNameList[1] }}</p>
             <p>{{ confirmationNameList[2] ]}</p>
         </div>
-        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[2]}}</a>
+        <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ confirmationNameList[3]}}</a>
     </form>
 </div>
 
