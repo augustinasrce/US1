@@ -128,7 +128,7 @@
         <div class="form-group">
             <label for="inputBankDivision" class="col-xs-2">{{ nameList.bankDivision }}</label>
             <div class="col-xs-10">
-                <select class="form-control" id="inputBankDivision">
+                <select class="form-control" id="inputBankDivision" >
                     <option ng-repeat="bankDivision in bankDivisions " value="{{ bankDivision }}">{{ bankDivision}}
                     </option>
                 </select>
@@ -166,6 +166,8 @@
                 <textarea class="form-control" rows="5" id="inputOther"></textarea>
             </div>
         </div>
+
+        <button type="button" class="btn btn-default" onclick="">Back</button>
 
         <input class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="registrationForm.$invalid" type="submit"
                ng-click="submitForm()" value="{{ nameList.confirmButton}}"/>
