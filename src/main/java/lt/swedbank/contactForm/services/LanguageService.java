@@ -126,15 +126,15 @@ public class LanguageService {
         return dataFromDatabase;
     }
 
-//    @RequestMapping("/dates")
-//    public ArrayList<String> getDates(){
-//        ArrayList<String> dates = new ArrayList<String>();
-//        dates.add("2016/02/23");
-//        return dates;
-//    }
-
-
-
+    @RequestMapping("/times")
+    public ArrayList<String> getTimes(){
+        ArrayList<String> times = new ArrayList<String>();
+        for(Integer i=8; i<20 ; i++) {
+            times.add(i.toString() + ":00");
+            times.add(i.toString() + ":30");
+        }
+        return times;
+    }
 
  /*
     @RequestMapping("/lt/contact")

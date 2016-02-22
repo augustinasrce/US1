@@ -21,27 +21,6 @@
     <script src="js/jquery.js"></script>
     <script src="js/datetimepicker/jquery.datetimepicker.full.js"></script>
 
-    <script >
-
-      $(document).ready(function() {
-
-           $.datetimepicker.setLocale('lt');
-
-             $(function() {
-                 $( "#inputDate" ).datetimepicker({
-                    minDate: 0,
-                    allowTimes:[
-                          '08:00', '08:30', '09:00', '09:30', '10:00', '10:30','11:00', '11:30','12:00', '12:30',
-                          '13:00', '13:30', '14:00', '14:30', '15:00', '15:30','16:00', '16:30','17:00', '17:30',
-                          '18:00', '18:30', '19:00', '19:30'
-                        ],
-                    format:	'Y-m-d H:i',
-                 });
-             });
-
-      });
-
-    </script>
 </head>
 <body ng-controller="RegistrationScreenController">
 
@@ -187,6 +166,8 @@
                 <textarea class="form-control" rows="5" id="inputOther"></textarea>
             </div>
         </div>
+
+        <button type="button" class="btn btn-default" onclick="">Back</button>
 
         <input class="col-xs-offset-10 col-xs-2 btn btn-primary" ng-disabled="registrationForm.$invalid" type="submit"
                ng-click="submitForm()" value="{{ nameList.confirmButton}}"/>
