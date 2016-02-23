@@ -51,7 +51,7 @@
             <th>Topic</th>
         </tr>
         </thead>
-        <tr ng-repeat="x in registrationInfo | orderBy: '[2]' ">
+        <tr ng-repeat="x in registrationInfo">
             <td>{{$index + 1}}</td>
             <td>{{ x[2] }}</td> <!-- date -->
             <td>{{ x[3] }}</td><!-- branch -->
