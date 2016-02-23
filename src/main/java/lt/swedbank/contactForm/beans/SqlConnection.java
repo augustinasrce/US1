@@ -148,12 +148,12 @@ public class SqlConnection {
             while (res.next()) {
                 if(!columnName.equals(""))
                 {
-                    line = res.getString(columnName);
+                    line = res.getString(columnName)+";";
                 }
                 else
                 {
                     columnid++;
-                    line += res.getString(columnid);
+                    line += res.getString(columnid)+";";
                 }
                 result.add(line);
             }
