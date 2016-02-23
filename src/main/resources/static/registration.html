@@ -68,8 +68,57 @@
     <input class="col-xs-offset-8 col-xs-2 btn btn-primary" type="submit"
            ng-click="stepUp()" value="Register"/>
 </div>
-
-
+<div ng-show="step==0" class="container">
+    <form id="previewForm" class="form-horizontal" novalidate>
+        <!-- name -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.name }}</label>
+            <p class="col-xs-10">{{ result[1] }}</p>
+        </div>
+        <!-- surname -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.surname }}</label>
+            <p class="col-xs-10">{{ result[2] }}</p>
+        </div>
+        <!-- phone -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.phone }}</label>
+            <p class="col-xs-10">{{ result[3] }}</p>
+        </div>
+        <!-- email -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.email }}</label>
+            <p class="col-xs-10">{{ result[4] }}</p>
+        </div>
+        <!-- branch -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.bankDivision }}</label>
+            <p class="col-xs-10">{{ result[5] }}</p>
+        </div>
+        <!-- date -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.date }}</label>
+            <p class="col-xs-10">{{ result[6] }}</p>
+        </div>
+        <!-- topic -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.topic }}</label>
+            <p class="col-xs-10">{{ result[7] }}</p>
+        </div>
+        <!-- comments -->
+        <div class="form-group">
+            <label class="col-xs-2">{{ nameList.other }}</label>
+            <p class="col-xs-2">{{ result[8] }}</p>
+        </div>
+        <hr>
+        <div class="form-group">
+            <p>{{ confirmationNameList[1] }}</p>
+            <p>{{ confirmationNameList[2] }}</p>
+        </div>
+        <input class="col-xs-offset-10 col-xs-2 btn btn-primary" type="submit"
+               ng-click="stepUp()" value="{{buttons.back}}"/>
+    </form>
+</div>
 <div ng-show="step==2" id="formDiv" class="container">
     <form id="registrationForm" name="registrationForm" class="form-horizontal" ng-model-options="{ updateOn: 'default'}" novalidate>
         <!-- name -->
@@ -198,8 +247,6 @@
                ng-click="submitForm()" value="{{ buttons.send}}">
     </form>
 </div>
-
-
 <div ng-show="step==3" id="confirmDiv" class="container">
     <form id="confirmForm" class="form-horizontal" novalidate>
         <!-- name -->

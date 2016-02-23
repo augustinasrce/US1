@@ -66,7 +66,7 @@ public class SqlConnection {
         return result;
     }
 
-    public void insertContactUsbigTable(String subject, String message,
+    public void insertContactUsBigTable(String subject, String message,
                                         String contact_by, String client_name,
                                         String client_surname, String client_phone_number, String client_email) {
         String query = String.format("insert into ContactUs(subject, message, contact_by, client_name, client_surname," +

@@ -13,7 +13,7 @@ import java.util.Map;
  * Created by p998ueh on 2016.02.11.
  */
 @RestController
-public class LanguageService {
+public class Service {
 
     Language language = null;
 
@@ -53,7 +53,7 @@ public class LanguageService {
                              @PathVariable String answerType) {
         SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
-        sqlConnection.insertContactUsbigTable(dropDownItem, textMessage, answerType, name, surname, phoneNr, email);
+        sqlConnection.insertContactUsBigTable(dropDownItem, textMessage, answerType, name, surname, phoneNr, email);
         sqlConnection.closeConnection();
     }
 
@@ -140,92 +140,11 @@ public class LanguageService {
     }
 
     @RequestMapping(value = "/preview/{id}", method = RequestMethod.GET)
-    public void previewRegistration(@PathVariable int id) {
+    public ArrayList<String> previewRegistration(@PathVariable int id) {
         SqlConnection sqlConnection = new SqlConnection();
         sqlConnection.connect();
-        sqlConnection.specialSelect("select * from Registrations where id="+id+";", "");
+        ArrayList<String> rez = sqlConnection.selectRegistrationById(id);
         sqlConnection.closeConnection();
+        return rez;
     }
-
-//
-//    @RequestMapping("/takenTimes")
-//    public  Map<String,ArrayList<String>> getTakenTimes(){
-//        Map<String,ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
-//        ArrayList<String> times = new ArrayList<String>();
-//        times.add("11:00");
-//        map.put("2016-02-26", times);
-//        return map;
-//    }
-
- /*
-    @RequestMapping("/lt/contact")
-    public FieldNames getLanguageForContactUsScreenLT() {
-        language = new Language();
-        return language.getFieldNamesForContactUsScreenLT();
-    }
-
-/*
-    @RequestMapping("lt/index.html")
-    public Language getLTLanguage() {
-        return language;
-    }
-
-
-        @RequestMapping("/peanuts/sorted")
-        public PeanutList sortedList() {
-            Collections.sort(peanutList.getPeanuts());
-            return peanutList;
-        }
-
-        @RequestMapping("/two")
-        public List<Peanut> two() {
-            List<Peanut> list = new ArrayList<Peanut>();
-            list.add(peanutList.getPeanuts().get(0));
-            list.add(peanutList.getPeanuts().get(1));
-            return list;
-        }
-
-        @RequestMapping("/peanuts/withO")
-        public List<Peanut> peanutsWithO() {
-            List<Peanut> list = new ArrayList<Peanut>();
-            for(Peanut peanut : peanutList.getPeanuts())
-            {
-                if(peanut.getName().contains("o"))
-                    list.add(peanut);
-            }
-
-            return list;
-        }
-
-
-        @RequestMapping("/peanuts/dividableby3")
-        public PeanutList dividableBy3List() {
-
-            PeanutList dividableBy3List = new PeanutList();
-            for (Peanut peanut : peanutList.getPeanuts()) {
-                if (peanut.getId() % 3 == 0)
-                    dividableBy3List.addPeanut(peanut,peanut.getId());
-            }
-            return dividableBy3List;
-        }
-
-
-        @RequestMapping(value = "/peanuts", method = RequestMethod.PUT)
-        public void create(String name) {
-            peanutList.addPeanut(new Peanut(name));
-        }
-
-
-        @RequestMapping(value = "/peanuts/{id}", method = RequestMethod.GET)
-        public Peanut getPeanut(@PathVariable Long id) {
-            for (Peanut peanut : peanutList.getPeanuts()) {
-                if (peanut.getId() == id.intValue())
-                    return peanut;
-            }
-            return null;
-        }
-
-
-
-*/
 }

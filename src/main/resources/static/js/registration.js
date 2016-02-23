@@ -47,6 +47,18 @@ var language = document.cookie;
 
     })};
 
+    $scope.preview = function (number){
+        $http({
+             method: 'GET',
+             url: '/preview/' + number
+        }).then(function successCallback(response) {
+             $scope.stepDown();
+             $scope.result = response.data.rez;
+             });
+
+    })};
+
+
     $scope.submitForm = function () {
     $('#inputEmail').val("-");
     $('#inputOther').val("-");
@@ -153,7 +165,6 @@ var language = document.cookie;
                     $scope.confirmationNameList = response.data.registrationConfirmationNameList;
                     $scope.errorList = response.data.errorMessagesMap;
                     $scope.buttons = response.data.buttonsMap;
-
                     document.title =  response.data.registrationNameTags.title;
                 });
         }
