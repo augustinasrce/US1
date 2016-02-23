@@ -36,7 +36,7 @@ var language = document.cookie;
     $scope.remove = function (number){
         $http({
              method: 'DELETE',
-             url: '/delete/' + number)
+             url: '/delete/' + number
         }).then(function successCallback(response) {
              $http({
                  method: 'GET',
