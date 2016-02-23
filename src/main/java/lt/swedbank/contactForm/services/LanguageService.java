@@ -22,25 +22,21 @@ public class LanguageService {
         language = new Language();
         return language.getFieldNamesLT();
     }
-
     @RequestMapping("/en")
     public FieldNames getLanguageEN() {
         language = new Language();
         return language.getFieldNamesEN();
     }
-
     @RequestMapping("/ru")
     public FieldNames getLanguageRU() {
         language = new Language();
         return language.getFieldNamesRU();
     }
-
     @RequestMapping("/ee")
     public FieldNames getLanguageEE() {
         language = new Language();
         return language.getFieldNamesEE();
     }
-
     @RequestMapping("/lv")
     public FieldNames getLanguageLV() {
         language = new Language();
@@ -115,6 +111,7 @@ public class LanguageService {
             databaseValues.add(split[6]);
             databaseValues.add(split[7]);
             databaseValues.add(split[8]);
+            databaseValues.add(split[0]);
 
             dataFromDatabase.put(split[0], databaseValues);
 
@@ -133,6 +130,15 @@ public class LanguageService {
         }
         return times;
     }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public void removeRegistration(@PathVariable int id) {
+        SqlConnection sqlConnection = new SqlConnection();
+        sqlConnection.connect();
+        sqlConnection.delete("Registrations",id);
+        sqlConnection.closeConnection();
+    }
+
 //
 //    @RequestMapping("/takenTimes")
 //    public  Map<String,ArrayList<String>> getTakenTimes(){
@@ -212,9 +218,6 @@ public class LanguageService {
         }
 
 
-        @RequestMapping(value = "/peanuts/{id}", method = RequestMethod.DELETE)
-        public void removePeanut(@PathVariable Long id) {
 
-        }
 */
 }

@@ -33,7 +33,19 @@ var language = document.cookie;
 
 
 
+    $scope.remove = function (number){
+        $http({
+             method: 'DELETE',
+             url: '/delete/' + number)
+        }).then(function successCallback(response) {
+             $http({
+                 method: 'GET',
+                 url: '/sql'
+             }).then(function successCallback(response) {
+                $scope.registrationInfo = response.data;
+             });
 
+    })};
 
     $scope.submitForm = function () {
     $('#inputEmail').val("-");
