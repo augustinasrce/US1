@@ -152,6 +152,7 @@ public class SqlConnection {
                 }
                 else
                 {
+                    columnid++;
                     line += res.getString(columnid);
                 }
                 result.add(line);

@@ -139,6 +139,14 @@ public class LanguageService {
         sqlConnection.closeConnection();
     }
 
+    @RequestMapping(value = "/preview/{id}", method = RequestMethod.GET)
+    public void previewRegistration(@PathVariable int id) {
+        SqlConnection sqlConnection = new SqlConnection();
+        sqlConnection.connect();
+        sqlConnection.specialSelect("select * from Registrations where id="+id+";", "");
+        sqlConnection.closeConnection();
+    }
+
 //
 //    @RequestMapping("/takenTimes")
 //    public  Map<String,ArrayList<String>> getTakenTimes(){
