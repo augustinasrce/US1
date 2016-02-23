@@ -118,8 +118,8 @@ public class SqlConnection {
                         "values(\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");\n",
                 name, surname, phoneNr, email, bankDivision, date, topic, others);
             try {
-            int value = st.executeUpdate(query);
-            if (value == 1)
+                int value = st.executeUpdate(query);
+                if (value == 1)
                 System.out.println("Successfully inserted value");
         } catch (Exception e) {
             System.out.println(e.getMessage());

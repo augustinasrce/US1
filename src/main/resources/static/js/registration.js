@@ -60,9 +60,10 @@ var language = document.cookie;
 
 
     $scope.submitForm = function () {
-    $('#inputEmail').val("-");
-    $('#inputOther').val("-");
-        console.log('was called');
+
+    //$('#inputEmail').val("-");
+    //$('#inputOther').val("-");
+
         $http.put('/registration/'  +$('#inputName').val()+'/'
                                     +$('#inputSurname').val()+'/'
                                     +$('#inputPhone').val()+'/'
