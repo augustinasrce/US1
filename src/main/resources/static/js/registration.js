@@ -53,16 +53,13 @@ var language = document.cookie;
              url: '/preview/' + number
         }).then(function successCallback(response) {
              $scope.stepDown();
-             $scope.result = response.data.rez;
+             $scope.result = response.data;
              });
 
     };
 
 
     $scope.submitForm = function () {
-
-    //$('#inputEmail').val("-");
-    //$('#inputOther').val("-");
 
         $http.put('/registration/'  +$('#inputName').val()+'/'
                                     +$('#inputSurname').val()+'/'
