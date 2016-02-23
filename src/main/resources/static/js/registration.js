@@ -1,8 +1,9 @@
 var app = angular.module('RegistrationScreen', ['ngMessages']);
 var language = document.cookie;
 
- app.controller('RegistrationScreenController',  function($scope, $http) {
 
+ app.controller('RegistrationScreenController',  function($scope, $http) {
+ $scope.step = 1;
  $scope.validValues = ['+','1','2','3','4','5','6','7','8','9','0'];
  $scope.plus = ['+'];
 
@@ -35,7 +36,6 @@ var language = document.cookie;
 
 
     $scope.submitForm = function () {
-
     $('#inputEmail').val("-");
     $('#inputOther').val("-");
         console.log('was called');
@@ -48,14 +48,16 @@ var language = document.cookie;
                                     +$('#inputTopic').val()+'/'
                                     +$('#inputOther').val()+'/')
         .success(function (data, status, headers) {
-            $("#formDiv").addClass("hidden");
-            $("#confirmDiv").removeClass("hidden");
+            $scope.stepUp();
         })
     };
 
-    $scope.registration = function(){
-        $("#overviewDiv").addClass("hidden");
-        $("#formDiv").removeClass("hidden");
+    $scope.stepUp = function(){
+        $scope.step++;
+    }
+
+    $scope.stepDown = function(){
+        $scope.step--;
     }
 
     $('#inputPhone').keypress(function(event) {

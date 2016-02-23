@@ -41,7 +41,7 @@
     <h1>{{ nameList.header }}</h1>
 </div>
 
-<div id="overviewDiv" class="container">
+<div ng-show="step==1" id="overviewDiv" class="container">
     <table class="table table-condensed">
         <thead class="thead-inverse">
         <tr>
@@ -66,11 +66,11 @@
     <a href="index.html" class="col-xs-2 btn btn-primary">{{buttons.back}}</a>
 
     <input class="col-xs-offset-8 col-xs-2 btn btn-primary" type="submit"
-           ng-click="registration()" value="Register"/>
+           ng-click="stepUp()" value="Register"/>
 </div>
 
 
-<div id="formDiv" class="container">
+<div ng-show="step==2" id="formDiv" class="container">
     <form id="registrationForm" name="registrationForm" class="form-horizontal" ng-model-options="{ updateOn: 'default'}" novalidate>
         <!-- name -->
         <div class="form-group"
@@ -193,60 +193,59 @@
             </div>
         </div>
 
-        <a href="index.html" class="col-xs-2 btn btn-primary">{{ buttons.back }}</a>
-
+        <input ng-click="stepDown()" class="col-xs-2 btn btn-primary" type="submit" value="{{ buttons.back }}"/>
         <input class="col-xs-offset-8 col-xs-2 btn btn-primary" ng-disabled="registrationForm.$invalid" type="submit"
                ng-click="submitForm()" value="{{ buttons.send}}">
     </form>
 </div>
 
 
-<div id="confirmDiv" class="container">
+<div ng-show="step==3" id="confirmDiv" class="container">
     <form id="confirmForm" class="form-horizontal" novalidate>
         <!-- name -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.name }}</label>
-            <label class="col-xs-10">{{ main.name }}</label>
+            <p class="col-xs-10">{{ main.name }}</p>
         </div>
         <!-- surname -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.surname }}</label>
-            <label class="col-xs-10">{{ main.surname }}</label>
+            <p class="col-xs-10">{{ main.surname }}</p>
         </div>
         <!-- phone -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.phone }}</label>
-            <label class="col-xs-10">{{ main.phoneNr }}</label>
+            <p class="col-xs-10">{{ main.phoneNr }}</p>
         </div>
         <!-- email -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.email }}</label>
-            <label class="col-xs-10">{{ main.email }}</label>
+            <p class="col-xs-10">{{ main.email }}</p>
         </div>
         <!-- branch -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.bankDivision }}</label>
-            <label class="col-xs-10">{{ main.bankDivision }}</label>
+            <p class="col-xs-10">{{ main.bankDivision }}</p>
         </div>
         <!-- date -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.date }}</label>
-            <label class="col-xs-10">{{ main.date }}</label>
+            <p class="col-xs-10">{{ main.date }}</p>
         </div>
         <!-- topic -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.topic }}</label>
-            <label class="col-xs-10">{{ main.topic }}</label>
+            <p class="col-xs-10">{{ main.topic }}</p>
         </div>
         <!-- comments -->
         <div class="form-group">
             <label class="col-xs-2">{{ nameList.other }}</label>
-            <label class="col-xs-2">{{ main.comment }}</label>
+            <p class="col-xs-2">{{ main.comment }}</p>
         </div>
         <hr>
         <div class="form-group">
             <p>{{ confirmationNameList[1] }}</p>
-            <p>{{ confirmationNameList[2] ]}</p>
+            <p>{{ confirmationNameList[2] }}</p>
         </div>
         <a href="index.html" class="col-xs-offset-10 col-xs-2 btn btn-primary">{{ buttons.back }}</a>
     </form>

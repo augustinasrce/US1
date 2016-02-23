@@ -487,7 +487,7 @@ public class FieldNames {
                 "jei skambinate iš užsienio. Linkime geros dienos!");
 
 
-        registrationConfirmationNameList.add("Title ");
+        registrationConfirmationNameList.add("Registracijos Patvirtinimas");
         registrationConfirmationNameList.add("Ačiū, kad domitės banko paslaugomis.");
         registrationConfirmationNameList.add("Jeigu Jums reikalinga skubi informacija, laukiame Jūsų skambučių telefonu 1884, " +
                 "darbo dienomis 8-20 val., šeštadieniais 9-16 val.");
@@ -630,4 +630,12 @@ public class FieldNames {
     public Map<String, String> getButtonsMap() {
         return buttonsMap;
     }
+
+    public List<String> getRegistrationConfirmationNameList() {
+        return registrationConfirmationNameList;
+    }
+
+
+
 }
+
