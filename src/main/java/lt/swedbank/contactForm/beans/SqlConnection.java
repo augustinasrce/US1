@@ -47,7 +47,7 @@ public class SqlConnection {
         try {
             ResultSet res = st.executeQuery(query);
             while (res.next()) {
-                int id = res.getInt("contactUs_id");
+                int id = res.getInt("contactus_id");
                 String subject = res.getString("subject");
                 String message = res.getString("message");
                 String contact_by = res.getString("contact_by");
