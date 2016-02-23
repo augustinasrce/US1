@@ -92,7 +92,7 @@ public class SqlConnection {
         try {
             ResultSet res = st.executeQuery(query);
             while (res.next()) {
-                int id = res.getInt("registration_id");
+                int id = res.getInt("registrations_id");
                 String subject = res.getString("subject");
                 String message = res.getString("comments");
                 String date = res.getString("date");
@@ -136,10 +136,24 @@ public class SqlConnection {
             columnName = "max(client_id)";
         }
 
+        //default: all columns
+        int columnid = 0;
+        if(columnName.equals("") && !query.equals(""))
+        {
+            columnid++;
+        }
+
         try {
             ResultSet res = st.executeQuery(query);
             while (res.next()) {
-                line = res.getString(columnName);
+                if(!columnName.equals(""))
+                {
+                    line = res.getString(columnName);
+                }
+                else
+                {
+                    line += res.getString(columnid);
+                }
                 result.add(line);
             }
         } catch (Exception e) {
