@@ -56,7 +56,7 @@ var language = document.cookie;
              $scope.result = response.data.rez;
              });
 
-    })};
+    };
 
 
     $scope.submitForm = function () {
