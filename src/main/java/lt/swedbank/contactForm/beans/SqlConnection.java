@@ -126,6 +126,24 @@ public class SqlConnection {
         }
     }
 
+    public ArrayList<String> selectRegistrationById(int id) {
+        ArrayList<String> result = new ArrayList<String>();
+        String line = "";
+        int columnId = 0;
+
+        try {
+            ResultSet res = st.executeQuery("select * from Registrations where registrations_id = "+id+";");
+            while (res.next()) {
+                line = res.getString(columnId);
+                result.add(line);
+            }
+        } catch (Exception e) {
+            System.out.printf(e.getMessage());
+        }
+
+        return  result;
+    }
+
     public ArrayList<String> specialSelect(String query, String columnName) {
         ArrayList<String> result = new ArrayList<String>();
         String line = "";
