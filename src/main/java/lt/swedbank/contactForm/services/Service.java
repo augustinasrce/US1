@@ -71,6 +71,7 @@ public class Service {
                         phoneNr,
                         email,
                         answerType);
+        //
     }
 
     @RequestMapping(value = "/registration/{name}/{surname}/{phoneNr}/{email}/{bankDivision}/{date}/{topic}/{others}/", method = RequestMethod.PUT)
