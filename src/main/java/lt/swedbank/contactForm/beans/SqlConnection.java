@@ -144,44 +144,6 @@ public class SqlConnection {
         return  result;
     }
 
-//    public ArrayList<String> specialSelect(String query, String columnName) {
-//        ArrayList<String> result = new ArrayList<String>();
-//        String line = "";
-//
-//        // default query
-//        if (query.equals("")) {
-//            query = "select max(client_id) from Client;";
-//            columnName = "max(client_id)";
-//        }
-//
-//        //default: all columns
-//        int columnid = 0;
-//        if(columnName.equals("") && !query.equals(""))
-//        {
-//            columnid++;
-//        }
-//
-//        try {
-//            ResultSet res = st.executeQuery(query);
-//            while (res.next()) {
-//                if(!columnName.equals(""))
-//                {
-//                    line = res.getString(columnName)+";";
-//                }
-//                else
-//                {
-//                    columnid++;
-//                    line += res.getString(columnid)+";";
-//                }
-//                result.add(line);
-//            }
-//        } catch (Exception e) {
-//            System.out.printf(e.getMessage());
-//        }
-//
-//        return result;
-//    }
-
     public void delete(String tableName, int id) {
         String query = String.format("delete from %s where %s_id = %d;", tableName, tableName.toLowerCase(), id);
         try {
